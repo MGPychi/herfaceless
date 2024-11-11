@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Play } from "lucide-react";
@@ -29,7 +27,7 @@ export default function Hero() {
       </motion.div>
 
       <main className="container mx-auto px-4 py-12 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-8">
+        <div className="flex flex-col items-center text-center  mx-auto space-y-8">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -68,7 +66,7 @@ export default function Hero() {
             transition={{ type: "spring", stiffness: 200 }}
             className="w-full"
           >
-            <Card className="max-w-4xl mx-auto aspect-video bg-[#f0f8ff] relative shadow-xl">
+            <Card className="max-w-5xl mx-auto aspect-video bg-[#f0f8ff] relative shadow-xl">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-48 h-48">
                   <IllustrationFigure />
