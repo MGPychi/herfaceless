@@ -1,58 +1,52 @@
-'use client'
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Play } from "lucide-react"
-import { useSpring, animated, config } from "@react-spring/web"
-import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Play } from "lucide-react";
+// import {m as  motion } from "framer-motion";
+import * as motion from "framer-motion/m"
 
 export default function Hero() {
-  const [,setRun] = useState(false)
-  useEffect(()=>{
-    setRun(true)
-  },[])
-  const fadeIn = useSpring({
-    from: { opacity: 0, transform: 'translateY(20px)' },
-    to: { opacity: 1, transform: 'translateY(0)' },
-    config: config.molasses,
-  })
-
-  const scaleIn = useSpring({
-    from: { transform: 'scale(0.9)' },
-    to: { transform: 'scale(1)' },
-    config: config.wobbly,
-  })
-
-  const leafAnimation = useSpring({
-    from: { opacity: 0, transform: 'rotate(-10deg) scale(0.9)' },
-    to: { opacity: 0.2, transform: 'rotate(0deg) scale(1)' },
-    config: { duration: 1000 },
-  })
-
-  const [playButtonProps ] = useSpring(() => ({
-    scale: 1,
-    config: config.wobbly,
-  }))
 
   return (
-    <div className="min-h-screen  bg-primary relative overflow-hidden">
+    <div className="min-h-screen bg-primary relative overflow-hidden">
       {/* Decorative Shapes */}
-      <animated.div style={leafAnimation} className="absolute left-0 top-0 w-[400px] h-[400px]">
+      <motion.div
+        initial={{ opacity: 0, rotate: -10, scale: 0.9 }}
+        whileInView={{ opacity: 0.2, rotate: 0, scale: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute left-0 top-0 w-[400px] h-[400px]"
+      >
         <GeometricPattern />
-      </animated.div>
-      <animated.div style={leafAnimation} className="absolute right-0 bottom-0 w-[400px] h-[400px] rotate-180">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, rotate: -10, scale: 0.9 }}
+        whileInView={{ opacity: 0.2, rotate: 0, scale: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute right-0 bottom-0 w-[400px] h-[400px] rotate-180"
+      >
         <GeometricPattern />
-      </animated.div>
-      
+      </motion.div>
+
       <main className="container mx-auto px-4 py-12 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-8">
           {/* Badge */}
-          <animated.div style={fadeIn} className="bg-[#003366] text-white text-sm px-6 py-2 rounded-full uppercase tracking-wider">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="bg-[#003366] text-white text-sm px-6 py-2 rounded-full uppercase tracking-wider"
+          >
             Mens Inner Circle Membership
-          </animated.div>
+          </motion.div>
 
           {/* Headings */}
-          <animated.div style={fadeIn} className="space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
+            className="space-y-4"
+          >
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
               Build, launch, and scale{" "}
               <span className="text-[#003366]">your own</span>
@@ -61,21 +55,28 @@ export default function Hero() {
               <span className="text-[#0066cc]">30 days</span>
             </h1>
             <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto">
-              Transform your expertise into a thriving online business. Get consistent sales notifications, secure financial freedom, and create the lifestyle you have always dreamed of.
+              Transform your expertise into a thriving online business. Get
+              consistent sales notifications, secure financial freedom, and
+              create the lifestyle you have always dreamed of.
             </p>
-          </animated.div>
+          </motion.div>
 
           {/* Video Card */}
-          <animated.div style={scaleIn} className="w-full">
+          <motion.div
+            initial={{ scale: 0.9 }}
+            whileInView={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            className="w-full"
+          >
             <Card className="max-w-4xl mx-auto aspect-video bg-[#f0f8ff] relative shadow-xl">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-48 h-48">
                   <IllustrationFigure />
                 </div>
-                <animated.div
-                  style={playButtonProps}
-                  // onMouseEnter={() => setPlayButton({ scale: 1.1 })}
-                  // onMouseLeave={() => setPlayButton({ scale: 1 })}
+                <motion.div
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 200 }}
                 >
                   <Button
                     size="icon"
@@ -84,24 +85,28 @@ export default function Hero() {
                   >
                     <Play className="h-8 w-8 text-white" />
                   </Button>
-                </animated.div>
+                </motion.div>
               </div>
               <div className="absolute bottom-4 left-0 right-0 text-center text-xs text-gray-500">
                 COPYRIGHT 2024 © MEN IN SUCCESS. ALL RIGHTS RESERVED | DESIGNED BY @MAVWITHEART
               </div>
             </Card>
-          </animated.div>
+          </motion.div>
 
           {/* CTA Button */}
-          <animated.div style={fadeIn}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
+          >
             <Button className="bg-[#003366] text-white hover:bg-[#004080] text-lg px-8 py-2 h-auto">
               JOIN NOW!
             </Button>
-          </animated.div>
+          </motion.div>
         </div>
       </main>
     </div>
-  )
+  );
 }
 
 function GeometricPattern() {
@@ -111,7 +116,7 @@ function GeometricPattern() {
       <rect x="33" y="33" width="33" height="33" />
       <rect x="66" y="66" width="33" height="33" />
     </svg>
-  )
+  );
 }
 
 function IllustrationFigure() {
@@ -127,5 +132,5 @@ function IllustrationFigure() {
       />
       <rect x="40" y="30" width="20" height="10" className="fill-[#e6f2ff]" />
     </svg>
-  )
+  );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
+import Wrappers from "@/components/Wrappers";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -26,9 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={``}
+        className={` `}
       >
+        <Wrappers>
+
         {children}
+        </Wrappers>
       </body>
     </html>
   );
