@@ -9,7 +9,7 @@ export default function MemberShip() {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="relative"
         >
           <div className="aspect-[3/4] relative rounded-[2.5rem] border-8 border-black bg-[#e5d0ba] overflow-hidden shadow-xl">
@@ -26,14 +26,14 @@ export default function MemberShip() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           className="space-y-6"
         >
           <div className="space-y-2">
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.3 }}
               className="text-[#b17f65] text-xl"
             >
               Introducing...
@@ -41,7 +41,7 @@ export default function MemberShip() {
             <motion.h1
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.5 }}
               className="text-4xl lg:text-5xl font-bold leading-tight"
             >
               Sisters Inner Circle Membership
@@ -51,7 +51,7 @@ export default function MemberShip() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 0.7 }}
             className="text-lg text-gray-700 leading-relaxed"
           >
             A comprehensive, on-demand membership you only need to teaches you how to create, launch, and sell digital products. This isn&apos;t just another course, it&apos;s a complete system that provides you with the tools, templates, and support you need to succeed.
@@ -60,7 +60,7 @@ export default function MemberShip() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 0.9 }}
           >
             <Button 
               className="bg-[#e5d0ba] hover:bg-[#d4c0aa] text-black px-8 py-6 text-lg rounded-md"
