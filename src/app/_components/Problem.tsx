@@ -21,7 +21,7 @@ const Component = () => {
         >
           <motion.div variants={fadeInUp} className="md:order-2">
             <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6 leading-tight">
-              You know you should be earning money from digital products now, but there's only one problem...
+              You know you should be earning money from digital products now, but there is only one problem...
             </h1>
             <motion.p variants={fadeInUp} className="text-lg text-zinc-600">
               You have no idea where to start, and every time you try, you feel overwhelmed by the endless possibilities and steps involved.
@@ -74,8 +74,6 @@ const Component = () => {
             </svg>
           </motion.div>
         </motion.div>
-
-        {/* Bottom Section */}
         <motion.div
           initial={{opacity:0,y:40}}
           whileInView={{opacity:1,y:0}}
@@ -84,7 +82,7 @@ const Component = () => {
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-2xl md:text-3xl font-bold text-white inline-block bg-zinc-900 px-6 py-3 rounded-lg shadow-md"
+            className="text-2xl md:text-2xl font-bold text-white inline-block bg-zinc-900 px-6 py-3 rounded-lg shadow-md"
           >
             But what if there was a clear, proven path that guided you every step of the way?
           </motion.h2>
@@ -95,7 +93,7 @@ const Component = () => {
           transition={{ duration: 0.4 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button className="bg-[#D2B48C] hover:bg-[#C1A47B] text-zinc-900 font-bold text-lg px-6 py-3 h-auto rounded-full shadow-lg transition-all duration-300 ease-in-out">
+            <Button className="bg-[#D2B48C]  hover:bg-[#C1A47B] text-zinc-900 font-bold  px-6 py-3 h-auto rounded-full shadow-lg transition-all duration-300 ease-in-out">
               I WANT TO START EARNING MONEY!
             </Button>
           </motion.div>
