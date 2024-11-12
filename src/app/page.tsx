@@ -4,6 +4,7 @@ import GamePlan from "./_components/GamePlan";
 import Hero from "./_components/Hero";
 import IsThatYou from "./_components/IsThatYou";
 import MemberShip from "./_components/MemberShip";
+import NewsletterSubscription from "./_components/Newsletter";
 import Pricing from "./_components/Pricing";
 import Problem from "./_components/Problem";
 import QandA from "./_components/QandA";
@@ -26,6 +27,7 @@ export default function Home() {
       <IsThatYou/>
       <FeaturesGrid/>
       <QandA/>
+      <NewsletterSubscription/>
     </main>
   );
 }
