@@ -1,16 +1,19 @@
 "use client"
-
 import { useState, useEffect } from 'react'
 import {  AnimatePresence } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { X } from "lucide-react"
 import * as motion from "framer-motion/m"
+import { createNewsLetterAction } from '@/actions/newsletter-actions'
+import toast from 'react-hot-toast'
 
 export default function NewsletterSubscription() {
   const [isVisible, setIsVisible] = useState(false)
   const [email, setEmail] = useState('')
   const [hasScrolled, setHasScrolled] = useState(false)
+  const [isLoading,setIsLoading]= useState(false)
+  const[hasSubscribed,setHasSubscribed]= useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,17 +38,27 @@ export default function NewsletterSubscription() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [hasScrolled])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async(e: React.FormEvent) => {
+    setIsLoading(true)
     e.preventDefault()
-    // Handle form submission here
     console.log('Submitted email:', email)
+
+    const response = await createNewsLetterAction({email})
+    if(response?.data?.success){
+        toast("subscribed")
+        setHasSubscribed(true)
+    }else{
+        toast("failed to subscribe ")
+    }
+
     setIsVisible(false)
     setHasScrolled(false) // Reset so it can appear again on next scroll
+    setIsLoading(false)
   }
 
   return (
     <AnimatePresence>
-      {isVisible && (
+      {isVisible&&!hasSubscribed && (
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -59,11 +72,13 @@ export default function NewsletterSubscription() {
             className="bg-gradient-to-br from-[#f3e4d7] to-[#e8c9b0] p-6 rounded-3xl shadow-lg max-w-sm border border-[#d4b094]"
           >
             <Button 
+            disabled={isLoading}
               variant="ghost" 
               size="icon"
-              className="absolute top-2 right-2 text-[#8b5e3c] hover:text-[#6d4b30]"
+              className={ `${isLoading&&"opacity-80"}absolute top-2 right-2 text-[#8b5e3c] hover:text-[#6d4b30]` }
               onClick={() => {
                 setIsVisible(false)
+                setHasSubscribed(true)
                 setHasScrolled(false) // Reset so it can appear again on next scroll
               }}
             >
