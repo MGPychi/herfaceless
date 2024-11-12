@@ -1,5 +1,6 @@
 import {  pgTable, timestamp, uuid, varchar } from "drizzle-orm/pg-core";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
+import z from "zod"
 
 export const newsLetter = pgTable("newsletter", {
   id: uuid("id").defaultRandom().primaryKey(), 
@@ -11,5 +12,8 @@ createdAt: timestamp("created_at").notNull().defaultNow(),
     .$onUpdate(() => new Date()),
 });
 
-export const insertNewsLetterSchema = createInsertSchema(newsLetter)
+export const insertNewsLetterSchema = createInsertSchema(newsLetter,{
+    email:z.string().email()
+})
+    
 export const selectNewsLetterSchema = createSelectSchema(newsLetter)

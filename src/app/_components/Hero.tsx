@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Play } from "lucide-react";
-// import {m as  motion } from "framer-motion";
 import * as motion from "framer-motion/m"
 
 export default function Hero() {

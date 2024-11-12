@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import {  AnimatePresence } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { X } from "lucide-react"
+import { Check, X } from "lucide-react"
 import * as motion from "framer-motion/m"
 import { createNewsLetterAction } from '@/actions/newsletter-actions'
 import toast from 'react-hot-toast'
@@ -21,7 +21,7 @@ export default function NewsletterSubscription() {
       const windowHeight = window.innerHeight
 
       // Show the component when user has scrolled 25% of the page
-      if (scrollPosition > windowHeight * 0.25 && !hasScrolled) {
+      if (scrollPosition > windowHeight * 0.45 && !hasScrolled) {
         setHasScrolled(true)
         setIsVisible(true)
       }
@@ -45,10 +45,15 @@ export default function NewsletterSubscription() {
 
     const response = await createNewsLetterAction({email})
     if(response?.data?.success){
-        toast("subscribed")
+        toast("subscribed",{
+            icon:<Check className='text-green-500 w-5 h-5'/>
+        })
         setHasSubscribed(true)
     }else{
-        toast("failed to subscribe ")
+        toast("failed to subscribe ",{
+            icon:<X className='w-5 h-5 text-red-500'/>,
+            
+        })
     }
 
     setIsVisible(false)
@@ -93,7 +98,7 @@ export default function NewsletterSubscription() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full bg-white/50 border-[#d4b094] focus:border-[#8b5e3c] rounded-full text-[#6d4b30]"
+                className="w-full px-4 h-11 bg-white/50 border-[#d4b094] focus:border-[#8b5e3c] rounded-full text-[#6d4b30]"
               />
               <Button 
                 type="submit" 
