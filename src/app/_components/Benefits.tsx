@@ -50,7 +50,7 @@ export default function Benefits() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-[#003366]">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-secondary">
             Here is What You Get Inside<br className="hidden md:inline" /> the Membership:
           </h2>
           <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
@@ -86,7 +86,7 @@ export default function Benefits() {
           </div>
 
           <div className="mt-16 text-center">
-            <Button className="bg-[#003366] text-white hover:bg-[#004080] text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <Button className="bg-secondary text-white hover:ring-2 hover:ring-secondary hover:bg-secondary text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform ">
               Join Now and Accelerate Your Success
               <ChevronRight className="ml-2 w-5 h-5" />
             </Button>
@@ -106,11 +106,11 @@ interface Benefit {
 function BenefitItem({ benefit }: { benefit: Benefit }) {
   return (
     <Card className="p-6 flex items-start gap-4 group hover:bg-[#f0f8ff] transition-colors duration-300 cursor-pointer">
-      <div className="p-3 rounded-full bg-[#003366] text-white shrink-0">
+      <div className="p-3 rounded-full bg-secondary text-white shrink-0">
         {benefit.icon}
       </div>
       <div className="flex-grow">
-        <h3 className="text-xl font-semibold text-[#003366] mb-2 group-hover:text-[#0066cc] transition-colors duration-300">
+        <h3 className="text-xl font-semibold text-secondary mb-2 group-hover:text-[#0066cc] transition-colors duration-300">
           {benefit.title}
         </h3>
         <p className="text-gray-600">{benefit.description}</p>

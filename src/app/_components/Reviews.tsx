@@ -51,7 +51,7 @@ export default function Reviews() {
           transition={{ duration: 0.8 }}
         >
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#003366] mb-4">
+            <h2 className="text-4xl font-bold text-secondary mb-4">
               Here is What Our Clients<br />Are Achieving:
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -99,11 +99,11 @@ function TestimonialCard({ testimonial, delay }: { testimonial: Testimonial; del
       transition={{ delay, duration: 0.6, ease: "easeOut" }}
     >
       <Card className="p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-16 h-16 bg-[#003366] transform rotate-45 translate-x-8 -translate-y-8"></div>
+        <div className="absolute top-0 right-0 w-16 h-16 bg-secondary transform rotate-45 translate-x-8 -translate-y-8"></div>
         <div className="absolute top-2 right-2 text-white z-10">
           {testimonial.icon}
         </div>
-        <Badge variant="secondary" className="mb-4">
+        <Badge variant="secondary" className="mb-4 text-white">
           {testimonial.badge}
         </Badge>
         <p className="text-gray-700 text-lg mb-4">{testimonial.content}</p>
@@ -129,7 +129,7 @@ function TestimonialCard({ testimonial, delay }: { testimonial: Testimonial; del
 function CallToActionButton() {
   return (
     <motion.button
-      className="bg-[#003366] text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-[#004080] transition-colors duration-300"
+      className="bg-secondary text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-[#004080] transition-colors duration-300"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >

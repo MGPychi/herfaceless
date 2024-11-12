@@ -1,8 +1,11 @@
 import Benefits from "./_components/Benefits";
+import FandQ from "./_components/FandQ";
 import FeaturesGrid from "./_components/FeaturesGrid";
 import GamePlan from "./_components/GamePlan";
 import Hero from "./_components/Hero";
+import Imagine from "./_components/Imagine";
 import IsThatYou from "./_components/IsThatYou";
+import Last from "./_components/Last";
 import MemberShip from "./_components/MemberShip";
 import NewsletterSubscription from "./_components/Newsletter";
 import Pricing from "./_components/Pricing";
@@ -27,6 +30,9 @@ export default function Home() {
       <IsThatYou/>
       <FeaturesGrid/>
       <QandA/>
+      <Imagine/>
+      <FandQ/>
+      <Last/>
       <NewsletterSubscription/>
     </main>
   );

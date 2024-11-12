@@ -32,7 +32,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="bg-[#003366] text-white text-sm px-6 py-2 rounded-full uppercase tracking-wider"
+            className="bg-secondary text-white text-sm px-6 py-2 rounded-full uppercase tracking-wider"
           >
             Mens Inner Circle Membership
           </motion.div>
@@ -49,7 +49,7 @@ export default function Hero() {
               <span className="text-[#003366]">your own</span>
               <br />
               digital empire in just{" "}
-              <span className="text-[#0066cc]">30 days</span>
+              <span className="text-secondary">30 days</span>
             </h1>
             <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto">
               Transform your expertise into a thriving online business. Get
@@ -96,7 +96,7 @@ export default function Hero() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
           >
-            <Button className="bg-[#003366] text-white hover:bg-[#004080] text-lg px-8 py-2 h-auto">
+            <Button className="bg-secondary hover:bg-secondary text-white hover:ring-2 hover:ring-secondary text-lg px-8 py-2 h-auto">
               JOIN NOW!
             </Button>
           </motion.div>

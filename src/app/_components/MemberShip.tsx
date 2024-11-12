@@ -4,7 +4,7 @@ import * as motion from "framer-motion/m"
 
 export default function MemberShip() {
   return (
-    <div className="min-h-screen bg-ground  flex items-center justify-center p-6">
+    <div className="lg:min-h-screen bg-ground  flex items-center justify-center p-6">
       <div className="max-w-7xl w-full mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -12,7 +12,7 @@ export default function MemberShip() {
           transition={{ duration: 0.5 }}
           className="relative"
         >
-          <div className="aspect-[3/4] relative rounded-[2.5rem] border-8 border-black bg-[#e5d0ba] overflow-hidden shadow-xl">
+          <div className="aspect-[3/4] hidden lg:block h-[60vh] mx-auto  lg:h-auto relative rounded-[2.5rem] border-8 border-black bg-[#e5d0ba] overflow-hidden shadow-xl">
             <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
               <h2 className="text-3xl font-bold mb-4">SISTERS<br />INNER CIRCLE</h2>
               <div className="absolute top-1/2 right-0 w-1/2 h-full bg-black transform translate-x-1/4 rotate-12" />
