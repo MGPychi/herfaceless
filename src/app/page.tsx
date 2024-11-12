@@ -13,7 +13,7 @@ import TopBenefits from "./_components/TopBenefits";
 
 export default function Home() {
   return (
-    <main>
+    <main className="px-4 md:px-0 ">
       <Hero/>
       <Benefits/>
       <TopBenefits/>

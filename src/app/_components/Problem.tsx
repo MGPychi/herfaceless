@@ -12,7 +12,6 @@ const Problem = () => {
   return (
     <div className="min-h-screen bg-ground">
       <div className="container mx-auto px-4 py-16">
-        {/* First Section */}
         <motion.div
         initial={{y:50,opacity:0}}
         whileInView={{y:0,opacity:1}}
