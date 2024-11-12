@@ -43,7 +43,7 @@ const benefits = [
 export default function Benefits() {
 
   return (
-    <section  className="py-24 px-4 bg-gradient-to-b from-[#e6f2ff] to-white overflow-hidden">
+    <section  className="py-24 px-4 bg-gradient-to-b  bg-ground  overflow-hidden">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

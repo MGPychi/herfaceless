@@ -43,7 +43,7 @@ const testimonials = [
 export default function Reviews() {
 
   return (
-    <div className="bg-gradient-to-b from-[#e6f2ff] to-[#f0f8ff] py-24 px-4">
+    <div className="bg-gradient-to-b  bg-ground py-24 px-4">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 100 }}

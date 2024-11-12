@@ -7,7 +7,7 @@ import * as motion from "framer-motion/m"
 export default function Hero() {
 
   return (
-    <div className="min-h-screen bg-primary relative overflow-hidden">
+    <div className="min-h-screen    !bg-ground relative overflow-hidden">
       {/* Decorative Shapes */}
       <motion.div
         initial={{ opacity: 0, rotate: -10, scale: 0.9 }}
