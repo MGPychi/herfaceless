@@ -16,7 +16,6 @@ export default function NewsletterSubscription() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
       const windowHeight = window.innerHeight
-      const bodyHeight = document.body.offsetHeight
 
       // Show the component when user has scrolled 25% of the page
       if (scrollPosition > windowHeight * 0.25 && !hasScrolled) {
