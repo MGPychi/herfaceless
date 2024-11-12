@@ -20,7 +20,7 @@ import * as motion   from "framer-motion/m"
 export default function SayGoodBTo() {
 
   return (
-    <div className=" bg-[#f3e4d7] flex items-center justify-center px-6 py-20">
+    <div className=" bg-ground flex items-center justify-center px-6 py-20">
       <Card className="max-w-2xl bg-transparent border-none shadow-none">
         <CardContent className="space-y-8">
           <motion.div

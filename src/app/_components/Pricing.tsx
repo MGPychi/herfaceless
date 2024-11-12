@@ -68,7 +68,7 @@ const plans = [
 export default function Pricing() {
 
   return (
-    <div className="min-h-screen bg-[#f3e4d7] py-20 px-4">
+    <div className="min-h-screen bg-ground py-20 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

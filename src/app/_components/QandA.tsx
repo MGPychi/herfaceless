@@ -28,6 +28,14 @@ const comparisonItems = [
   {
     title: "Real-Life Impact",
     content: "Our members don't just learn theory – they implement strategies that create tangible results in their businesses and lives."
+  },
+  {
+    title: "Exclusive Access to Resources",
+    content: "Get access to tools, templates, and resources that are not available anywhere else, giving you a competitive edge in your industry."
+  },
+  {
+    title: "Community and Sisterhood",
+    content: "Join a supportive community"
   }
 ]
   const container = {
@@ -48,7 +56,7 @@ export default function QandA() {
 
 
   return (
-    <div className="min-h-screen bg-[#f3e4d7] py-20 px-4">
+    <div className="min-h-screen bg-ground  py-20 px-4">
       <div className="max-w-screen-md mx-auto space-y-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
