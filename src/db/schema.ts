@@ -16,7 +16,7 @@ export const rolesEnum = pgEnum("roles", ["admin"]);
 export const users = pgTable("users", {
   id: uuid("id").defaultRandom().primaryKey(),
   name: varchar("name",{length:100}).notNull(),
-  password: varchar("password",{length:125}).notNull(),
+  password: varchar("password",{length:225}).notNull(),
   email: varchar("email",{length:100}).notNull().unique(),
   role: rolesEnum().default("admin").notNull(),
   createdAt: timestamp("created_at").notNull().defaultNow(),

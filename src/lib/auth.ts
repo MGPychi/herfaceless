@@ -52,7 +52,7 @@ export const authConfig: NextAuthConfig = {
           if (!user) return null;
 
           const isValid =
-            (user.role == "admin" || user.role == "superAdmin") &&
+            (user.role == "admin" ) &&
             (await verifyPassword(password as string, user.password));
           if (!isValid) return null;
           return {
@@ -73,6 +73,7 @@ export const authConfig: NextAuthConfig = {
 export const { handlers, signIn, signOut, auth } = NextAuth(authConfig);
 export const getUserOrRedirectToLogin = async()=>{
     const session = await auth()
+    console.log("sessio",session)
     if(!session||!session.user)
         redirect("/admin/auth/login")
     return session.user

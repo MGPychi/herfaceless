@@ -6,8 +6,9 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "db:generate": "drizzle-kit generate",
-    "db:push": "drizzle-kit push",
+    "db:g": "drizzle-kit generate",
+    "db:p": "drizzle-kit push",
+    "db:se": "pnpm tsx ./src/db/seed",
     "db:st": "drizzle-kit studio",
     "lint": "next lint"
   },

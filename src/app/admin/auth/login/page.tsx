@@ -49,7 +49,7 @@ export default function AdminLogin() {
       setError(null);
       await signIn("credentials", {
         redirect: true,
-        redirectTo: "/admin/dashboard",
+        redirectTo: "/admin",
         ...values,
       });
       // Redirect to admin dashboard on successful login

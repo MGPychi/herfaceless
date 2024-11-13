@@ -15,6 +15,13 @@
       "when": 1731519956254,
       "tag": "0001_sad_cyclops",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1731527102172,
+      "tag": "0002_slim_sebastian_shaw",
+      "breakpoints": true
     }
   ]
 }
