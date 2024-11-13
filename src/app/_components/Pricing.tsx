@@ -113,7 +113,7 @@ export default function Pricing() {
                 </motion.ul>
               </CardContent>
               <CardFooter className="mt-auto">
-                <Button className="w-full bg-[#dbc1b0] hover:bg-[#b17f65] text-black py-6 text-lg">
+                <Button aria-label="sign me up button" className="w-full bg-[#dbc1b0] hover:bg-[#b17f65] text-black py-6 text-lg">
                   {plan.cta}
                 </Button>
               </CardFooter>

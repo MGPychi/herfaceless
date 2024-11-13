@@ -77,6 +77,7 @@ export default function IsThatYou() {
 
               <div className="flex justify-center">
                 <Button 
+                aria-label="ready now button"
                   className="bg-[#b17f65] hover:bg-[#a06c55] text-white px-8 py-6 text-lg rounded-full shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
                 >
                   <span>I&apos;M READY NOW!</span>

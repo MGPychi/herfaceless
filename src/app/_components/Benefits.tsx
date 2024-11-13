@@ -86,7 +86,7 @@ export default function Benefits() {
           </div>
 
           <div className="mt-16 text-center">
-            <Button className="bg-secondary text-white hover:ring-2 hover:ring-secondary hover:bg-secondary text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform ">
+            <Button aria-label="join button" className="bg-secondary text-white hover:ring-2 hover:ring-secondary hover:bg-secondary text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform ">
               Join Now and Accelerate Your Success
               <ChevronRight className="ml-2 w-5 h-5" />
             </Button>
@@ -117,7 +117,7 @@ function BenefitItem({ benefit }: { benefit: Benefit }) {
       </div>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="ghost" size="icon" className="shrink-0 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+          <Button aria-label="info button" variant="ghost" size="icon" className="shrink-0 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
             <Info className="w-5 h-5" />
           </Button>
         </TooltipTrigger>

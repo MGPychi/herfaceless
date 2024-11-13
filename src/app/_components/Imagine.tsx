@@ -101,6 +101,7 @@ export default function Imagine() {
                 how your world changes for the better.
               </p>
               <Button
+              aria-label="start now button"
                 size="lg"
                 className="bg-secondary hover:bg-secondary/90 text-white font-semibold px-8 py-6 text-lg"
               >

@@ -76,6 +76,7 @@ export default function Hero() {
                   transition={{ type: "spring", stiffness: 200 }}
                 >
                   <Button
+                  aria-label="play video button"
                     size="icon"
                     variant="secondary"
                     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#003366]/80 hover:bg-[#003366]"
@@ -96,7 +97,7 @@ export default function Hero() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
           >
-            <Button className="bg-secondary hover:bg-secondary text-white hover:ring-2 hover:ring-secondary text-lg px-8 py-2 h-auto">
+            <Button aria-label="join now button" className="bg-secondary hover:bg-secondary text-white hover:ring-2 hover:ring-secondary text-lg px-8 py-2 h-auto">
               JOIN NOW!
             </Button>
           </motion.div>

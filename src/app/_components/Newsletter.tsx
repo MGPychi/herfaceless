@@ -78,6 +78,7 @@ export default function NewsletterSubscription() {
           >
             <Button 
             disabled={isLoading}
+            aria-label='close newsletter button'
               variant="ghost" 
               size="icon"
               className={ `${isLoading&&"opacity-80"}absolute top-2 right-2 text-[#8b5e3c] hover:text-[#6d4b30]` }
@@ -101,6 +102,7 @@ export default function NewsletterSubscription() {
                 className="w-full px-4 h-11 bg-white/50 border-[#d4b094] focus:border-[#8b5e3c] rounded-full text-[#6d4b30]"
               />
               <Button 
+              aria-label='subscribe now button'
                 type="submit" 
                 className="w-full bg-gradient-to-r from-[#8b5e3c] to-[#6d4b30] text-[#f3e4d7] hover:from-[#7a5235] hover:to-[#5c3f28] rounded-full transition-all duration-300 ease-in-out transform hover:scale-105"
               >

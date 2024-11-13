@@ -152,6 +152,7 @@ export default function Last() {
           className="pt-8"
         >
           <Button
+          aria-label="count me in button"
             size="lg"
             className="bg-[#D2B48C] hover:bg-[#C4A484] text-black font-semibold text-lg px-8 py-6"
           >

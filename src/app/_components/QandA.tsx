@@ -106,6 +106,7 @@ export default function QandA() {
           </p>
           
           <Button 
+          aria-label='i want button'
             className="bg-[#dbc1b0] hover:bg-[#b17f65] text-black px-8 py-6 text-lg rounded-md"
           >
             I WANT!!

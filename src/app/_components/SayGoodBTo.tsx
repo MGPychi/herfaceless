@@ -91,7 +91,7 @@ export default function SayGoodBTo() {
             transition={{ delay: 0.7}}
             className="flex justify-center"
           >
-            <Button className="bg-black hover:bg-black/90 text-white px-8 py-6 text-lg rounded-md">
+            <Button aria-label="count me in button" className="bg-black hover:bg-black/90 text-white px-8 py-6 text-lg rounded-md">
               COUNT ME IN!
             </Button>
           </motion.div>

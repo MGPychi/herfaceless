@@ -92,7 +92,7 @@ const Problem = () => {
           transition={{ duration: 0.4 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button className="bg-[#D2B48C]  hover:bg-[#C1A47B] text-zinc-900 font-bold  px-6 py-3 h-auto rounded-full shadow-lg transition-all duration-300 ease-in-out">
+            <Button aria-label='i want to start earing money button' className="bg-[#D2B48C]  hover:bg-[#C1A47B] text-zinc-900 font-bold  px-6 py-3 h-auto rounded-full shadow-lg transition-all duration-300 ease-in-out">
               I WANT TO START EARNING MONEY!
             </Button>
           </motion.div>

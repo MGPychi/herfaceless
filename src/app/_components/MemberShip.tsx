@@ -63,6 +63,7 @@ export default function MemberShip() {
             transition={{ delay: 0.4 }}
           >
             <Button 
+            aria-label="get instant access button"
               className="bg-[#e5d0ba] hover:bg-[#d4c0aa] text-black px-8 py-6 text-lg rounded-md"
             >
               Get Instant Access Now!

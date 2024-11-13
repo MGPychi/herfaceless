@@ -130,6 +130,7 @@ export default function FeaturesGrid() {
           </div>
           
           <Button 
+          aria-label="get started button"
             className="bg-black hover:bg-black/90 text-white px-8 py-6 text-lg rounded-md"
           >
             GET STARTED TODAY!
