@@ -96,7 +96,7 @@ export default function Imagine() {
                 All of this is possible with our membership.
               </h3>
               <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-                It's not just about creating a product, it's about transforming your life and the lives
+                It is not just about creating a product, it is about transforming your life and the lives
                 of those you love. Grab this opportunity today to make a real difference and watch
                 how your world changes for the better.
               </p>
