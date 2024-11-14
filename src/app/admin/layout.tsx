@@ -8,7 +8,8 @@ export const metadata: Metadata = {
 const Layout = async ({children}:{children:ReactNode}) => {
     
   return (
-    <main>
+    <sideb
+    <main className='px-4 py-4'>
         {children}
     </main>
   )
