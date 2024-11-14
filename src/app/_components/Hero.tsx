@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Play } from "lucide-react";
+// import { Play } from "lucide-react";
 import * as motion from "framer-motion/m"
+import MainVideo from "./MainVideo";
 
 export default function Hero() {
 
@@ -67,26 +68,21 @@ export default function Hero() {
           >
             <Card className="max-w-5xl mx-auto aspect-video bg-[#f0f8ff] relative shadow-xl">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-48 h-48">
-                  <IllustrationFigure />
-                </div>
                 <motion.div
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 200 }}
                 >
-                  <Button
+                  <MainVideo/>
+                  {/* <Button
                   aria-label="play video button"
                     size="icon"
                     variant="secondary"
                     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#003366]/80 hover:bg-[#003366]"
                   >
                     <Play className="h-8 w-8 text-white" />
-                  </Button>
+                  </Button> */}
                 </motion.div>
-              </div>
-              <div className="absolute bottom-4 left-0 right-0 text-center text-xs text-gray-500">
-                COPYRIGHT 2024 © MEN IN SUCCESS. ALL RIGHTS RESERVED | DESIGNED BY @MAVWITHEART
               </div>
             </Card>
           </motion.div>
@@ -117,18 +113,18 @@ function GeometricPattern() {
   );
 }
 
-function IllustrationFigure() {
-  return (
-    <svg viewBox="0 0 100 100" className="w-full h-full">
-      <path
-        d="M50,20 C60,20 70,30 70,50 C70,70 60,80 50,80 C40,80 30,70 30,50 C30,30 40,20 50,20"
-        className="fill-[#003366]"
-      />
-      <path
-        d="M45,40 C55,40 65,45 65,60 C65,75 55,80 45,80 C35,80 25,75 25,60 C25,45 35,40 45,40"
-        className="fill-[#0066cc]"
-      />
-      <rect x="40" y="30" width="20" height="10" className="fill-[#e6f2ff]" />
-    </svg>
-  );
-}
+// function IllustrationFigure() {
+  // return (
+  //   <svg viewBox="0 0 100 100" className="w-full h-full">
+  //     <path
+  //       d="M50,20 C60,20 70,30 70,50 C70,70 60,80 50,80 C40,80 30,70 30,50 C30,30 40,20 50,20"
+  //       className="fill-[#003366]"
+  //     />
+  //     <path
+  //       d="M45,40 C55,40 65,45 65,60 C65,75 55,80 45,80 C35,80 25,75 25,60 C25,45 35,40 45,40"
+  //       className="fill-[#0066cc]"
+  //     />
+  //     <rect x="40" y="30" width="20" height="10" className="fill-[#e6f2ff]" />
+  //   </svg>
+  // );
+// }
