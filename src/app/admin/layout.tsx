@@ -1,18 +1,21 @@
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
+import AdminSideBar from "./_components/AdminSidebar";
 
 export const metadata: Metadata = {
   title: "Admin dashboard",
 };
 
-const Layout = async ({children}:{children:ReactNode}) => {
+export default function Layout({ children }: { children: ReactNode }) {
     
   return (
-    <sideb
-    <main className='px-4 py-4'>
+       <SidebarProvider>
+       <AdminSideBar />
+      <main className="w-full px-4 py-4 space-y-4">
+         <SidebarTrigger />
         {children}
-    </main>
+       </main>
+     </SidebarProvider>
   )
 }
-
-export default Layout

@@ -2,7 +2,7 @@ import {  pgEnum, pgTable, timestamp, uuid, varchar } from "drizzle-orm/pg-core"
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 import z from "zod"
 
-export const newsLetter = pgTable("newsletter", {
+export const newsletter = pgTable("newsletter", {
   id: uuid("id").defaultRandom().primaryKey(), 
   name: varchar("name",{ length: 255 }),
   email: varchar("email",{ length: 255 }).notNull().unique(),
@@ -26,9 +26,9 @@ export const users = pgTable("users", {
     .$onUpdate(() => new Date()),
 });
 
-export const insertNewsLetterSchema = createInsertSchema(newsLetter,{
+export const insertNewsLetterSchema = createInsertSchema(newsletter,{
     email:z.string().email()
 })
-export const selectNewsLetterSchema = createSelectSchema(newsLetter)
+export const selectNewsLetterSchema = createSelectSchema(newsletter)
 export const insertUserSchema = createInsertSchema(users);
 export const selectUserSchema = createSelectSchema(users);

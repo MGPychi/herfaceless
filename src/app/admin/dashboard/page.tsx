@@ -14,7 +14,7 @@ import { Button } from '@/components/ui/button'
 
 export default function Dashboard() {
   return (
-    <>
+    <section className='w-full '>
       {/* ===== Top Heading ===== */}
         {/* <TopNav links={topNav} /> */}
         <div className='ml-auto flex items-center space-x-4'>
@@ -171,7 +171,7 @@ export default function Dashboard() {
           </div>
         </TabsContent>
       </Tabs>
-    </>
+    </section>
   )
 }
 
