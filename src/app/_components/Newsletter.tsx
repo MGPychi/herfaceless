@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Check, X } from "lucide-react"
 import * as motion from "framer-motion/m"
-import { createNewsLetterAction } from '@/actions/newsletter-actions'
+import { createNewsLetterAction } from '@/app/actions/newsletter-actions'
 import toast from 'react-hot-toast'
 
 export default function NewsletterSubscription() {
@@ -14,6 +14,12 @@ export default function NewsletterSubscription() {
   const [hasScrolled, setHasScrolled] = useState(false)
   const [isLoading,setIsLoading]= useState(false)
   const[hasSubscribed,setHasSubscribed]= useState(false)
+  useEffect(()=>{
+    const newsletterEmail = localStorage.getItem("newsletter_email")
+    if(newsletterEmail){
+      setHasSubscribed(true)
+    }
+  },[])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,6 +55,7 @@ export default function NewsletterSubscription() {
             icon:<Check className='text-green-500 w-5 h-5'/>
         })
         setHasSubscribed(true)
+        localStorage.setItem("newsletter_email",email)
     }else{
         toast("failed to subscribe ",{
             icon:<X className='w-5 h-5 text-red-500'/>,

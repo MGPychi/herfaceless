@@ -1,5 +1,4 @@
 "use client";
-import { getNewsletter } from "@/data/newsletter-data";
 import { Button } from "@/components/ui/button";
 import toast from 'react-hot-toast'
 import {
@@ -29,18 +28,20 @@ import {
 import { MoreHorizontalIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { deleteNewsletter } from "@/app/actions/newsletter-actions";
+import { getPricing } from "@/data/pricing-data";
+import { deletePricing } from "@/app/actions/pricing-actions";
+import NewPricingModal from "./NewPricingModal";
 
 // import { deleteEmailAction } from "../actions";
 
 interface Props {
-  data: Awaited<ReturnType<typeof getNewsletter>>["data"];
+  data: Awaited<ReturnType<typeof getPricing>>["data"];
   count: number;
   currentPage: number;
   searchTerm: string;
 }
 
-export default function AdminNewsletterTable({
+export default function AdminPricingTable({
   data,
   count,
   currentPage,
@@ -63,7 +64,7 @@ export default function AdminNewsletterTable({
 
     // Set a new timeout to wait for 500ms before executing search
     const timeout = setTimeout(() => {
-      router.push(`/admin/newsletter?search=${value}&page=${currentPage}`);
+      router.push(`/admin/pricing?search=${value}&page=${currentPage}`);
     }, 500);
 
     setDebounceTimeout(timeout);
@@ -73,13 +74,14 @@ export default function AdminNewsletterTable({
     <Card className="w-full">
       <CardHeader>
         <div className="flex items-center justify-between space-x-6">
-          <CardTitle>Newsletter Dashboard</CardTitle>
+          <CardTitle>Pricing Dashboard</CardTitle>
+          <NewPricingModal/>
         </div>
       </CardHeader>
       <CardContent className="min-h-[calc(100vh-328px)]">
         <div className="mb-6 flex flex-col gap-4 md:flex-row">
           <Input
-            placeholder="Search newsletter..."
+            placeholder="Search pricing..."
             value={searchInput}
             onChange={(e) => handleSearch(e.target.value)}
             className="md:w-1/3"
@@ -89,20 +91,22 @@ export default function AdminNewsletterTable({
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Name</TableHead>
-              <TableHead>Email</TableHead>
+              <TableHead>Title</TableHead>
+              <TableHead>Price</TableHead>
               <TableHead>Registred at</TableHead>
+              <TableHead>Updated at</TableHead>
               <TableHead>Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {data.map((item) => (
               <TableRow key={item.id}>
-                <TableCell>{item.name??"None"}</TableCell>
-                <TableCell>{item.email}</TableCell>
+                <TableCell>{item.title}</TableCell>
+                <TableCell>{item.price}</TableCell>
                 <TableCell>{item.createdAt?.toLocaleDateString()}</TableCell>
+                <TableCell>{item.updatedAt?.toLocaleDateString()}</TableCell>
                 <TableCell>
-                  <NewsletterActionsMenu userId={item.id} />
+                  <PricingActionsMenu userId={item.id} />
                 </TableCell>
               </TableRow>
             ))}
@@ -110,17 +114,17 @@ export default function AdminNewsletterTable({
         </Table>
       </CardContent>
       <CardFooter className="flex w-full justify-center">
-        <span className="text-sm text-muted-foreground">{count} newsletter</span>
+        <span className="text-sm text-muted-foreground">{count} pricing</span>
       </CardFooter>
     </Card>
   );
 }
 
-interface NewsletterActionsMenuProps {
+interface PricingActionsMenuProps {
   userId: string;
 }
 
-export const NewsletterActionsMenu = ({ userId }: NewsletterActionsMenuProps) => {
+export const PricingActionsMenu = ({ userId }: PricingActionsMenuProps) => {
 
   return (
     <DropdownMenu>
@@ -136,7 +140,7 @@ export const NewsletterActionsMenu = ({ userId }: NewsletterActionsMenuProps) =>
             variant="destructive"
             size="sm"
             onClick={async () => {
-              const result = await deleteNewsletter({
+              const result = await deletePricing({
                 id: userId,
               });
               if (result?.data?.success) {
