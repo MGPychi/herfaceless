@@ -15,25 +15,20 @@ import Wrappers from "@/components/Wrappers";
 // });
 
 export const metadata: Metadata = {
-  title: "Her faceless",
-  description: "A faceless learning platform for the modern web",
+	title: "Her faceless",
+	description: "A faceless learning platform for the modern web",
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={` `}
-      >
-        <Wrappers>
-
-        {children}
-        </Wrappers>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body className={` `}>
+				<Wrappers>{children}</Wrappers>
+			</body>
+		</html>
+	);
 }

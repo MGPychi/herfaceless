@@ -1,5 +1,3 @@
-"use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFieldArray, useForm } from "react-hook-form";
 import * as z from "zod";
@@ -17,20 +15,25 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { insertPricingSchema } from "@/db/schema";
-import { createNewPricing } from "@/app/actions/pricing-actions";
+import { updatePricingSchema } from "@/db/schema";
+import { updatePricing } from "@/app/actions/pricing-actions";
 import toast from "react-hot-toast";
 
-type FormValues = z.infer<typeof insertPricingSchema>;
+type FormValues = z.infer<typeof updatePricingSchema>;
+export type UpdatePricingType = FormValues;
+interface Props {
+	pricing: FormValues;
+}
 
-export default function PricingForm() {
+export default function UpdatePricingForm({ pricing }: Props) {
 	const form = useForm<FormValues>({
-		resolver: zodResolver(insertPricingSchema),
+		resolver: zodResolver(updatePricingSchema),
 		defaultValues: {
-			stripeUrl: "",
-			price: 0,
-			title: "",
-			pricingItems: [],
+			id: pricing.id,
+			stripeUrl: pricing.stripeUrl,
+			price: pricing.price,
+			title: pricing.title,
+			pricingItems: pricing.pricingItems,
 		},
 	});
 
@@ -40,12 +43,11 @@ export default function PricingForm() {
 	});
 
 	async function onSubmit(data: FormValues) {
-		console.log(data);
-		const response = await createNewPricing(data);
+		const response = await updatePricing(data);
 		if (response?.data?.success) {
-			toast("pricing added");
+			toast("pricing updated");
 		} else {
-			toast("failed to add pricing");
+			toast("failed to update pricing");
 		}
 	}
 

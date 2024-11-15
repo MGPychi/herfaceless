@@ -1,8 +1,5 @@
-
 const AuthErrorPage = () => {
-  return (
-    <main>failed to login</main>
-  )
-}
+	return <main>failed to login</main>;
+};
 
-export default AuthErrorPage
+export default AuthErrorPage;

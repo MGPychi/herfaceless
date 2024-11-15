@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import toast from 'react-hot-toast'
+import toast from "react-hot-toast";
 import {
   Card,
   CardContent,
@@ -31,11 +31,13 @@ import { useState } from "react";
 import { getPricing } from "@/data/pricing-data";
 import { deletePricing } from "@/app/actions/pricing-actions";
 import NewPricingModal from "./NewPricingModal";
+import UpdatePricingModal from "./UpdatePricingModal";
 
 // import { deleteEmailAction } from "../actions";
 
+type dataType = Awaited<ReturnType<typeof getPricing>>["data"];
 interface Props {
-  data: Awaited<ReturnType<typeof getPricing>>["data"];
+  data: dataType;
   count: number;
   currentPage: number;
   searchTerm: string;
@@ -50,7 +52,7 @@ export default function AdminPricingTable({
   const router = useRouter();
   const [searchInput, setSearchInput] = useState(searchTerm || "");
   const [debounceTimeout, setDebounceTimeout] = useState<NodeJS.Timeout | null>(
-    null
+    null,
   );
 
   // Handle search with debounce
@@ -75,7 +77,7 @@ export default function AdminPricingTable({
       <CardHeader>
         <div className="flex items-center justify-between space-x-6">
           <CardTitle>Pricing Dashboard</CardTitle>
-          <NewPricingModal/>
+          <NewPricingModal />
         </div>
       </CardHeader>
       <CardContent className="min-h-[calc(100vh-328px)]">
@@ -100,15 +102,7 @@ export default function AdminPricingTable({
           </TableHeader>
           <TableBody>
             {data.map((item) => (
-              <TableRow key={item.id}>
-                <TableCell>{item.title}</TableCell>
-                <TableCell>{item.price}</TableCell>
-                <TableCell>{item.createdAt?.toLocaleDateString()}</TableCell>
-                <TableCell>{item.updatedAt?.toLocaleDateString()}</TableCell>
-                <TableCell>
-                  <PricingActionsMenu userId={item.id} />
-                </TableCell>
-              </TableRow>
+              <TableItem key={item.id} item={item} />
             ))}
           </TableBody>
         </Table>
@@ -119,13 +113,29 @@ export default function AdminPricingTable({
     </Card>
   );
 }
+export const TableItem = ({ item }: { item: dataType[0] }) => {
+  const [isOpen,setIsOpen] = useState(false)
+  return (
+    <>
+    <TableRow onClick={()=>setIsOpen(true)} key={item.id}>
+      <TableCell>{item.title}</TableCell>
+      <TableCell>{item.price}</TableCell>
+      <TableCell>{item.createdAt?.toLocaleDateString()}</TableCell>
+      <TableCell>{item.updatedAt?.toLocaleDateString()}</TableCell>
+      <TableCell onClick={(e)=>e.stopPropagation()}>
+        <PricingActionsMenu id={item.id} />
+      </TableCell>
+    </TableRow>
+    <UpdatePricingModal isOpen={isOpen} setIsOpen={setIsOpen} pricing={item} />
+    </>
+  );
+};
 
 interface PricingActionsMenuProps {
-  userId: string;
+  id: string;
 }
 
-export const PricingActionsMenu = ({ userId }: PricingActionsMenuProps) => {
-
+export const PricingActionsMenu = ({ id }: PricingActionsMenuProps) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -141,7 +151,7 @@ export const PricingActionsMenu = ({ userId }: PricingActionsMenuProps) => {
             size="sm"
             onClick={async () => {
               const result = await deletePricing({
-                id: userId,
+                id,
               });
               if (result?.data?.success) {
                 toast("deleted");

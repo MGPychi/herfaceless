@@ -16,24 +16,24 @@ import SayGoodBTo from "./_components/SayGoodBTo";
 import TopBenefits from "./_components/TopBenefits";
 
 export default function Home() {
-  return (
-    <main className="px-4 md:px-0 ">
-      <Hero/>
-      <Benefits/>
-      <TopBenefits/>
-      <Reviews/>
-      <Problem/>
-      <SayGoodBTo/>
-      <MemberShip/>
-      <Pricing/>
-      <GamePlan/>
-      <IsThatYou/>
-      <FeaturesGrid/>
-      <QandA/>
-      <Imagine/>
-      <FandQ/>
-      <Last/>
-      <NewsletterSubscription/>
-    </main>
-  );
+	return (
+		<main className="px-4 md:px-0 ">
+			<Hero />
+			<Benefits />
+			<TopBenefits />
+			<Reviews />
+			<Problem />
+			<SayGoodBTo />
+			<MemberShip />
+			<Pricing />
+			<GamePlan />
+			<IsThatYou />
+			<FeaturesGrid />
+			<QandA />
+			<Imagine />
+			<FandQ />
+			<Last />
+			<NewsletterSubscription />
+		</main>
+	);
 }
