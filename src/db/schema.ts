@@ -62,6 +62,9 @@ export const pricingItem = pgTable("pricing_item",{
     .$onUpdate(() => new Date()),
   
 })
+export const pricingRelations = relations(pricing,({many})=>({
+  pricingItems:many(pricingItem),
+}))
 export const pricingItemRelation = relations(pricingItem,({one})=>({
   pricing:one(pricing,{
     fields:[pricingItem.pricingId],

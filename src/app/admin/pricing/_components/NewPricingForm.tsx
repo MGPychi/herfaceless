@@ -121,6 +121,8 @@ export default function PricingForm() {
                         <div className="flex items-center space-x-2 mt-2">
                           <Input placeholder={`Enter pricing item ${index + 1}`} {...field} />
                           <Button
+                            disabled={form.formState.isSubmitting}
+                            className={`${form.formState.isSubmitSuccessful&&"opacity-90"}`}
                             type="button"
                             variant="outline"
                             size="icon"

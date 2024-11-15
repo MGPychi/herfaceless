@@ -2,7 +2,7 @@
 import { insertPricingSchema, pricing, pricingItem } from "@/db/schema";
 import { actionClient, protectedActionClient } from "@/utils/safe-actions";
 import {  eq } from "drizzle-orm";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { z } from "zod";
 
 
@@ -18,6 +18,7 @@ export const createNewPricing = actionClient.schema(insertPricingSchema).action(
         console.error(err)
         return {success:false}
     }
+        revalidateTag("pricing")
         revalidatePath("/admin/dashboard/pricing");
         return {success:true}
 })
@@ -34,6 +35,7 @@ export const deletePricing = protectedActionClient
       console.log(err);
       return { success: false };
     }
+    revalidateTag("pricing")
     revalidatePath("/admin/dashboard/pricing");
     return { success: true };
   });

@@ -1,9 +1,19 @@
 "use server";
 import { PAGE_SIZE } from "@/constants";
 import { db } from "@/db";
-import { pricing } from "@/db/schema";
+import { pricing  } from "@/db/schema";
 import { and, count, gte, or, sql } from "drizzle-orm";
+import { unstable_cache } from "next/cache";
 import { cache } from "react";
+export const getAllPricing = unstable_cache(async () => {
+return await db.query.pricing.findMany({
+    with:{
+        pricingItems:true
+    }
+})
+},["pricing"],{
+    tags:["pricing"]
+});
 export const getPricing = cache(
   async ({ page, q }: { page: number; q?: string }) => {
     const filteredPricing = db.$with("filtered_pricing").as(
