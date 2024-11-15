@@ -1,5 +1,5 @@
 "use client";
-import { DollarSign, Home, Inbox, Settings } from "lucide-react";
+import { DollarSign,TextCursor, Home, Inbox  } from "lucide-react";
 
 import {
 	Sidebar,
@@ -30,9 +30,9 @@ const items = [
 		icon: DollarSign,
 	},
 	{
-		title: "Settings",
-		url: "#",
-		icon: Settings,
+		title: "Reviews",
+		url: "/admin/reviews",
+		icon: TextCursor,
 	},
 ];
 
