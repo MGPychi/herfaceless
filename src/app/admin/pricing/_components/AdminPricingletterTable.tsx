@@ -119,7 +119,7 @@ export const TableItem = ({ item }: { item: dataType[0] }) => {
     <>
     <TableRow onClick={()=>setIsOpen(true)} key={item.id}>
       <TableCell>{item.title}</TableCell>
-      <TableCell>{item.price}</TableCell>
+      <TableCell>{item.price}$</TableCell>
       <TableCell>{item.createdAt?.toLocaleDateString()}</TableCell>
       <TableCell>{item.updatedAt?.toLocaleDateString()}</TableCell>
       <TableCell onClick={(e)=>e.stopPropagation()}>
