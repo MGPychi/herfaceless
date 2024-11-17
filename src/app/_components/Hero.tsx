@@ -63,32 +63,19 @@ export default function Hero() {
 						</p>
 					</motion.div>
 
-					{/* Video Card */}
 					<motion.div
 						initial={{ scale: 0.9 }}
 						whileInView={{ scale: 1 }}
 						transition={{ type: "spring", stiffness: 200 }}
 						className="w-full"
 					>
-						<Card className="max-w-5xl mx-auto aspect-video bg-[#f0f8ff] relative shadow-xl">
+						<Card className="max-w-5xl mx-auto aspect-video  relative shadow-xl">
 							<div className="absolute inset-0 flex items-center justify-center">
 								<motion.div
-									initial={{ scale: 1 }}
-									whileHover={{ scale: 1.1 }}
-									transition={{
-										type: "spring",
-										stiffness: 200,
-									}}
 								>
 									<MainVideo />
-									{/* <Button
-                  aria-label="play video button"
-                    size="icon"
-                    variant="secondary"
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#003366]/80 hover:bg-[#003366]"
-                  >
-                    <Play className="h-8 w-8 text-white" />
-                  </Button> */}
+
+
 								</motion.div>
 							</div>
 						</Card>
