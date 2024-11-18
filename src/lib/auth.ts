@@ -12,8 +12,8 @@ export const authConfig: NextAuthConfig = {
 		strategy: "jwt",
 	},
 	pages: {
-		signIn: "/admin/auth/login",
-		error: "/admin/auth/error",
+		signIn: "/auth/login",
+		error: "/auth/error",
 	},
 	callbacks: {
 		async jwt({ token, user }) {
@@ -76,7 +76,6 @@ export const authConfig: NextAuthConfig = {
 export const { handlers, signIn, signOut, auth } = NextAuth(authConfig);
 export const getUserOrRedirectToLogin = async () => {
 	const session = await auth();
-	console.log("sessio", session);
-	if (!session || !session.user) redirect("/admin/auth/login");
+	if (!session || !session.user) redirect("/auth/login");
 	return session.user;
 };

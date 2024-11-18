@@ -1,3 +1,4 @@
+import { getUserOrRedirectToLogin } from "@/lib/auth";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { Metadata } from "next";
 import { ReactNode } from "react";
@@ -7,7 +8,9 @@ export const metadata: Metadata = {
 	title: "Admin dashboard",
 };
 
-export default function Layout({ children }: { children: ReactNode }) {
+export  default async function Layout({ children }: { children: ReactNode }) {
+	await getUserOrRedirectToLogin()
+
 	return (
 		<SidebarProvider>
 			<AdminSideBar />
