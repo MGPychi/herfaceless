@@ -26,7 +26,7 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 // import { useToast } from "@/hooks/use-toast";
-import { MoreHorizontalIcon } from "lucide-react";
+import { Check, MoreHorizontalIcon, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { deleteNewsletter } from "@/app/actions/newsletter-actions";
@@ -92,6 +92,7 @@ export default function AdminNewsletterTable({
 						<TableRow>
 							<TableHead>Name</TableHead>
 							<TableHead>Email</TableHead>
+							<TableHead>Paid</TableHead>
 							<TableHead>Registred at</TableHead>
 							<TableHead>Actions</TableHead>
 						</TableRow>
@@ -101,6 +102,7 @@ export default function AdminNewsletterTable({
 							<TableRow key={item.id}>
 								<TableCell>{item.name ?? "None"}</TableCell>
 								<TableCell>{item.email}</TableCell>
+								<TableCell>{item.isPaid? <Check className="text-gray-500"/>:<X className="text-red-400"/> }</TableCell>
 								<TableCell>
 									{item.createdAt?.toLocaleDateString()}
 								</TableCell>

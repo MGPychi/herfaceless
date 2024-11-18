@@ -1,5 +1,6 @@
 import { relations } from "drizzle-orm";
 import {
+	boolean,
 	integer,
 	pgEnum,
 	pgTable,
@@ -14,6 +15,7 @@ import z from "zod";
 export const newsletter = pgTable("newsletter", {
 	id: uuid("id").defaultRandom().primaryKey(),
 	name: varchar("name", { length: 255 }),
+	isPaid:boolean("is_paid").default(false),
 	email: varchar("email", { length: 255 }).notNull().unique(),
 	createdAt: timestamp("created_at").notNull().defaultNow(),
 	updatedAt: timestamp("updated_at")
