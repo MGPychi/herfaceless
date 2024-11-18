@@ -127,6 +127,7 @@ export default function GamePlan() {
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
 					className="text-center"
 				>
@@ -156,6 +157,7 @@ export default function GamePlan() {
 								key={step.title}
 								initial={{ opacity: 0, x: -20 }}
 								whileInView={{ opacity: 1, x: 0 }}
+								viewport={{ once: true }}
 								transition={{
 									duration: 0.6,
 									delay: index * 0.1,
@@ -194,6 +196,7 @@ export default function GamePlan() {
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
 					transition={{ duration: 0.6, delay: 0.4 }}
 					className="mt-16 text-center"
 				>

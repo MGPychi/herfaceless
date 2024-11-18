@@ -1,5 +1,5 @@
 "use client";
-import { DollarSign,TextCursor, Home, Inbox  } from "lucide-react";
+import { DollarSign, TextCursor, Home, Inbox } from "lucide-react";
 
 import {
 	Sidebar,

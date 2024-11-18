@@ -85,6 +85,7 @@ export default function FandQ() {
 					initial={{ opacity: 0, y: -20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.4 }}
+					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
 					<h2 className="text-4xl font-bold text-gray-900">FAQs</h2>
@@ -97,6 +98,7 @@ export default function FandQ() {
 					variants={container}
 					initial="hidden"
 					whileInView="show"
+					viewport={{ once: true }}
 					className="grid grid-cols-1 md:grid-cols-2 gap-6"
 				>
 					{faqs.map((faq, index) => {

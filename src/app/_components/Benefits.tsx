@@ -61,6 +61,7 @@ export default function Benefits() {
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1, ease: "easeInOut" }}
+					viewport={{ once: true }}
 				>
 					<h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-secondary">
 						Here is What You Get Inside
@@ -91,6 +92,7 @@ export default function Benefits() {
 										key={index}
 										initial={{ opacity: 0, x: 50 }}
 										whileInView={{ opacity: 1, x: 0 }}
+										viewport={{ once: true }}
 										transition={{
 											duration: 0.5,
 											delay: index * 0.2,

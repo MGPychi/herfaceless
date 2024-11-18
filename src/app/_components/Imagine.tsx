@@ -44,6 +44,7 @@ const DecorativeSVG = () => (
 	<motion.svg
 		initial={{ opacity: 0, scale: 0.8 }}
 		whileInView={{ opacity: 1, scale: 1 }}
+		viewport={{ once: true }}
 		transition={{ duration: 0.5 }}
 		className="absolute right-0 top-1/4 -z-10 h-64 w-64 text-primary/10"
 		viewBox="0 0 100 100"
@@ -71,6 +72,7 @@ export default function Imagine() {
 							key={index}
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
 							transition={{ duration: 0.6, delay: item.delay }}
 						>
 							<Card className="border-none bg-white/80 backdrop-blur">
@@ -92,6 +94,7 @@ export default function Imagine() {
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
 					transition={{ duration: 0.4, delay: 0.8 }}
 					className="mt-16 text-center"
 				>

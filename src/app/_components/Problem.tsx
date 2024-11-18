@@ -15,6 +15,7 @@ const Problem = () => {
 				<motion.div
 					initial={{ y: 50, opacity: 0 }}
 					whileInView={{ y: 0, opacity: 1 }}
+					viewport={{ once: true }}
 					transition={{ duration: 0.4 }}
 					className="grid md:grid-cols-2 gap-12 items-center mb-32"
 				>
@@ -73,6 +74,7 @@ const Problem = () => {
 					initial={{ y: 50, opacity: 0 }}
 					whileInView={{ y: 0, opacity: 1 }}
 					transition={{ duration: 0.4 }}
+					viewport={{ once: true }}
 					className="grid md:grid-cols-2 gap-12 mb-32"
 				>
 					<motion.div variants={fadeInUp} className="space-y-6">
@@ -141,6 +143,7 @@ const Problem = () => {
 				<motion.div
 					initial={{ opacity: 0, y: 40 }}
 					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
 					transition={{ duration: 0.4 }}
 					className="text-center space-y-8"
 				>

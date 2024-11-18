@@ -51,6 +51,7 @@ export default function TopBenefits() {
 				<motion.h2
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
 					transition={{ duration: 0.5 }}
 					className="text-4xl font-bold text-center mb-16"
 				>
@@ -59,6 +60,7 @@ export default function TopBenefits() {
 				<motion.div
 					variants={containerVariants}
 					initial="hidden"
+					viewport={{ once: true }}
 					whileInView={"visible"}
 					className="grid grid-cols-1 md:grid-cols-3 gap-8"
 				>

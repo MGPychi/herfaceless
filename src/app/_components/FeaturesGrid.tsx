@@ -114,6 +114,7 @@ export default function FeaturesGrid() {
 				<motion.h2
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
 					className="text-3xl md:text-4xl font-bold text-center"
 				>
 					THIS IS WHAT&apos;S INCLUDED
@@ -123,6 +124,7 @@ export default function FeaturesGrid() {
 					variants={container}
 					initial="hidden"
 					whileInView="show"
+					viewport={{ once: true }}
 					className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
 				>
 					{features.map((feature, index) => (
@@ -154,6 +156,7 @@ export default function FeaturesGrid() {
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
 					className="text-center space-y-6"
 				>
 					<div className="text-2xl md:text-3xl font-bold">

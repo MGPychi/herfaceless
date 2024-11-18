@@ -9,6 +9,7 @@ export default function MemberShip() {
 				<motion.div
 					initial={{ opacity: 0, x: -50 }}
 					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true }}
 					transition={{ duration: 0.5 }}
 					className="relative"
 				>
@@ -30,6 +31,7 @@ export default function MemberShip() {
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
 					transition={{ duration: 0.4, delay: 0.1 }}
 					className="space-y-6"
 				>
@@ -37,6 +39,7 @@ export default function MemberShip() {
 						<motion.p
 							initial={{ opacity: 0 }}
 							whileInView={{ opacity: 1 }}
+							viewport={{ once: true }}
 							transition={{ delay: 0.1 }}
 							className="text-[#b17f65] text-xl"
 						>
@@ -44,6 +47,7 @@ export default function MemberShip() {
 						</motion.p>
 						<motion.h1
 							initial={{ opacity: 0 }}
+							viewport={{ once: true }}
 							whileInView={{ opacity: 1 }}
 							transition={{ delay: 0.2 }}
 							className="text-4xl lg:text-5xl font-bold leading-tight"
@@ -55,6 +59,7 @@ export default function MemberShip() {
 					<motion.p
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
+						viewport={{ once: true }}
 						transition={{ delay: 0.3 }}
 						className="text-lg text-gray-700 leading-relaxed"
 					>
@@ -68,6 +73,7 @@ export default function MemberShip() {
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
 						transition={{ delay: 0.4 }}
 					>
 						<Button

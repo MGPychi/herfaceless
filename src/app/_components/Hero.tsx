@@ -11,6 +11,7 @@ export default function Hero() {
 			<motion.div
 				initial={{ opacity: 0, rotate: -10, scale: 0.9 }}
 				whileInView={{ opacity: 0.2, rotate: 0, scale: 1 }}
+				viewport={{ once: true }}
 				transition={{ duration: 1 }}
 				className="absolute left-0 top-0 w-[400px] h-[400px]"
 			>
@@ -19,6 +20,7 @@ export default function Hero() {
 			<motion.div
 				initial={{ opacity: 0, rotate: -10, scale: 0.9 }}
 				whileInView={{ opacity: 0.2, rotate: 0, scale: 1 }}
+				viewport={{ once: true }}
 				transition={{ duration: 1 }}
 				className="absolute right-0 bottom-0 w-[400px] h-[400px] rotate-180"
 			>
@@ -31,6 +33,7 @@ export default function Hero() {
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
 						transition={{ type: "spring", stiffness: 300 }}
 						className="bg-secondary text-white text-sm px-6 py-2 rounded-full uppercase tracking-wider"
 					>
@@ -41,6 +44,7 @@ export default function Hero() {
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
 						transition={{
 							type: "spring",
 							stiffness: 300,
@@ -66,16 +70,14 @@ export default function Hero() {
 					<motion.div
 						initial={{ scale: 0.9 }}
 						whileInView={{ scale: 1 }}
+						viewport={{ once: true }}
 						transition={{ type: "spring", stiffness: 200 }}
 						className="w-full"
 					>
 						<Card className="max-w-5xl mx-auto aspect-video  relative shadow-xl">
 							<div className="absolute inset-0 flex items-center justify-center">
-								<motion.div
-								>
+								<motion.div>
 									<MainVideo />
-
-
 								</motion.div>
 							</div>
 						</Card>
@@ -85,6 +87,7 @@ export default function Hero() {
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
 						transition={{
 							type: "spring",
 							stiffness: 300,

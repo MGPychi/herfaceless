@@ -21,22 +21,21 @@ export const getAllPricing = unstable_cache(
 );
 export const getPricing = cache(
 	async ({ page, q }: { page: number; q?: string }) => {
-		const data =await  db.query.pricing.findMany({
-			where:	and(
-						q
-							? or(
-									sql`${pricing.title} LIKE ${`%${q}%`}`,
-									sql`${pricing.price} LIKE ${`%${q}%`}`,
-								)
-							: undefined,
-					),
+		const data = await db.query.pricing.findMany({
+			where: and(
+				q
+					? or(
+							sql`${pricing.title} LIKE ${`%${q}%`}`,
+							sql`${pricing.price} LIKE ${`%${q}%`}`,
+						)
+					: undefined,
+			),
 			limit: PAGE_SIZE,
 			offset: (page - 1) * PAGE_SIZE,
-			with:{
-				pricingItems:true
-			}
-			
-		})
+			with: {
+				pricingItems: true,
+			},
+		});
 
 		// Get total pricing count after filters
 		const c = await getPricingCount({ q });
@@ -44,7 +43,7 @@ export const getPricing = cache(
 		const hasNext = page < pageCount;
 		const hasPrev = page > 1;
 
-		return { data , hasNext, hasPrev, count: c, pageCount };
+		return { data, hasNext, hasPrev, count: c, pageCount };
 	},
 );
 export const getPricingCount = cache(async ({ q }: { q?: string }) => {

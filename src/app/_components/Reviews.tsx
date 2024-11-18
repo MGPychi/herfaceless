@@ -1,16 +1,15 @@
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Star} from "lucide-react";
+import { Star } from "lucide-react";
 // import { m as motion  } from "framer-motion"
 import * as motion from "framer-motion/m";
 import { getAllReviews } from "@/data/reviews-data";
 import { z } from "zod";
 import { selectReviewSchema } from "@/db/schema";
 
-
 export default async function Reviews() {
-	const reviews = await getAllReviews()
+	const reviews = await getAllReviews();
 	return (
 		<div className="bg-gradient-to-b  bg-ground py-24 px-4">
 			<div className="container mx-auto max-w-6xl">
@@ -18,6 +17,7 @@ export default async function Reviews() {
 					initial={{ opacity: 0, y: 100 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
+					viewport={{ once: true }}
 				>
 					<div className="text-center mb-16">
 						<h2 className="text-4xl font-bold text-secondary mb-4">
@@ -54,7 +54,6 @@ export default async function Reviews() {
 	);
 }
 
-
 function TestimonialCard({
 	testimonial,
 	delay,
@@ -66,6 +65,7 @@ function TestimonialCard({
 		<motion.div
 			initial={{ opacity: 0, scale: 0.9, rotateX: 45 }}
 			whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
+			viewport={{ once: true }}
 			transition={{ delay, duration: 0.6, ease: "easeOut" }}
 		>
 			<Card className="p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 relative overflow-hidden">
@@ -76,15 +76,10 @@ function TestimonialCard({
 				<Badge variant="secondary" className="mb-4 text-white">
 					{testimonial.value}
 				</Badge>
-				<p className="text-gray-700 text-lg mb-4">
-					{testimonial.body}
-				</p>
+				<p className="text-gray-700 text-lg mb-4">{testimonial.body}</p>
 				<div className="flex items-center gap-4">
 					<Avatar>
-						<AvatarImage
-							src={""}
-							alt={testimonial.client}
-						/>
+						<AvatarImage src={""} alt={testimonial.client} />
 						<AvatarFallback>{testimonial.client}</AvatarFallback>
 					</Avatar>
 					<div>

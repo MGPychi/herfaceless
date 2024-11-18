@@ -25,6 +25,7 @@ export default function SayGoodBTo() {
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
 						transition={{ duration: 0.5 }}
 						className="text-center space-y-2"
 					>
@@ -47,6 +48,7 @@ export default function SayGoodBTo() {
 						<motion.div
 							variants={container}
 							initial="hidden"
+							viewport={{ once: true }}
 							whileInView="show"
 							className="space-y-6"
 						>
@@ -73,6 +75,7 @@ export default function SayGoodBTo() {
 							variants={container}
 							initial="hidden"
 							whileInView="show"
+							viewport={{ once: true }}
 							className="space-y-6"
 						>
 							<h2 className="text-2xl font-semibold">
@@ -99,6 +102,7 @@ export default function SayGoodBTo() {
 					<motion.div
 						initial={{ opacity: 0, y: 40 }}
 						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
 						transition={{ delay: 0.7 }}
 						className="flex justify-center"
 					>

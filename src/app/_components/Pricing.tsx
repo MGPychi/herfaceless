@@ -33,6 +33,7 @@ export default async function Pricing() {
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
 				className="container  mx-auto text-center mb-12"
 			>
 				<h1 className="text-4xl md:text-5xl font-bold">
@@ -47,6 +48,7 @@ export default async function Pricing() {
 						key={plan.id}
 						initial={{ opacity: 0, x: index === 0 ? -50 : 50 }}
 						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true }}
 						transition={{ duration: 0.5 }}
 					>
 						<Card className="h-full flex flex-col">
@@ -72,6 +74,7 @@ export default async function Pricing() {
 									variants={container}
 									initial="hidden"
 									whileInView="show"
+									viewport={{ once: true }}
 									className="space-y-4"
 								>
 									{plan.pricingItems.map((planFeature) => (

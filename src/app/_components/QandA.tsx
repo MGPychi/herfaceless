@@ -65,6 +65,7 @@ export default function QandA() {
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
 					className="text-center space-y-4"
 				>
 					<h2 className="text-3xl md:text-4xl font-bold">
@@ -81,6 +82,7 @@ export default function QandA() {
 					variants={container}
 					initial="hidden"
 					whileInView="show"
+					viewport={{ once: true }}
 				>
 					<Accordion type="single" collapsible className="space-y-4">
 						{comparisonItems.map((item, index) => (
@@ -104,6 +106,7 @@ export default function QandA() {
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
 					transition={{ delay: 0.5 }}
 					className="text-center space-y-6"
 				>

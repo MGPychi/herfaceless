@@ -8,8 +8,7 @@ import { cache } from "react";
 
 export const getAllReviews = unstable_cache(
 	async () => {
-		return await db.query.reviews.findMany({
-		});
+		return await db.query.reviews.findMany({});
 	},
 	["reviews"],
 	{
@@ -18,20 +17,19 @@ export const getAllReviews = unstable_cache(
 );
 export const getReviews = cache(
 	async ({ page, q }: { page: number; q?: string }) => {
-		const data =await  db.query.reviews.findMany({
-			where:	and(
-						q
-							? or(
-									sql`${reviews.body} LIKE ${`%${q}%`}`,
-									sql`${reviews.client} LIKE ${`%${q}%`}`,
-									sql`${reviews.value} LIKE ${`%${q}%`}`,
-								)
-							: undefined,
-					),
+		const data = await db.query.reviews.findMany({
+			where: and(
+				q
+					? or(
+							sql`${reviews.body} LIKE ${`%${q}%`}`,
+							sql`${reviews.client} LIKE ${`%${q}%`}`,
+							sql`${reviews.value} LIKE ${`%${q}%`}`,
+						)
+					: undefined,
+			),
 			limit: PAGE_SIZE,
 			offset: (page - 1) * PAGE_SIZE,
-			
-		})
+		});
 
 		// Get total reviews count after filters
 		const c = await getReviewsCount({ q });
@@ -39,7 +37,7 @@ export const getReviews = cache(
 		const hasNext = page < pageCount;
 		const hasPrev = page > 1;
 
-		return { data , hasNext, hasPrev, count: c, pageCount };
+		return { data, hasNext, hasPrev, count: c, pageCount };
 	},
 );
 export const getReviewsCount = cache(async ({ q }: { q?: string }) => {
@@ -51,9 +49,9 @@ export const getReviewsCount = cache(async ({ q }: { q?: string }) => {
 				and(
 					q
 						? or(
-									sql`${reviews.body} LIKE ${`%${q}%`}`,
-									sql`${reviews.client} LIKE ${`%${q}%`}`,
-									sql`${reviews.value} LIKE ${`%${q}%`}`,
+								sql`${reviews.body} LIKE ${`%${q}%`}`,
+								sql`${reviews.client} LIKE ${`%${q}%`}`,
+								sql`${reviews.value} LIKE ${`%${q}%`}`,
 							)
 						: undefined,
 				),

@@ -11,11 +11,14 @@ import { z } from "zod";
 import { updatePricingSchema } from "@/db/schema";
 interface Props {
 	pricing: z.infer<typeof updatePricingSchema>;
-    isOpen:boolean;
-    setIsOpen:(value:boolean)=>void
+	isOpen: boolean;
+	setIsOpen: (value: boolean) => void;
 }
-export default function UpdatePricingModal({ pricing,isOpen,setIsOpen }: Props) {
-
+export default function UpdatePricingModal({
+	pricing,
+	isOpen,
+	setIsOpen,
+}: Props) {
 	return (
 		<Dialog open={isOpen} onOpenChange={setIsOpen}>
 			<DialogContent className="sm:max-w-[425px] md:max-w-[700px] max-h-[95vh] overflow-y-scroll">

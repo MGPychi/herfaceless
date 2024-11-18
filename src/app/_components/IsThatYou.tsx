@@ -37,6 +37,7 @@ export default function IsThatYou() {
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
 							className="text-center space-y-4"
 						>
 							<h2 className="text-3xl md:text-4xl font-bold text-[#b17f65]">
@@ -52,6 +53,7 @@ export default function IsThatYou() {
 							variants={container}
 							initial="hidden"
 							whileInView="show"
+							viewport={{ once: true }}
 							className="grid gap-6 md:grid-cols-2"
 						>
 							{painPoints.map((point, index) => (
@@ -71,6 +73,7 @@ export default function IsThatYou() {
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
 							transition={{ delay: 0.5 }}
 							className="space-y-6"
 						>
