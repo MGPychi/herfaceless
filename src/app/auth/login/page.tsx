@@ -52,7 +52,6 @@ export default function AdminLogin() {
 				redirectTo: "/admin",
 				...values,
 			});
-			// Redirect to admin dashboard on successful login
 			router.push("/admin");
 		} catch (error) {
 			console.error(error);
