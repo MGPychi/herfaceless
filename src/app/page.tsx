@@ -17,7 +17,7 @@ import TopBenefits from "./_components/TopBenefits";
 
 export default function Home() {
 	return (
-		<main className="px-4 md:px-0 ">
+		<main className=" bg-ground">
 			<Hero />
 			<Benefits />
 			<TopBenefits />

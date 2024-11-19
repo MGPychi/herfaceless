@@ -19,6 +19,7 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Link from "next/link";
 
 const benefits = [
 	{
@@ -55,7 +56,7 @@ const benefits = [
 
 export default function Benefits() {
 	return (
-		<section className="py-24 px-4 bg-gradient-to-b  bg-ground  overflow-hidden">
+		<section className="py-4 md:py-24 px-4 bg-gradient-to-b  bg-ground  overflow-hidden">
 			<div className="container mx-auto">
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
@@ -63,7 +64,7 @@ export default function Benefits() {
 					transition={{ duration: 1, ease: "easeInOut" }}
 					viewport={{ once: true }}
 				>
-					<h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-secondary">
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 text-secondary">
 						Here is What You Get Inside
 						<br className="hidden md:inline" /> the Membership:
 					</h2>
@@ -106,14 +107,16 @@ export default function Benefits() {
 						</div>
 					</div>
 
-					<div className="mt-16 text-center">
-						<Button
-							aria-label="join button"
-							className="bg-secondary text-white hover:ring-2 hover:ring-secondary hover:bg-secondary text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform "
-						>
-							Join Now and Accelerate Your Success
-							<ChevronRight className="ml-2 w-5 h-5" />
-						</Button>
+					<div className="mt-10  text-center">
+						<Link href="/#pricing">
+							<Button
+								aria-label="join button"
+								className="bg-secondary  text-white hover:ring-2 hover:ring-secondary hover:bg-secondary text-xs sm:text-base md:text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform "
+							>
+								Join Now and Accelerate Your Success
+								<ChevronRight className="ml-2 w-5 h-5" />
+							</Button>
+						</Link>
 					</div>
 				</motion.div>
 			</div>
@@ -129,15 +132,15 @@ interface Benefit {
 
 function BenefitItem({ benefit }: { benefit: Benefit }) {
 	return (
-		<Card className="p-6 flex items-start gap-4 group hover:bg-[#f0f8ff] transition-colors duration-300 cursor-pointer">
+		<Card className="p-2 py-4 md:!p-6 flex min-h-[135px]  items-start gap-4 group hover:bg-[#f0f8ff] transition-colors duration-300 cursor-pointer">
 			<div className="p-3 rounded-full bg-secondary text-white shrink-0">
 				{benefit.icon}
 			</div>
 			<div className="flex-grow">
-				<h3 className="text-xl font-semibold text-secondary mb-2 group-hover:text-[#0066cc] transition-colors duration-300">
+				<h3 className=" md:text-xl font-semibold text-secondary mb-2 group-hover:text-[#0066cc] transition-colors duration-300">
 					{benefit.title}
 				</h3>
-				<p className="text-gray-600">{benefit.description}</p>
+				<p className="text-gray-600 text-xs">{benefit.description}</p>
 			</div>
 			<Tooltip>
 				<TooltipTrigger asChild>

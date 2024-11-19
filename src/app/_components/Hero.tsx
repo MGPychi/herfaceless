@@ -6,8 +6,7 @@ import MainVideo from "./MainVideo";
 
 export default function Hero() {
 	return (
-		<div className="min-h-screen    !bg-ground relative overflow-hidden">
-			{/* Decorative Shapes */}
+		<div className="min-h-[90vh]    !bg-ground relative overflow-hidden">
 			<motion.div
 				initial={{ opacity: 0, rotate: -10, scale: 0.9 }}
 				whileInView={{ opacity: 0.2, rotate: 0, scale: 1 }}
@@ -35,7 +34,7 @@ export default function Hero() {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 						transition={{ type: "spring", stiffness: 300 }}
-						className="bg-secondary text-white text-sm px-6 py-2 rounded-full uppercase tracking-wider"
+						className="bg-secondary text-white text-sm px-6  py-2 rounded-full uppercase tracking-wider"
 					>
 						Mens Inner Circle Membership
 					</motion.div>
@@ -52,14 +51,14 @@ export default function Hero() {
 						}}
 						className="space-y-4"
 					>
-						<h1 className="text-4xl md:text-6xl font-bold leading-tight">
+						<h1 className="text-2xl sm:text-4xl md:text-6xl font-bold leading-tight">
 							Build, launch, and scale{" "}
 							<span className="text-[#003366]">your own</span>
 							<br />
 							digital empire in just{" "}
 							<span className="text-secondary">30 days</span>
 						</h1>
-						<p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto">
+						<p className="text-gray-700  sm:text-lg md:text-xl max-w-3xl mx-auto">
 							Transform your expertise into a thriving online
 							business. Get consistent sales notifications, secure
 							financial freedom, and create the lifestyle you have

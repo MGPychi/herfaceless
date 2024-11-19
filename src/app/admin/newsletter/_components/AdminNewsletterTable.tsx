@@ -102,7 +102,13 @@ export default function AdminNewsletterTable({
 							<TableRow key={item.id}>
 								<TableCell>{item.name ?? "None"}</TableCell>
 								<TableCell>{item.email}</TableCell>
-								<TableCell>{item.isPaid? <Check className="text-gray-500"/>:<X className="text-red-400"/> }</TableCell>
+								<TableCell>
+									{item.isPaid ? (
+										<Check className="text-gray-500" />
+									) : (
+										<X className="text-red-400" />
+									)}
+								</TableCell>
 								<TableCell>
 									{item.createdAt?.toLocaleDateString()}
 								</TableCell>

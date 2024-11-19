@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 	title: "Admin dashboard",
 };
 
-export  default async function Layout({ children }: { children: ReactNode }) {
-	await getUserOrRedirectToLogin()
+export default async function Layout({ children }: { children: ReactNode }) {
+	await getUserOrRedirectToLogin();
 
 	return (
 		<SidebarProvider>
