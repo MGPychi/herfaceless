@@ -1,3 +1,4 @@
+import Footer from "@/components/layout/Footer";
 import Benefits from "./_components/Benefits";
 import FandQ from "./_components/FandQ";
 import FeaturesGrid from "./_components/FeaturesGrid";
@@ -17,6 +18,7 @@ import TopBenefits from "./_components/TopBenefits";
 
 export default function Home() {
 	return (
+		<>
 		<main className=" bg-ground">
 			<Hero />
 			<Benefits />
@@ -35,5 +37,7 @@ export default function Home() {
 			<Last />
 			<NewsletterSubscription />
 		</main>
+		<Footer/>
+		</>
 	);
 }
