@@ -29,7 +29,7 @@ export default async function Pricing() {
 	const plans = await getAllPricing();
 
 	return (
-		<div className="min-h-screen bg-ground py-20 px-4">
+		<section id="pricing" className="min-h-screen bg-ground py-20 px-4">
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -104,6 +104,6 @@ export default async function Pricing() {
 					</motion.div>
 				))}
 			</div>
-		</div>
+		</section>
 	);
 }
