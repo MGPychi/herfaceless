@@ -53,7 +53,7 @@ export default function AdminLogin() {
 				...values,
 			});
 			// Redirect to admin dashboard on successful login
-			router.push("/admin/dashboard");
+			router.push("/admin");
 		} catch (error) {
 			console.error(error);
 			setError("Invalid email or password");
