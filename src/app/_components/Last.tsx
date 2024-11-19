@@ -64,7 +64,9 @@ const SVGIllustration = () => (
 
 export default function Last() {
 	return (
-		<section className="py-24 px-4 max-w-4xl mx-auto text-center bg-gradient-to-b from-background to-secondary/20">
+		<section className="py-24 px-4   text-center bg-gradient-to-b from-background to-secondary/20">
+			<div className="container max-w-4xl mx-auto">
+
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -172,6 +174,7 @@ export default function Last() {
 						COUNT ME IN!
 					</Button>
 				</motion.div>
+			</div>
 			</div>
 		</section>
 	);
