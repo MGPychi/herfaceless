@@ -39,7 +39,7 @@ export default function Footer() {
               <nav className="grid gap-2">
 
                 <Link href="mailto:contact@hersfaceless.com" className="text-sm hover:underline">
-                  contact@example.com
+                  contact@hersfaceless.com
                 </Link>
                 <Link
                   href="https://instagram.com"

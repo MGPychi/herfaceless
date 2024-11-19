@@ -57,7 +57,7 @@ const faqs = [
 	},
 	{
 		question: "What's your refund policy?",
-		answer: "We offer a 30-day money-back guarantee if you're not completely satisfied with your membership.",
+		answer: "we are confident in the value of our digital products and services. For this reason, we do not offer refunds for one-time purchases. We encourage you to review the product details carefully before making a purchase, as all sales are final.",
 		icon: ShieldCheck,
 	},
 ];

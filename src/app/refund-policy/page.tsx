@@ -6,7 +6,7 @@ import Link from "next/link"
 export default function PrivacyPolicy() {
   return (
     <>
-    <main className="min-h-screen bg-ground flex items-center justify-center p-4">
+    <main className="min-h-[70vh] bg-ground flex items-center justify-center p-4">
       <Card className="w-full max-w-4xl bg-white/80 backdrop-blur-sm">
         <CardHeader className="text-center space-y-2">
           <CardTitle className="text-3xl font-bold">Refund Policy</CardTitle>
