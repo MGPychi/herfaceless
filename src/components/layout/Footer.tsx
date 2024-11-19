@@ -1,8 +1,9 @@
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+"use client";
 import { Instagram } from 'lucide-react'
 import Link from "next/link"
+import NewsLetterForm from "@/app/_components/NewsLetterForm"
 
+const dummyFunc =(v:boolean)=>v
 export default function Footer() {
   return (
     <footer className="w-full border-t-[1px] border-gray-100  bg-ground">
@@ -13,29 +14,33 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground">
               Get the latest updates and exclusive offers directly to your inbox.
             </p>
-            <div className="flex gap-2 max-w-sm">
-              <Input placeholder="Enter your email" type="email" className="max-w-lg flex-1" />
-              <Button>Subscribe</Button>
+            <div className="flex gap-10">
+              <NewsLetterForm iClassName='h-10 w-30 mr-2 ' className='flex items-center !space-y-0 ' setHasScrolled={dummyFunc} setHasSubscribed={dummyFunc} setIsVisible={dummyFunc} />
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="grid gap-4">
               <h3 className="text-lg font-semibold">Quick Links</h3>
               <nav className="grid gap-2">
+
+                <Link href="/" className="text-sm hover:underline">
+                  Home
+                </Link>
                 <Link href="/#pricing" className="text-sm hover:underline">
                   Pricing
                 </Link>
                 <Link href="/refund-policy" className="text-sm hover:underline">
                   Refund Policy
                 </Link>
-                <Link href="mailto:contact@hersfaceless.com" className="text-sm hover:underline">
-                  contact@example.com
-                </Link>
               </nav>
             </div>
             <div className="grid gap-4">
               <h3 className="text-lg font-semibold">Connect</h3>
               <nav className="grid gap-2">
+
+                <Link href="mailto:contact@hersfaceless.com" className="text-sm hover:underline">
+                  contact@example.com
+                </Link>
                 <Link
                   href="https://instagram.com"
                   className="flex items-center gap-2 text-sm hover:underline"

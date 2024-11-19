@@ -1,11 +1,13 @@
+import Footer from "@/components/layout/Footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail } from 'lucide-react'
 import Link from "next/link"
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-[#fdf4f0] flex items-center justify-center p-4">
-      <Card className="w-full max-w-3xl bg-white/80 backdrop-blur-sm">
+    <>
+    <main className="min-h-screen bg-ground flex items-center justify-center p-4">
+      <Card className="w-full max-w-4xl bg-white/80 backdrop-blur-sm">
         <CardHeader className="text-center space-y-2">
           <CardTitle className="text-3xl font-bold">Refund Policy</CardTitle>
           <CardDescription className="text-lg text-muted-foreground">
@@ -35,6 +37,8 @@ export default function PrivacyPolicy() {
           </div>
         </CardContent>
       </Card>
-    </div>
+    </main>
+    <Footer/>
+    </>
   )
 }
