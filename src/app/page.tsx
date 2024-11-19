@@ -19,25 +19,25 @@ import TopBenefits from "./_components/TopBenefits";
 export default function Home() {
 	return (
 		<>
-		<main className=" bg-ground">
-			<Hero />
-			<Benefits />
-			<TopBenefits />
-			<Reviews />
-			<Problem />
-			<SayGoodBTo />
-			<MemberShip />
-			<Pricing />
-			<GamePlan />
-			<IsThatYou />
-			<FeaturesGrid />
-			<QandA />
-			<Imagine />
-			<FandQ />
-			<Last />
-			<NewsletterSubscription />
-		</main>
-		<Footer/>
+			<main className=" bg-ground">
+				<Hero />
+				<Benefits />
+				<TopBenefits />
+				<Reviews />
+				<Problem />
+				<SayGoodBTo />
+				<MemberShip />
+				<Pricing />
+				<GamePlan />
+				<IsThatYou />
+				<FeaturesGrid />
+				<QandA />
+				<Imagine />
+				<FandQ />
+				<Last />
+				<NewsletterSubscription />
+			</main>
+			<Footer />
 		</>
 	);
 }

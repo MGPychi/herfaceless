@@ -34,7 +34,7 @@ const Problem = () => {
 							possibilities and steps involved.
 						</motion.p>
 					</motion.div>
-					<motion.div  variants={fadeInUp} className="md:order-1  ">
+					<motion.div variants={fadeInUp} className="md:order-1  ">
 						<svg viewBox="0 0 400 300" className="w-full h-auto">
 							<rect width="400" height="300" fill="#f3f4f6" />
 							<circle cx="200" cy="150" r="80" fill="#d1d5db" />
@@ -163,12 +163,12 @@ const Problem = () => {
 						whileTap={{ scale: 0.95 }}
 					>
 						<Link href="/#pricing">
-						<Button
-							aria-label="i want to start earing money button"
-							className="bg-[#D2B48C]   hover:bg-[#C1A47B] text-zinc-900 font-bold  px-6 py-3 h-auto rounded-full shadow-lg transition-all duration-300 ease-in-out"
-						>
-							I WANT TO START EARNING MONEY!
-						</Button>
+							<Button
+								aria-label="i want to start earing money button"
+								className="bg-[#D2B48C]   hover:bg-[#C1A47B] text-zinc-900 font-bold  px-6 py-3 h-auto rounded-full shadow-lg transition-all duration-300 ease-in-out"
+							>
+								I WANT TO START EARNING MONEY!
+							</Button>
 						</Link>
 					</motion.div>
 				</motion.div>

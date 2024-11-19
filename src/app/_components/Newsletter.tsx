@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import {  X } from "lucide-react";
+import { X } from "lucide-react";
 import * as motion from "framer-motion/m";
 import NewsLetterForm from "./NewsLetterForm";
 
@@ -40,7 +40,6 @@ export default function NewsletterSubscription() {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, [hasScrolled]);
 
-
 	return (
 		<AnimatePresence>
 			{isVisible && !hasSubscribed && (
@@ -75,7 +74,11 @@ export default function NewsletterSubscription() {
 							Subscribe for exclusive updates, tips, and special
 							offers.
 						</p>
-						<NewsLetterForm setHasScrolled={setHasScrolled} setHasSubscribed={setHasSubscribed} setIsVisible={setIsVisible} />
+						<NewsLetterForm
+							setHasScrolled={setHasScrolled}
+							setHasSubscribed={setHasSubscribed}
+							setIsVisible={setIsVisible}
+						/>
 					</motion.div>
 					<motion.div
 						animate={{

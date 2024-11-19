@@ -7,13 +7,19 @@ import { Check, X } from "lucide-react";
 import toast from "react-hot-toast";
 import clsx from "clsx";
 interface Props {
-    setHasSubscribed:(value:boolean)=>void;
-    setIsVisible:(value:boolean)=>void;
-    setHasScrolled:(value:boolean)=>void;
-    className?:string;
-    iClassName?:string;
+	setHasSubscribed: (value: boolean) => void;
+	setIsVisible: (value: boolean) => void;
+	setHasScrolled: (value: boolean) => void;
+	className?: string;
+	iClassName?: string;
 }
-const NewsLetterForm = ({setHasSubscribed,iClassName,className,setIsVisible,setHasScrolled}:Props) => {
+const NewsLetterForm = ({
+	setHasSubscribed,
+	iClassName,
+	className,
+	setIsVisible,
+	setHasScrolled,
+}: Props) => {
 	const [email, setEmail] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const handleSubmit = async (e: React.FormEvent) => {
@@ -39,20 +45,23 @@ const NewsLetterForm = ({setHasSubscribed,iClassName,className,setIsVisible,setH
 		setIsLoading(false);
 	};
 	return (
-		<form onSubmit={handleSubmit} className={clsx(className,"space-y-4")}>
+		<form onSubmit={handleSubmit} className={clsx(className, "space-y-4")}>
 			<Input
 				type="email"
 				placeholder="Your email address"
 				value={email}
 				onChange={(e) => setEmail(e.target.value)}
 				required
-				className={clsx("w-full px-4 h-11 bg-white/50 border-[#d4b094] focus:border-[#8b5e3c] rounded-full text-[#6d4b30]",iClassName)}
+				className={clsx(
+					"w-full px-4 h-11 bg-white/50 border-[#d4b094] focus:border-[#8b5e3c] rounded-full text-[#6d4b30]",
+					iClassName,
+				)}
 			/>
 			<Button
-                disabled={isLoading}
+				disabled={isLoading}
 				aria-label="subscribe now button"
 				type="submit"
-				className={ `${isLoading&&"opacity-90"} w-full bg-gradient-to-r from-[#8b5e3c] to-[#6d4b30] text-[#f3e4d7] hover:from-[#7a5235] hover:to-[#5c3f28] rounded-full transition-all duration-300 ease-in-out transform hover:scale-105` }
+				className={`${isLoading && "opacity-90"} w-full bg-gradient-to-r from-[#8b5e3c] to-[#6d4b30] text-[#f3e4d7] hover:from-[#7a5235] hover:to-[#5c3f28] rounded-full transition-all duration-300 ease-in-out transform hover:scale-105`}
 			>
 				Subscribe Now
 			</Button>

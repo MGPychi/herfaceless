@@ -66,115 +66,116 @@ export default function Last() {
 	return (
 		<section className="py-24 px-4   text-center bg-gradient-to-b from-background to-secondary/20">
 			<div className="container max-w-4xl mx-auto">
-
-			<motion.div
-				initial={{ opacity: 0, y: 20 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.6 }}
-			>
-				<h2 className="text-4xl font-bold mb-16">LAST BUT NOT LEAST</h2>
-			</motion.div>
-
-			<motion.div
-				initial={{ opacity: 0, scale: 0.95 }}
-				whileInView={{ opacity: 1, scale: 1 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.6, delay: 0.2 }}
-				className="mb-16"
-			>
-				<SVGIllustration />
-			</motion.div>
-
-			<div className="space-y-6 max-w-2xl mx-auto">
-				<motion.p
+				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
-					transition={{ duration: 0.6, delay: 0.4 }}
-					className="text-lg"
+					transition={{ duration: 0.6 }}
 				>
-					How many opportunities for{" "}
-					<span className="font-semibold bg-primary/10 px-1 rounded">
-						financial freedom
-					</span>{" "}
-					and{" "}
-					<span className="font-semibold bg-primary/10 px-1 rounded">
-						personal fulfillment
-					</span>{" "}
-					are you missing out on each day by not starting your digital
-					product journey now?
-				</motion.p>
-
-				<motion.p
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
-					transition={{ duration: 0.6, delay: 0.5 }}
-					className="text-lg"
-				>
-					If you&apos;ve read this far,
-					<br />
-					you know{" "}
-					<span className="font-semibold">
-						our membership can help achieve your dreams.
-					</span>
-				</motion.p>
-
-				<motion.p
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
-					transition={{ duration: 0.6, delay: 0.6 }}
-					className="text-lg"
-				>
-					Are you ready to take control of your financial future and
-					enjoy life with your loved ones with less worry and more
-					joy?
-				</motion.p>
-
-				<motion.p
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
-					transition={{ duration: 0.6, delay: 0.7 }}
-					className="text-lg"
-				>
-					Inside our membership you&apos;ll learn how to create{" "}
-					<span className="font-semibold">
-						successful digital products
-					</span>{" "}
-					that not only boost your income but also enrich your life
-					and those you love and care about.
-				</motion.p>
-
-				<motion.p
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
-					transition={{ duration: 0.6, delay: 0.8 }}
-					className="text-lg"
-				>
-					Don&apos;t let this chance slip away because you deserve to
-					start creating the life you&apos;ve always wanted!
-				</motion.p>
+					<h2 className="text-4xl font-bold mb-16">
+						LAST BUT NOT LEAST
+					</h2>
+				</motion.div>
 
 				<motion.div
-					initial={{ opacity: 0, scale: 0.9 }}
+					initial={{ opacity: 0, scale: 0.95 }}
 					whileInView={{ opacity: 1, scale: 1 }}
 					viewport={{ once: true }}
-					transition={{ duration: 0.6, delay: 1 }}
-					className="pt-8"
+					transition={{ duration: 0.6, delay: 0.2 }}
+					className="mb-16"
 				>
-					<Button
-						aria-label="count me in button"
-						size="lg"
-						className="bg-[#D2B48C] hover:bg-[#C4A484] text-black font-semibold text-lg px-8 py-6"
-					>
-						COUNT ME IN!
-					</Button>
+					<SVGIllustration />
 				</motion.div>
-			</div>
+
+				<div className="space-y-6 max-w-2xl mx-auto">
+					<motion.p
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.4 }}
+						className="text-lg"
+					>
+						How many opportunities for{" "}
+						<span className="font-semibold bg-primary/10 px-1 rounded">
+							financial freedom
+						</span>{" "}
+						and{" "}
+						<span className="font-semibold bg-primary/10 px-1 rounded">
+							personal fulfillment
+						</span>{" "}
+						are you missing out on each day by not starting your
+						digital product journey now?
+					</motion.p>
+
+					<motion.p
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.5 }}
+						className="text-lg"
+					>
+						If you&apos;ve read this far,
+						<br />
+						you know{" "}
+						<span className="font-semibold">
+							our membership can help achieve your dreams.
+						</span>
+					</motion.p>
+
+					<motion.p
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.6 }}
+						className="text-lg"
+					>
+						Are you ready to take control of your financial future
+						and enjoy life with your loved ones with less worry and
+						more joy?
+					</motion.p>
+
+					<motion.p
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.7 }}
+						className="text-lg"
+					>
+						Inside our membership you&apos;ll learn how to create{" "}
+						<span className="font-semibold">
+							successful digital products
+						</span>{" "}
+						that not only boost your income but also enrich your
+						life and those you love and care about.
+					</motion.p>
+
+					<motion.p
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.8 }}
+						className="text-lg"
+					>
+						Don&apos;t let this chance slip away because you deserve
+						to start creating the life you&apos;ve always wanted!
+					</motion.p>
+
+					<motion.div
+						initial={{ opacity: 0, scale: 0.9 }}
+						whileInView={{ opacity: 1, scale: 1 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 1 }}
+						className="pt-8"
+					>
+						<Button
+							aria-label="count me in button"
+							size="lg"
+							className="bg-[#D2B48C] hover:bg-[#C4A484] text-black font-semibold text-lg px-8 py-6"
+						>
+							COUNT ME IN!
+						</Button>
+					</motion.div>
+				</div>
 			</div>
 		</section>
 	);

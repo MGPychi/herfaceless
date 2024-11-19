@@ -112,13 +112,13 @@ export default function Imagine() {
 								changes for the better.
 							</p>
 							<Link href="/#pricing">
-							<Button
-								aria-label="start now button"
-								size="lg"
-								className="bg-secondary hover:bg-secondary/90 text-white font-semibold px-8 py-6 text-lg"
-							>
-								Start Your Journey Here!
-							</Button>
+								<Button
+									aria-label="start now button"
+									size="lg"
+									className="bg-secondary hover:bg-secondary/90 text-white font-semibold px-8 py-6 text-lg"
+								>
+									Start Your Journey Here!
+								</Button>
 							</Link>
 						</CardContent>
 					</Card>
