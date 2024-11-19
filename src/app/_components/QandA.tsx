@@ -7,6 +7,7 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Heart } from "lucide-react";
+import Link from "next/link";
 
 const comparisonItems = [
 	{
@@ -73,7 +74,7 @@ export default function QandA() {
 						<br />
 						VS OTHERS
 					</h2>
-					<p className="text-gray-600">
+					<p className="text-gray-600 text-lg">
 						How our membership programs differ from others:
 					</p>
 				</motion.div>
@@ -89,7 +90,7 @@ export default function QandA() {
 							<motion.div key={index} variants={motionItem}>
 								<AccordionItem
 									value={`item-${index}`}
-									className="bg-white rounded-lg shadow-sm border-none"
+									className="bg-white text-xs md:text-base rounded-lg shadow-sm border-none"
 								>
 									<AccordionTrigger className="px-6 hover:no-underline hover:bg-gray-50 rounded-lg">
 										{item.title}
@@ -110,18 +111,20 @@ export default function QandA() {
 					transition={{ delay: 0.5 }}
 					className="text-center space-y-6"
 				>
-					<p className="text-lg">
+					<p className="text-lg py-2">
 						Join now to start making a real difference in your life
 						and your loved ones{" "}
 						<Heart className="inline-block h-5 w-5 text-red-500 fill-current" />
 					</p>
 
-					<Button
-						aria-label="i want button"
-						className="bg-[#dbc1b0] hover:bg-[#b17f65] text-black px-8 py-6 text-lg rounded-md"
-					>
-						I WANT!!
-					</Button>
+					<Link href="/#pricing">
+						<Button
+							aria-label="i want button"
+							className="bg-[#dbc1b0] hover:bg-[#b17f65] text-black px-8 py-6 text-lg rounded-md"
+						>
+							I WANT!!
+						</Button>
+					</Link>
 				</motion.div>
 			</div>
 		</div>

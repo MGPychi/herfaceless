@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import * as motion from "framer-motion/m";
 import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 
 const content = [
 	{
@@ -110,6 +111,7 @@ export default function Imagine() {
 								make a real difference and watch how your world
 								changes for the better.
 							</p>
+							<Link href="/#pricing">
 							<Button
 								aria-label="start now button"
 								size="lg"
@@ -117,6 +119,7 @@ export default function Imagine() {
 							>
 								Start Your Journey Here!
 							</Button>
+							</Link>
 						</CardContent>
 					</Card>
 				</motion.div>

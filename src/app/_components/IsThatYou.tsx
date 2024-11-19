@@ -30,10 +30,10 @@ const item = {
 
 export default function IsThatYou() {
 	return (
-		<div className="min-h-screen bg-ground   py-20 px-4">
-			<div className="max-w-6xl mx-auto">
+		<div className="min-h-screen bg-ground   py-20 px-2  md:px-4">
+			<div className="  max-w-6xl mx-auto">
 				<Card className="border-none bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl overflow-hidden">
-					<CardContent className="p-8 md:p-12 space-y-10">
+					<CardContent className="p-4 py-8 md:p-12 space-y-10">
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
@@ -77,11 +77,11 @@ export default function IsThatYou() {
 							transition={{ delay: 0.5 }}
 							className="space-y-6"
 						>
-							<div className="bg-[#b17f65] text-white p-6 rounded-xl">
-								<h3 className="text-xl font-semibold mb-2">
+							<div className="bg-[#b17f65] text-white p-4 md:p-6 rounded-xl">
+								<h3 className="text-lg md:text-xl font-semibold mb-2">
 									The Solution You have Been Waiting For
 								</h3>
-								<p className="text-lg">
+								<p className=" md:text-lg">
 									Our{" "}
 									<span className="font-bold">
 										Sisters Inner Circle Membership
@@ -96,7 +96,7 @@ export default function IsThatYou() {
 							<div className="flex justify-center">
 								<Button
 									aria-label="ready now button"
-									className="bg-[#b17f65] hover:bg-[#a06c55] text-white px-8 py-6 text-lg rounded-full shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
+									className="bg-zinc-800 hover:bg-zinc-900 text-white px-8 py-6 text-lg rounded-full shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
 								>
 									<span>I&apos;M READY NOW!</span>
 									<CheckCircle2 className="ml-2 h-5 w-5" />

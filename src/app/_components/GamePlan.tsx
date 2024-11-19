@@ -80,7 +80,7 @@ const steps = [
 
 export default function GamePlan() {
 	return (
-		<section className="relative min-h-screen overflow-hidden bg-ground px-6 py-16">
+		<section className="relative min-h-screen overflow-hidden bg-ground px-2 md:px-6 py-16">
 			{/* Decorative Background */}
 			<div className="pointer-events-none absolute inset-0">
 				<svg
@@ -137,7 +137,7 @@ export default function GamePlan() {
 					<p className="mb-2 text-sm font-medium uppercase tracking-wider text-gray-700">
 						THIS PROGRAM WILL HELP YOU WITH...
 					</p>
-					<h2 className="mb-6 text-4xl font-bold tracking-tight text-gray-900">
+					<h2 className="mb-6 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
 						GAME PLAN SUCCESS
 					</h2>
 					<p className="mb-12 text-lg text-gray-700">
@@ -151,7 +151,7 @@ export default function GamePlan() {
 					<div className="absolute left-[1.65rem] top-0 h-full w-px bg-gray-300" />
 
 					{/* Steps */}
-					<div className="space-y-8">
+					<div className="space-y-8 ">
 						{steps.map((step, index) => (
 							<motion.div
 								key={step.title}
