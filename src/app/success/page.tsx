@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import * as motion from "framer-motion/m"
-import Footer from "@/components/layout/Footer";
 import { useState } from "react";
 
 export default function SuccessPage() {
@@ -37,7 +36,6 @@ export default function SuccessPage() {
     };
 
     return (
-        <>
             <main className="min-h-screen bg-[#f8efe8] flex items-center justify-center p-4">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -161,7 +159,5 @@ export default function SuccessPage() {
                     </Card>
                 </motion.div>
             </main>
-            <Footer />
-        </>
     );
 }

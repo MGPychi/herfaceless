@@ -39,7 +39,7 @@ export default function Footer() {
                 >
                   Home
                 </Link>
-                <Link
+                <Link  
                   href="/#pricing"
                   className="text-sm hover:underline"
                 >

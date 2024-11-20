@@ -2,7 +2,7 @@
 import { PAGE_SIZE } from "@/constants";
 import { db } from "@/db";
 import { pricing } from "@/db/schema";
-import { and, count, gte, or, sql } from "drizzle-orm";
+import { and, asc, count, gte, or, sql } from "drizzle-orm";
 import { unstable_cache } from "next/cache";
 import { cache } from "react";
 
@@ -12,6 +12,7 @@ export const getAllPricing = unstable_cache(
 			with: {
 				pricingItems: true,
 			},
+			orderBy:[asc(pricing.createdAt)]
 		});
 	},
 	["pricing"],
