@@ -16,31 +16,31 @@ import {
 const features = [
 	{
 		icon: FileText,
-		title: "Monthly Access to Passion to Profit Course",
-		value: 1997,
+		title: "The Secret to Viral on Instagram",
+		value: 197,
 		description:
-			"The only system you need to create, launch, and sell digital products from scratch.",
+			"50+ actionable lessons to master engagement, grow your audience, and create shareable, viral content.",
 		darkBg: true,
 	},
 	{
 		icon: Mic,
-		title: "Monthly Training with Guest Speaker",
-		value: 497,
+		title: "Digital Marketing Playbook",
+		value: 97,
 		description:
-			"Exclusive monthly sessions with expert coaches, where you'll gain valuable insights.",
+			"Unlock the secrets to digital marketing success! Learn to create viral social media strategies, grow your online presence, and design eye-catching content with Canva to elevate your brand.",
 		darkBg: false,
 	},
 	{
 		icon: Database,
-		title: "Bonus: Ready to Sell Digital Product",
-		value: 2997,
+		title: "Instagram Marketing",
+		value: 87,
 		description:
-			"The only system you need to create, launch, and sell digital products from scratch.",
+			"Master the art of Instagram marketing with strategies to grow your audience, boost engagement, and drive real results for your brand or business.",
 		darkBg: true,
 	},
 	{
 		icon: Pen,
-		title: "Membership Creation Lesson",
+		title: "Access to the Exclusive Private Community",
 		value: 297,
 		description:
 			"A step-by-step guide to build and launch your own membership site.",

@@ -90,7 +90,7 @@ export default async function Pricing() {
                     aria-label="sign me up button"
                     className="w-full bg-[#dbc1b0] hover:bg-[#b17f65] text-black py-6 text-lg"
                   >
-                    <Link href={plan.stripeUrl}>Sign Me Up</Link>
+                    <Link target="_blank" href={plan.stripeUrl}>Get Started!</Link>
                   </Button>
                 </CardFooter>
               </Card>

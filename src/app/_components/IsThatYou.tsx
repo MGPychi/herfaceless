@@ -85,12 +85,9 @@ export default function IsThatYou() {
 								<p className=" md:text-lg">
 									Our{" "}
 									<span className="font-bold">
-										Sisters Inner Circle Membership
+										The Ultimate Digital Course
 									</span>{" "}
-									process is the secret sauce that will help
-									you ditch the confusion and craft a
-									profitable digital product that sells like
-									hotcakes.
+									Master the art of faceless content creation and digital marketing! Learn to create viral social media posts, grow your Instagram, and design stunning visuals with Canva—all while building a powerful digital presence.
 								</p>
 							</div>
 

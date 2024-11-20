@@ -30,16 +30,18 @@ export default function SayGoodBTo() {
 						className="text-center space-y-2"
 					>
 						<p className="text-2xl leading-relaxed">
-							With our{" "}
+							<span>With our </span>
 							<span className="font-semibold">
-								SIS Inner Circle Membership
+								Digital Master Curse 
 							</span>
 							, you&apos;ll learn how to{" "}
 							<span className="font-bold">
 								create digital products that sell
 							</span>
-							, and never feel{" "}
-							<span className="italic">stuck or overwhelmed</span>{" "}
+							, and never feel
+							<span className="italic">
+								stuck or overwhelmed
+							</span>{" "}
 							again!
 						</p>
 					</motion.div>

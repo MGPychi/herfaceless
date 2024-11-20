@@ -15,11 +15,6 @@ export default function MemberShip() {
 				>
 					<div className="aspect-[3/4] hidden lg:block h-[60vh] mx-auto  lg:h-auto relative rounded-[2.5rem] border-8 border-black bg-[#e5d0ba] overflow-hidden shadow-xl">
 						<div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-							<h2 className="text-3xl font-bold mb-4">
-								SISTERS
-								<br />
-								INNER CIRCLE
-							</h2>
 							<div className="absolute top-1/2 right-0 w-1/2 h-full bg-black transform translate-x-1/4 rotate-12" />
 							<div className="absolute bottom-1/4 right-1/4 w-1/2 h-1/3 bg-[#4a3428] transform -rotate-45" />
 							<Sparkles className="absolute top-1/4 right-1/4 w-6 h-6" />
@@ -52,7 +47,8 @@ export default function MemberShip() {
 							transition={{ delay: 0.2 }}
 							className="text-4xl lg:text-5xl font-bold leading-tight"
 						>
-							Sisters Inner Circle Membership
+								The Ultimate Digital Faceless Course
+
 						</motion.h1>
 					</div>
 
@@ -63,11 +59,7 @@ export default function MemberShip() {
 						transition={{ delay: 0.3 }}
 						className="text-lg text-gray-700 leading-relaxed"
 					>
-						A comprehensive, on-demand membership you only need to
-						teaches you how to create, launch, and sell digital
-						products. This isn&apos;t just another course, it&apos;s
-						a complete system that provides you with the tools,
-						templates, and support you need to succeed.
+						Master faceless content creation and digital marketing! Learn to create viral social media content, grow on Instagram, and design stunning visuals with Canva—all without showing your face. Start building your faceless digital brand today!
 					</motion.p>
 
 					<motion.div

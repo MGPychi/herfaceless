@@ -133,7 +133,7 @@ export default function GamePlan() {
 					className="text-center"
 				>
 					<p className="text-sm font-medium uppercase tracking-wider text-gray-700">
-						IN 30 DAYS,
+						IN Couple Weeks
 					</p>
 					<p className="mb-2 text-sm font-medium uppercase tracking-wider text-gray-700">
 						THIS PROGRAM WILL HELP YOU WITH...
