@@ -105,7 +105,7 @@ export default function SuccessPage() {
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.5, delay: 0.5 }}
-                                className="relative h-[300px] w-[300px] max-w-sm aspect-square mb-8 rounded-2xl overflow-hidden shadow-lg"
+                                className="relative h-[300px] w-[220px] max-w-sm aspect-square mb-8 rounded-2xl overflow-hidden shadow-lg"
                             >
                                 <Image
                                     src={CoverImage}
