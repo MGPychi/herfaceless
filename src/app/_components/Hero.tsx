@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 // import { Play } from "lucide-react";
 import * as motion from "framer-motion/m";
 import MainVideo from "./MainVideo";
+import Link from "next/link";
 
 export default function Hero() {
 	return (
@@ -93,12 +94,14 @@ export default function Hero() {
 							delay: 0.2,
 						}}
 					>
+						<Link href="/#pricing">
 						<Button
 							aria-label="join now button"
 							className="bg-secondary hover:bg-secondary text-white hover:ring-2 hover:ring-secondary text-lg px-8 py-2 h-auto"
 						>
 							JOIN NOW!
 						</Button>
+						</Link>
 					</motion.div>
 				</div>
 			</main>

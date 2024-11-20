@@ -14,7 +14,7 @@ const fadeInUp = {
 
 const Problem = () => {
 	return (
-		<section className="min-h-screen bg-ground">
+		<section className="min-h-[80vh] bg-ground">
 			<div className="container mx-auto px-4 py-16">
 				<motion.div
 					initial={{ y: 50, opacity: 0 }}

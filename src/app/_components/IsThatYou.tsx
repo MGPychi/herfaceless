@@ -2,6 +2,7 @@ import * as motion from "framer-motion/m";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 const painPoints = [
 	"You've tried creating digital products before but ended up feeling frustrated and stuck.",
@@ -94,6 +95,7 @@ export default function IsThatYou() {
 							</div>
 
 							<div className="flex justify-center">
+								<Link href="/#pricing">
 								<Button
 									aria-label="ready now button"
 									className="bg-zinc-800 hover:bg-zinc-900 text-white px-8 py-6 text-lg rounded-full shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
@@ -101,6 +103,7 @@ export default function IsThatYou() {
 									<span>I&apos;M READY NOW!</span>
 									<CheckCircle2 className="ml-2 h-5 w-5" />
 								</Button>
+								</Link>
 							</div>
 						</motion.div>
 					</CardContent>

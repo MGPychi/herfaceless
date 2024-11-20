@@ -1,6 +1,7 @@
 import * as motion from "framer-motion/m";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const steps = [
 	{
@@ -206,12 +207,15 @@ export default function GamePlan() {
 						products that consistently generate sales and grow your
 						online business.
 					</p>
+				<Link href="/#pricing">
+
 					<Button
 						size="lg"
 						className="bg-black px-8 py-6 text-sm font-semibold uppercase tracking-wider text-white hover:bg-gray-800"
 					>
 						START YOUR TRANSFORMATION NOW!
 					</Button>
+				</Link>
 				</motion.div>
 			</div>
 		</section>

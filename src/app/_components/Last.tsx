@@ -1,5 +1,6 @@
 import * as motion from "framer-motion/m";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const SVGIllustration = () => (
 	<svg
@@ -167,6 +168,8 @@ export default function Last() {
 						transition={{ duration: 0.6, delay: 1 }}
 						className="pt-8"
 					>
+						<Link href="/#pricing">
+
 						<Button
 							aria-label="count me in button"
 							size="lg"
@@ -174,6 +177,7 @@ export default function Last() {
 						>
 							COUNT ME IN!
 						</Button>
+								</Link>
 					</motion.div>
 				</div>
 			</div>
