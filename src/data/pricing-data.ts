@@ -1,7 +1,7 @@
 "use server";
 import { PAGE_SIZE } from "@/constants";
 import { db } from "@/db";
-import { pricing } from "@/db/schema";
+import { pricing, pricingItem } from "@/db/schema";
 import { and, asc, count, gte, or, sql } from "drizzle-orm";
 import { unstable_cache } from "next/cache";
 import { cache } from "react";
@@ -10,9 +10,10 @@ export const getAllPricing = unstable_cache(
 	async () => {
 		return await db.query.pricing.findMany({
 			with: {
-				pricingItems: true,
+				pricingItems: {
+					orderBy:[asc(pricingItem.createdAt)]
+				},
 			},
-			orderBy:[asc(pricing.createdAt)]
 		});
 	},
 	["pricing"],
