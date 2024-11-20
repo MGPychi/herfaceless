@@ -63,7 +63,7 @@ export const pricing = pgTable("pricing", {
 export const pricingItem = pgTable("pricing_item", {
 	id: uuid("id").defaultRandom().primaryKey(),
 	body: varchar("body").notNull(),
-	pricingId: uuid("pricing_id").notNull(),
+	pricingId: uuid("pricing_id").notNull().references(()=>pricing.id,{onDelete:"cascade"}),
 	createdAt: timestamp("created_at").notNull().defaultNow(),
 	updatedAt: timestamp("updated_at")
 		.defaultNow()

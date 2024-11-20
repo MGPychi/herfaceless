@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFieldArray, useForm } from "react-hook-form";
 import * as z from "zod";
-import { Plus, Trash2 } from "lucide-react";
+import { Loader2, Plus, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -172,11 +172,19 @@ export default function UpdatePricingForm({ pricing }: Props) {
 						</div>
 						<div className="flex justify-end">
 							<Button
-								className="w-32"
+							disabled={form.formState.isSubmitting}
+								className={`${form.formState.isLoading && "opacity-90"} w-32`}
 								variant={"default"}
 								type="submit"
 							>
-								Save
+								<span>
+
+								Update
+								</span>
+
+						{form.formState.isSubmitting && (
+							<Loader2 className="h-4 w-4 animate-spin" />
+						)}
 							</Button>
 						</div>
 					</form>

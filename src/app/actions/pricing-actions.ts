@@ -20,11 +20,13 @@ export const createNewPricing = actionClient
 					.values(parsedInput)
 					.returning({ insertedId: pricing.id })
 			)[0];
-			parsedInput.pricingItems.forEach(async (item) => {
+			console.log(parsedInput.pricingItems)
+			for (const item of parsedInput.pricingItems) {
+				console.log("Inserting:", item);
 				await ctx.db
 					.insert(pricingItem)
 					.values({ ...item, pricingId: pricingId.insertedId });
-			});
+			}
 		} catch (err) {
 			console.error(err);
 			return { success: false };

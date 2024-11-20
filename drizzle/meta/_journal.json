@@ -43,6 +43,13 @@
       "when": 1731954946559,
       "tag": "0005_light_shen",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1732103058050,
+      "tag": "0006_milky_champions",
+      "breakpoints": true
     }
   ]
 }
