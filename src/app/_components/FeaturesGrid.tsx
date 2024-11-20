@@ -11,6 +11,7 @@ import {
 	Lightbulb,
 	Star,
 } from "lucide-react";
+import Link from "next/link";
 
 const features = [
 	{
@@ -48,7 +49,7 @@ const features = [
 	{
 		icon: MessageSquare,
 		title: "Social Media Success Framework",
-		value: 1997,
+		value: 47,
 		description:
 			"A step-by-step guide to crafting winning social media strategies that drive results.",
 		darkBg: true,
@@ -56,7 +57,7 @@ const features = [
 	{
 		icon: Briefcase,
 		title: "Guide to Creating Faceless Reels",
-		value: 297,
+		value: 97,
 		description:
 			"Learn how to create captivating faceless reels that engage and grow your audience.",
 		darkBg: false,
@@ -64,7 +65,7 @@ const features = [
 	{
 		icon: Lightbulb,
 		title: "The Definitive Faceless Content Guide",
-		value: 2997,
+		value: 85,
 		description:
 			"Master the art of faceless content creation with this ultimate guide to stand out online.",
 		darkBg: true,
@@ -72,13 +73,12 @@ const features = [
 	{
 		icon: Star,
 		title: "Canva Essentials for Beginners",
-		value: 1997,
+		value: 27,
 		description:
 			"Learn the basics of Canva to create stunning designs and elevate your brand effortlessly.",
 		darkBg: false,
 	},
 ];
-
 
 const container = {
 	hidden: { opacity: 0 },
@@ -158,12 +158,14 @@ export default function FeaturesGrid() {
 						</span>
 					</div>
 
-					<Button
-						aria-label="get started button"
-						className="bg-black hover:bg-black/90 text-white px-8 py-6 text-lg rounded-md"
-					>
-						GET STARTED TODAY!
-					</Button>
+					<Link href={"/#pricing"} className="block">
+						<Button
+							aria-label="get started button"
+							className="bg-black hover:bg-black/90 text-white px-8 py-6 text-lg rounded-md"
+						>
+							GET STARTED TODAY!
+						</Button>
+					</Link>
 				</motion.div>
 			</div>
 		</section>
