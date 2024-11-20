@@ -13,7 +13,7 @@ import Link from "next/link";
 export default async function Reviews() {
 	const reviews = await getAllReviews();
 	return (
-		<div className="bg-gradient-to-b  bg-ground py-4 md:py-24 px-4">
+		<section className="bg-gradient-to-b  bg-ground py-4 md:py-24 px-4">
 			<div className="container mx-auto max-w-6xl">
 				<motion.div
 					initial={{ opacity: 0, y: 100 }}
@@ -56,7 +56,7 @@ export default async function Reviews() {
 					</div>
 				</motion.div>
 			</div>
-		</div>
+		</section>
 	);
 }
 

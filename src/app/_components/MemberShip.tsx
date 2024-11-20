@@ -4,7 +4,7 @@ import * as motion from "framer-motion/m";
 
 export default function MemberShip() {
 	return (
-		<div className="lg:min-h-screen bg-ground  flex items-center justify-center p-6">
+		<section className="lg:min-h-screen bg-ground  flex items-center justify-center p-6">
 			<div className="max-w-7xl w-full mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 				<motion.div
 					initial={{ opacity: 0, x: -50 }}
@@ -85,6 +85,6 @@ export default function MemberShip() {
 					</motion.div>
 				</motion.div>
 			</div>
-		</div>
+		</section>
 	);
 }

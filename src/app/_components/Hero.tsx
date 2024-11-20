@@ -6,7 +6,7 @@ import MainVideo from "./MainVideo";
 
 export default function Hero() {
 	return (
-		<div className="min-h-[90vh]    !bg-ground relative overflow-hidden">
+		<section className="min-h-[90vh]    !bg-ground relative overflow-hidden">
 			<motion.div
 				initial={{ opacity: 0, rotate: -10, scale: 0.9 }}
 				whileInView={{ opacity: 0.2, rotate: 0, scale: 1 }}
@@ -102,7 +102,7 @@ export default function Hero() {
 					</motion.div>
 				</div>
 			</main>
-		</div>
+		</section>
 	);
 }
 

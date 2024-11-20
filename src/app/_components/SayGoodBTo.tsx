@@ -19,7 +19,7 @@ const item = {
 
 export default function SayGoodBTo() {
 	return (
-		<div className=" bg-ground flex items-center justify-center px-6 py-20">
+		<section className=" bg-ground flex items-center justify-center px-6 py-20">
 			<Card className="max-w-2xl bg-transparent border-none shadow-none">
 				<CardContent className="space-y-8">
 					<motion.div
@@ -115,6 +115,6 @@ export default function SayGoodBTo() {
 					</motion.div>
 				</CardContent>
 			</Card>
-		</div>
+		</section>
 	);
 }

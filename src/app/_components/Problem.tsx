@@ -14,7 +14,7 @@ const fadeInUp = {
 
 const Problem = () => {
 	return (
-		<div className="min-h-screen bg-ground">
+		<section className="min-h-screen bg-ground">
 			<div className="container mx-auto px-4 py-16">
 				<motion.div
 					initial={{ y: 50, opacity: 0 }}
@@ -107,7 +107,7 @@ const Problem = () => {
 					</motion.div>
 				</motion.div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

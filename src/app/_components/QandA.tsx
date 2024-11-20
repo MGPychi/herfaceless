@@ -61,7 +61,7 @@ const motionItem = {
 };
 export default function QandA() {
 	return (
-		<div className="min-h-screen bg-ground  py-20 px-4">
+		<section className="min-h-screen bg-ground  py-20 px-4">
 			<div className="max-w-screen-md mx-auto space-y-10">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -127,6 +127,6 @@ export default function QandA() {
 					</Link>
 				</motion.div>
 			</div>
-		</div>
+		</section>
 	);
 }

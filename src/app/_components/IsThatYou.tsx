@@ -30,7 +30,7 @@ const item = {
 
 export default function IsThatYou() {
 	return (
-		<div className="min-h-screen bg-ground   py-20 px-2  md:px-4">
+		<section className="min-h-screen bg-ground   py-20 px-2  md:px-4">
 			<div className="  max-w-6xl mx-auto">
 				<Card className="border-none bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl overflow-hidden">
 					<CardContent className="p-4 py-8 md:p-12 space-y-10">
@@ -106,6 +106,6 @@ export default function IsThatYou() {
 					</CardContent>
 				</Card>
 			</div>
-		</div>
+		</section>
 	);
 }
