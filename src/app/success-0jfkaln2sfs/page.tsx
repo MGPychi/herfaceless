@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import * as motion from "framer-motion/m"
 import { useState } from "react";
+import CoverImage from "../../../public/cover.webp"
 
 export default function SuccessPage() {
     const [isDownloading, setIsDownloading] = useState(false);
@@ -107,7 +108,7 @@ export default function SuccessPage() {
                                 className="relative h-[300px] w-[300px] max-w-sm aspect-square mb-8 rounded-2xl overflow-hidden shadow-lg"
                             >
                                 <Image
-                                    src="/placeholder.svg"
+                                    src={CoverImage}
                                     alt="Digital Course Cover"
                                     fill
                                     className="object-cover"
