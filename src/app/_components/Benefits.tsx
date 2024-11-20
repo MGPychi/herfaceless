@@ -1,5 +1,4 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -12,7 +11,6 @@ import {
 	ChevronRight,
 } from "lucide-react";
 import * as motion from "framer-motion/m";
-// import { m as motion} from "framer-motion";
 import {
 	Tooltip,
 	TooltipContent,
@@ -20,6 +18,9 @@ import {
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
+import Image from "next/image";
+
+import SectionImage from "../../../public/phones.webp"
 
 const benefits = [
 	{
@@ -56,7 +57,7 @@ const benefits = [
 
 export default function Benefits() {
 	return (
-		<section className="py-4 md:py-24 px-4 bg-gradient-to-b  bg-ground  overflow-hidden">
+		<section className="py-4 md:py-24 px-4 bg-gradient-to-b   bg-ground  overflow-hidden">
 			<div className="container mx-auto">
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
@@ -76,14 +77,9 @@ export default function Benefits() {
 
 					<div className="grid lg:grid-cols-2 gap-12 items-center">
 						<div className="relative mx-auto lg:mx-0 order-2 lg:order-1">
-							<Card className="bg-[#f0f8ff] p-8 rounded-2xl shadow-xl max-w-md transform hover:scale-105 transition-transform duration-300">
 								<div className="relative aspect-square">
-									<IllustrationBusiness />
-									<div className="absolute bottom-0 right-0 w-1/4 h-1/4">
-										<IllustrationPlant />
-									</div>
+									<Image src={SectionImage}  alt="section image"    />
 								</div>
-							</Card>
 						</div>
 
 						<div className="space-y-4 order-1 lg:order-2">
@@ -161,69 +157,4 @@ function BenefitItem({ benefit }: { benefit: Benefit }) {
 	);
 }
 
-function IllustrationBusiness() {
-	return (
-		<svg viewBox="0 0 200 200" className="w-full h-full">
-			<rect
-				x="60"
-				y="80"
-				width="80"
-				height="100"
-				rx="10"
-				className="fill-[#003366]"
-			/>
-			<circle cx="100" cy="100" r="25" className="fill-[#0066cc]" />
-			<rect
-				x="75"
-				y="90"
-				width="50"
-				height="60"
-				rx="25"
-				className="fill-[#0066cc]"
-			/>
-			<rect
-				x="85"
-				y="110"
-				width="40"
-				height="30"
-				rx="5"
-				className="fill-[#e6f2ff]"
-			/>
-			<rect
-				x="85"
-				y="130"
-				width="40"
-				height="5"
-				rx="2"
-				className="fill-[#003366]"
-			/>
-			<path
-				d="M40,150 Q30,140 40,130 Q50,140 40,150"
-				className="fill-[#666]"
-			/>
-			<circle cx="35" cy="140" r="8" className="fill-[#666]" />
-		</svg>
-	);
-}
 
-function IllustrationPlant() {
-	return (
-		<svg viewBox="0 0 50 50" className="w-full h-full">
-			<rect
-				x="20"
-				y="35"
-				width="10"
-				height="15"
-				className="fill-[#0066cc]"
-			/>
-			<path
-				d="M25,35 Q15,25 25,15 Q35,25 25,35"
-				className="fill-[#003366]"
-			/>
-			<path
-				d="M25,30 Q35,20 25,10 Q15,20 25,30"
-				className="fill-[#003366]"
-			/>
-		</svg>
-	);
-}

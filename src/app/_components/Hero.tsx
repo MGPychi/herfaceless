@@ -36,7 +36,7 @@ export default function Hero() {
 						transition={{ type: "spring", stiffness: 300 }}
 						className="bg-secondary text-white text-sm px-6  py-2 rounded-full uppercase tracking-wider"
 					>
-						Mens Inner Circle Membership
+						The Ultimate Faceless Digital Course
 					</motion.div>
 
 					{/* Headings */}
@@ -51,14 +51,14 @@ export default function Hero() {
 						}}
 						className="space-y-4"
 					>
-						<h1 className="text-2xl sm:text-4xl md:text-6xl font-bold leading-tight">
-							Build, launch, and scale{" "}
-							<span className="text-[#003366]">your own</span>
+						<h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">
+							Achieve Design, publish, and market
 							<br />
-							digital empire in just{" "}
-							<span className="text-secondary">30 days</span>
+							<span className="text-secondary">digital </span>
+							your own  creations using{" "}
+							<span className="text-secondary">Canva.</span>
 						</h1>
-						<p className="text-gray-700  sm:text-lg md:text-xl max-w-3xl mx-auto">
+						<p className="text-gray-700  sm:text-lg  max-w-3xl mx-auto">
 							Transform your expertise into a thriving online
 							business. Get consistent sales notifications, secure
 							financial freedom, and create the lifestyle you have
