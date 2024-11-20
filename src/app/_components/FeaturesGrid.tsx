@@ -10,83 +10,75 @@ import {
 	Briefcase,
 	Lightbulb,
 	Star,
-	FileCode,
 } from "lucide-react";
 
 const features = [
 	{
 		icon: FileText,
-		title: "The Secret to Viral on Instagram",
+		title: "The Key to Going Viral on Instagram (+50 Insights)",
 		value: 197,
 		description:
-			"50+ actionable lessons to master engagement, grow your audience, and create shareable, viral content.",
+			"Unlock 50 expert tips to create viral Instagram content, grow your audience, and boost engagement.",
 		darkBg: true,
 	},
 	{
 		icon: Mic,
-		title: "Digital Marketing Playbook",
+		title: "Digital Marketing Strategy Handbook",
 		value: 97,
 		description:
-			"Unlock the secrets to digital marketing success! Learn to create viral social media strategies, grow your online presence, and design eye-catching content with Canva to elevate your brand.",
+			"Master digital marketing with actionable strategies to build your brand and convert followers into customers.",
 		darkBg: false,
 	},
 	{
 		icon: Database,
-		title: "Instagram Marketing",
+		title: "Mastering Instagram Marketing",
 		value: 87,
 		description:
-			"Master the art of Instagram marketing with strategies to grow your audience, boost engagement, and drive real results for your brand or business.",
+			"Learn the secrets to optimizing your Instagram profile, content, and hashtags for maximum impact.",
 		darkBg: true,
 	},
 	{
 		icon: Pen,
-		title: "Access to the Exclusive Private Community",
+		title: "Exclusive Members-Only Community",
 		value: 297,
 		description:
-			"A step-by-step guide to build and launch your own membership site.",
+			"Connect with like-minded marketers, share insights, and gain exclusive access to expert tips.",
 		darkBg: false,
 	},
 	{
 		icon: MessageSquare,
-		title: "Weekly Q&A on Community Group",
+		title: "Social Media Success Framework",
 		value: 1997,
 		description:
-			"Offer quick answers, expert tips, and lively discussions within the community.",
+			"A step-by-step guide to crafting winning social media strategies that drive results.",
 		darkBg: true,
 	},
 	{
 		icon: Briefcase,
-		title: "Bonus: Social Media Marketing Mastery",
+		title: "Guide to Creating Faceless Reels",
 		value: 297,
 		description:
-			"A step-by-step guide to selling your products on social media.",
+			"Learn how to create captivating faceless reels that engage and grow your audience.",
 		darkBg: false,
 	},
 	{
 		icon: Lightbulb,
-		title: "Monthly Group Coaching Lesson",
+		title: "The Definitive Faceless Content Guide",
 		value: 2997,
 		description:
-			"A more intimate session focused on direct coaching, tackling participants' challenges, goals, and progress.",
+			"Master the art of faceless content creation with this ultimate guide to stand out online.",
 		darkBg: true,
 	},
 	{
 		icon: Star,
-		title: "Sisterhood Growth Community",
+		title: "Canva Essentials for Beginners",
 		value: 1997,
 		description:
-			"A place for you to share experiences, resources, and encouragement to foster growth.",
+			"Learn the basics of Canva to create stunning designs and elevate your brand effortlessly.",
 		darkBg: false,
 	},
-	{
-		icon: FileCode,
-		title: "Bonus: Product Launch Blueprint",
-		value: 397,
-		description:
-			"Everything you need to launch your product with confidence and success.",
-		darkBg: true,
-	},
 ];
+
 
 const container = {
 	hidden: { opacity: 0 },
@@ -130,7 +122,7 @@ export default function FeaturesGrid() {
 					{features.map((feature, index) => (
 						<motion.div key={index} variants={item}>
 							<Card
-								className={`h-full transition-transform hover:scale-105 ${
+								className={`h-full min-h-[300px] transition-transform hover:scale-105 ${
 									feature.darkBg
 										? "bg-black text-white"
 										: "bg-white text-black"

@@ -135,7 +135,7 @@ export default function SuccessPage() {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.7 }}
                                 >
-                                    <Link href="/community">
+                                    <Link target="_blank" href="https://discord.gg/vkmuKYUq">
                                         <Button
                                             variant="outline"
                                             className="w-full h-12 text-lg border-[#7289da] text-[#7289da] hover:bg-[#7289da] hover:text-white"
