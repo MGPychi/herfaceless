@@ -34,7 +34,7 @@ export default function Home() {
 				<QandA />
 				<Imagine />
 				<FandQ />
-				<Last />
+				{/* <Last /> */}
 				<NewsletterSubscription />
 			</main>
 			<Footer />

@@ -153,7 +153,7 @@ export default function SuccessPage() {
                                     transition={{ duration: 0.5, delay: 0.8 }}
                                     className="text-sm text-muted-foreground"
                                 >
-                                    Having trouble? Contact our support team at support@example.com
+                                    Having trouble? Contact our support team at  herfacelessmarketing1@gmail.com
                                 </motion.p>
                             </div>
                         </CardContent>

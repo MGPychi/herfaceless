@@ -24,7 +24,7 @@ const content = [
 	},
 	{
 		title: "Fast-forward to a day when your phone buzzes with payment notifications...",
-		text: "And you think, \"Alhamdulillah, I can't believe how far I've come.\"",
+		text: "And you think, \", I can't believe how far I've come.\"",
 		delay: 0.2,
 	},
 	{
