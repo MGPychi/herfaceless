@@ -77,8 +77,7 @@ export default function Footer() {
         </div>
         <div className="mt-8 border-t pt-8">
           <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Your Company. All rights
-            reserved.
+            © {new Date().getFullYear()} © 2024 Her Faceless Makreting. All rights reserved.
           </p>
         </div>
       </div>
