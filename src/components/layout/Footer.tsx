@@ -63,7 +63,7 @@ export default function Footer() {
                   herfacelessmarketing1@gmail.com
                 </Link>
                 <Link
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/her.facelessmarketing/"
                   className="flex items-center gap-2 text-sm hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
