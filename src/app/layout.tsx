@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
 import Wrappers from "@/components/Wrappers";
+import { Analytics } from "@vercel/analytics/react"
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -28,6 +29,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={` `}>
 				<Wrappers>{children}</Wrappers>
+				<Analytics />
 			</body>
 		</html>
 	);
