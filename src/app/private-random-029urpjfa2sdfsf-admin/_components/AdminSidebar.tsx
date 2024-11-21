@@ -11,27 +11,28 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { ADMIN_PAGE } from "@/constants";
 
 // Menu items.
 const items = [
 	{
 		title: "Dashboard",
-		url: "/admin",
+		url: `${ADMIN_PAGE}`,
 		icon: Home,
 	},
 	{
 		title: "Newsletter",
-		url: "/admin/newsletter",
+		url: `${ADMIN_PAGE}/newsletter`,
 		icon: Inbox,
 	},
 	{
 		title: "Pricing",
-		url: "/admin/pricing",
+		url: `${ADMIN_PAGE}/pricing`,
 		icon: DollarSign,
 	},
 	{
 		title: "Reviews",
-		url: "/admin/reviews",
+		url: `${ADMIN_PAGE}/reviews`,
 		icon: TextCursor,
 	},
 ];
