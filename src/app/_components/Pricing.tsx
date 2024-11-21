@@ -57,7 +57,7 @@ export default async function Pricing() {
                 <CardHeader>
                   <CardTitle className="text-2xl">{plan.title}</CardTitle>
                   <p className="text-sm text-muted-foreground">
-                    (Billed Monthly)
+                    (One Time Payment)
                   </p>
                   <div className="text-4xl font-bold mt-4">
                     <span className="text-[#b17f65]">${plan.price}</span>
