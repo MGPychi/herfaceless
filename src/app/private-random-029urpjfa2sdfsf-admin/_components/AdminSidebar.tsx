@@ -12,6 +12,7 @@ import {
 	SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { ADMIN_PAGE } from "@/constants";
+import Link from "next/link";
 
 // Menu items.
 const items = [
@@ -48,10 +49,10 @@ export default function AdminSideBar() {
 							{items.map((item) => (
 								<SidebarMenuItem key={item.title}>
 									<SidebarMenuButton asChild>
-										<a href={item.url}>
-											<item.icon />
-											<span>{item.title}</span>
-										</a>
+										<Link href={item.url}>
+												<item.icon />
+												<span>{item.title}</span>
+										</Link>
 									</SidebarMenuButton>
 								</SidebarMenuItem>
 							))}

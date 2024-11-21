@@ -23,6 +23,7 @@ import {
 	FormLabel,
 	FormMessage,
 } from "@/components/ui/form";
+import { ADMIN_PAGE } from "@/constants";
 
 // Define the form schema with Zod
 const formSchema = z.object({
@@ -49,7 +50,7 @@ export default function AdminLogin() {
 			setError(null);
 			await signIn("credentials", {
 				redirect: true,
-				redirectTo: "/admin",
+				redirectTo: ADMIN_PAGE,
 				...values,
 			});
 			router.push("/admin");
