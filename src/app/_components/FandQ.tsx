@@ -51,7 +51,7 @@ const faqs = [
 		icon: Users,
 	},
 	{
-		question: "Why the membership priced the way it is?",
+		question: "Why the Course priced the way it is?",
 		answer: "Our pricing reflects the comprehensive value of our program, including all resources, support, and community access.",
 		icon: DollarSign,
 	},
@@ -90,7 +90,7 @@ export default function FandQ() {
 				>
 					<h2 className="text-4xl font-bold text-gray-900">FAQs</h2>
 					<p className="mt-4 text-lg text-gray-600">
-						Everything you need to know about our membership
+						Everything you need to know about our Course
 					</p>
 				</motion.div>
 

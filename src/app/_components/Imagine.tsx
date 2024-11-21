@@ -102,7 +102,7 @@ export default function Imagine() {
 					<Card className="border-none bg-primary/5 backdrop-blur">
 						<CardContent className="p-8">
 							<h3 className="text-xl font-bold text-primary mb-4">
-								All of this is possible with our membership.
+								All of this is possible with our Course.
 							</h3>
 							<p className="text-gray-700 mb-8 max-w-2xl mx-auto">
 								It is not just about creating a product, it is

@@ -67,7 +67,7 @@ export default function Benefits() {
 				>
 					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 text-secondary">
 						Here is What You Get Inside
-						<br className="hidden md:inline" /> the Membership:
+						<br className="hidden md:inline" /> the Course:
 					</h2>
 					<p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
 						Unlock a suite of powerful tools and resources designed

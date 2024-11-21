@@ -119,7 +119,7 @@ export default function Last() {
 						<br />
 						you know{" "}
 						<span className="font-semibold">
-							our membership can help achieve your dreams.
+							our Course can help achieve your dreams.
 						</span>
 					</motion.p>
 
@@ -142,7 +142,7 @@ export default function Last() {
 						transition={{ duration: 0.6, delay: 0.7 }}
 						className="text-lg"
 					>
-						Inside our membership you&apos;ll learn how to create{" "}
+						Inside our Course you&apos;ll learn how to create{" "}
 						<span className="font-semibold">
 							successful digital products
 						</span>{" "}

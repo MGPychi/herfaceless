@@ -40,7 +40,7 @@ const benefits = [
 		icon: Handshake,
 		title: "Ongoing Support & Community",
 		description:
-			"Get access to a supportive community of fellow sisters and live Q&A sessions to help you overcome any obstacles.",
+			"Get access to a supportive community of fellow the ultimate faceless digital course and live Q&A sessions to help you overcome any obstacles.",
 	},
 ];
 

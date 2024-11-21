@@ -203,7 +203,7 @@ export default function GamePlan() {
 				>
 					<p className="mx-auto mb-8 max-w-2xl text-gray-700">
 						After mastering the tools and strategies inside our
-						Passion To Profit Membership, you can expect to create
+						Passion To Profit The Course, you can expect to create
 						products that consistently generate sales and grow your
 						online business.
 					</p>

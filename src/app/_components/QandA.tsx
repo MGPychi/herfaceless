@@ -41,7 +41,7 @@ const comparisonItems = [
 			"Get access to tools, templates, and resources that are not available anywhere else, giving you a competitive edge in your industry.",
 	},
 	{
-		title: "Community and Sisterhood",
+		title: "Faceless Amazing Community",
 		content: "Join a supportive community",
 	},
 ];
@@ -69,13 +69,13 @@ export default function QandA() {
 					viewport={{ once: true }}
 					className="text-center space-y-4"
 				>
-					<h2 className="text-3xl md:text-4xl font-bold">
-						SISTERS INNER CIRCLE MEMBERSHIP
+					<h2 className="text-3xl uppercase md:text-4xl font-bold">
+						the ultimate faceless digital course
 						<br />
 						VS OTHERS
 					</h2>
 					<p className="text-gray-600 text-lg">
-						How our membership programs differ from others:
+						How our Course programs differ from others:
 					</p>
 				</motion.div>
 
