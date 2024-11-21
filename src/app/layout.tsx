@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Wrappers from "@/components/Wrappers";
 import { Analytics } from "@vercel/analytics/react"
 
@@ -30,6 +31,7 @@ export default function RootLayout({
 			<body className={` `}>
 				<Wrappers>{children}</Wrappers>
 				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	);
