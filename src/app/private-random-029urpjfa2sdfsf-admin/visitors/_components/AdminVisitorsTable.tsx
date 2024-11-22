@@ -1,7 +1,5 @@
 "use client";
-import { getNewsletter } from "@/data/newsletter-data";
 import { Button } from "@/components/ui/button";
-import toast from "react-hot-toast";
 import {
 	Card,
 	CardContent,
@@ -26,22 +24,22 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 // import { useToast } from "@/hooks/use-toast";
-import { MoreHorizontalIcon } from "lucide-react";
+import { Check, MoreHorizontalIcon, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { deleteNewsletter } from "@/app/actions/newsletter-actions";
+import { getVisitors } from "@/data/visitors-data";
+import toast from "react-hot-toast";
+import { deleteVisitor } from "@/app/actions/visitors-actions";
 import { ADMIN_PAGE } from "@/constants";
 
-// import { deleteEmailAction } from "../actions";
-
 interface Props {
-	data: Awaited<ReturnType<typeof getNewsletter>>["data"];
+	data: Awaited<ReturnType<typeof getVisitors>>["data"];
 	count: number;
 	currentPage: number;
 	searchTerm: string;
 }
 
-export default function AdminNewsletterTable({
+export default function AdminVisitorsTable({
 	data,
 	count,
 	currentPage,
@@ -64,7 +62,7 @@ export default function AdminNewsletterTable({
 		// Set a new timeout to wait for 500ms before executing search
 		const timeout = setTimeout(() => {
 			router.push(
-				`${ADMIN_PAGE}/newsletter?search=${value}&page=${currentPage}`,
+				`${ADMIN_PAGE}/dashboard/visitors?search=${value}&page=${currentPage}`,
 			);
 		}, 500);
 
@@ -75,38 +73,39 @@ export default function AdminNewsletterTable({
 		<Card className="w-full">
 			<CardHeader>
 				<div className="flex items-center justify-between space-x-6">
-					<CardTitle>Newsletter Dashboard</CardTitle>
+					<CardTitle>Visitors Dashboard</CardTitle>
 				</div>
 			</CardHeader>
 			<CardContent className="min-h-[calc(100vh-328px)]">
 				<div className="mb-6 flex flex-col gap-4 md:flex-row">
 					<Input
-						placeholder="Search newsletter..."
+						placeholder="Search Visitors..."
 						value={searchInput}
 						onChange={(e) => handleSearch(e.target.value)}
 						className="md:w-1/3"
 					/>
 				</div>
-
 				<Table>
 					<TableHeader>
 						<TableRow>
-							<TableHead>Name</TableHead>
-							<TableHead>Email</TableHead>
-							<TableHead>Registred at</TableHead>
+							<TableHead>IP</TableHead>
+							<TableHead>Clicked Pricing</TableHead>
+							<TableHead>Pricing</TableHead>
+							<TableHead>Date</TableHead>
 							<TableHead>Actions</TableHead>
 						</TableRow>
 					</TableHeader>
 					<TableBody>
 						{data.map((item) => (
 							<TableRow key={item.id}>
-								<TableCell>{item.name ?? "None"}</TableCell>
-								<TableCell>{item.email}</TableCell>
+								<TableCell>{item.ip}</TableCell>
+								<TableCell>{item.clickedOnThePricing ?<Check/>:<X/>}</TableCell>
+								<TableCell>{item.pricingType??"None" }</TableCell>
 								<TableCell>
 									{item.createdAt?.toLocaleDateString()}
 								</TableCell>
-								<TableCell>
-									<NewsletterActionsMenu userId={item.id} />
+								<TableCell onClick={(e) => e.stopPropagation()}>
+									<UserActionsMenu id={item.id} />
 								</TableCell>
 							</TableRow>
 						))}
@@ -115,20 +114,18 @@ export default function AdminNewsletterTable({
 			</CardContent>
 			<CardFooter className="flex w-full justify-center">
 				<span className="text-sm text-muted-foreground">
-					{count} newsletter
+					{count} Visitors
 				</span>
 			</CardFooter>
 		</Card>
 	);
 }
 
-interface NewsletterActionsMenuProps {
-	userId: string;
+interface UserActionsMenuProps {
+	id: string;
 }
 
-export const NewsletterActionsMenu = ({
-	userId,
-}: NewsletterActionsMenuProps) => {
+export const UserActionsMenu = ({ id }: UserActionsMenuProps) => {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
@@ -143,13 +140,13 @@ export const NewsletterActionsMenu = ({
 						variant="destructive"
 						size="sm"
 						onClick={async () => {
-							const result = await deleteNewsletter({
-								id: userId,
+							const result = await deleteVisitor({
+								id: id,
 							});
 							if (result?.data?.success) {
-								toast("deleted");
+								toast("visitor deleted");
 							} else {
-								toast("unable to delete");
+								toast("Failed to delete visitor");
 							}
 						}}
 					>

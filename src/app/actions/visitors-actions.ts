@@ -1,6 +1,9 @@
 "use server";
+import { ADMIN_PAGE } from "@/constants";
 import { visitors } from "@/db/schema";
-import { actionClient } from "@/utils/safe-actions";
+import { actionClient, protectedActionClient } from "@/utils/safe-actions";
+import { eq } from "drizzle-orm";
+import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
 import { z } from "zod";
 
@@ -27,3 +30,15 @@ export const createVisitor = actionClient
 		}
 		return { success: true };
 	});
+
+export const deleteVisitor = protectedActionClient.schema(z.object({id: z.string()})).action(async ({ctx, parsedInput}) => {
+    try {
+        await ctx.db.delete(visitors).where(eq(visitors.id, parsedInput.id))
+    } catch (e) {
+        console.error(e);
+        return {success: false};
+    }
+    revalidatePath(`${ADMIN_PAGE}/visitors`);
+    return {success: true};
+
+})

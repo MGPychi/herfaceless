@@ -1,4 +1,5 @@
 "use server";
+import { ADMIN_PAGE } from "@/constants";
 import { insertNewsLetterSchema, newsletter } from "@/db/schema";
 import { actionClient, protectedActionClient } from "@/utils/safe-actions";
 import { eq } from "drizzle-orm";
@@ -29,6 +30,6 @@ export const deleteNewsletter = protectedActionClient
 			console.log(err);
 			return { success: false };
 		}
-		revalidatePath("/admin/dashboard/newsletter");
+		revalidatePath(`${ADMIN_PAGE}/newsletter`);
 		return { success: true };
 	});

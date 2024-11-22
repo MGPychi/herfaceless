@@ -1,4 +1,5 @@
 "use server";
+import { ADMIN_PAGE } from "@/constants";
 import {
 	insertPricingSchema,
 	pricing,
@@ -32,7 +33,7 @@ export const createNewPricing = actionClient
 			return { success: false };
 		}
 		revalidateTag("pricing");
-		revalidatePath("/admin/dashboard/pricing");
+		revalidatePath(`${ADMIN_PAGE}/pricing`);
 		return { success: true };
 	});
 
@@ -64,7 +65,7 @@ export const updatePricing = actionClient
 			return { success: false };
 		}
 		revalidateTag("pricing");
-		revalidatePath("/admin/dashboard/pricing");
+		revalidatePath(`${ADMIN_PAGE}/pricing`);
 		return { success: true };
 	});
 
@@ -82,6 +83,6 @@ export const deletePricing = protectedActionClient
 			return { success: false };
 		}
 		revalidateTag("pricing");
-		revalidatePath("/admin/dashboard/pricing");
+		revalidatePath(`${ADMIN_PAGE}/pricing`);
 		return { success: true };
 	});

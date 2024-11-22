@@ -34,6 +34,7 @@ import CreateReviewModal from "./CreateReviewModal";
 import { ReviewDataModal } from "./ReviewDataModal";
 import toast from "react-hot-toast";
 import { deleteReview } from "@/app/actions/reviews-actions";
+import { ADMIN_PAGE } from "@/constants";
 
 interface Props {
 	data: Awaited<ReturnType<typeof getReviews>>["data"];
@@ -65,7 +66,7 @@ export default function AdminReviewsTable({
 		// Set a new timeout to wait for 500ms before executing search
 		const timeout = setTimeout(() => {
 			router.push(
-				`/admin/dashboard/reviews?search=${value}&page=${currentPage}`,
+				`${ADMIN_PAGE}/dashboard/reviews?search=${value}&page=${currentPage}`,
 			);
 		}, 500);
 

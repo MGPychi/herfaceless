@@ -1,5 +1,5 @@
 "use client";
-import { DollarSign, TextCursor, Home, Inbox } from "lucide-react";
+import { DollarSign, TextCursor, Home, Inbox, Users } from "lucide-react";
 
 import {
 	Sidebar,
@@ -35,6 +35,12 @@ const items = [
 		title: "Reviews",
 		url: `${ADMIN_PAGE}/reviews`,
 		icon: TextCursor,
+	},
+
+	{
+		title: "Visitors",
+		url: `${ADMIN_PAGE}/visitors`,
+		icon: Users,
 	},
 ];
 

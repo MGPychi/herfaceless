@@ -32,6 +32,7 @@ import { getPricing } from "@/data/pricing-data";
 import { deletePricing } from "@/app/actions/pricing-actions";
 import NewPricingModal from "./NewPricingModal";
 import UpdatePricingModal from "./UpdatePricingModal";
+import { ADMIN_PAGE } from "@/constants";
 
 // import { deleteEmailAction } from "../actions";
 
@@ -65,7 +66,7 @@ export default function AdminPricingTable({
 
 		// Set a new timeout to wait for 500ms before executing search
 		const timeout = setTimeout(() => {
-			router.push(`/admin/pricing?search=${value}&page=${currentPage}`);
+			router.push(`${ADMIN_PAGE}/pricing?search=${value}&page=${currentPage}`);
 		}, 500);
 
 		setDebounceTimeout(timeout);

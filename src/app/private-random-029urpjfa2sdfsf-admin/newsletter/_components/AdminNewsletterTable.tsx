@@ -30,6 +30,7 @@ import { Check, MoreHorizontalIcon, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { deleteNewsletter } from "@/app/actions/newsletter-actions";
+import { ADMIN_PAGE } from "@/constants";
 
 // import { deleteEmailAction } from "../actions";
 
@@ -63,7 +64,7 @@ export default function AdminNewsletterTable({
 		// Set a new timeout to wait for 500ms before executing search
 		const timeout = setTimeout(() => {
 			router.push(
-				`/admin/newsletter?search=${value}&page=${currentPage}`,
+				`${ADMIN_PAGE}/newsletter?search=${value}&page=${currentPage}`,
 			);
 		}, 500);
 

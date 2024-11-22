@@ -1,4 +1,5 @@
 "use server";
+import { ADMIN_PAGE } from "@/constants";
 import { insertReviewSchema, reviews } from "@/db/schema";
 import { actionClient, protectedActionClient } from "@/utils/safe-actions";
 import { eq } from "drizzle-orm";
@@ -17,7 +18,7 @@ export const createReview = actionClient
 			return { success: false };
 		}
 
-		revalidatePath("/admin/dashboard/reviews");
+		revalidatePath(`${ADMIN_PAGE}/reviews`);
 		revalidatePath("/");
 		return {
 			success: true,
@@ -33,7 +34,7 @@ export const deleteReview = protectedActionClient
 			console.log(err);
 			return { success: false };
 		}
-		revalidatePath("/admin/dashboard/reviews");
+		revalidatePath(`${ADMIN_PAGE}/reviews`);
 		revalidateTag("reviews");
 		revalidatePath("/");
 		return { success: true };
