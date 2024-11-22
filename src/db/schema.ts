@@ -80,6 +80,20 @@ export const pricingItemRelation = relations(pricingItem, ({ one }) => ({
 	}),
 }));
 
+export const visitors = pgTable("visitors", {
+	id: uuid("id").defaultRandom().primaryKey(),
+	ip: varchar("ip", { length: 100 }).notNull(),
+	clickedOnThePricing: boolean("clicked_on_the_pricing").default(false),
+	pricingType: varchar("pricing_type", { length: 100 }),
+	createdAt: timestamp("created_at").notNull().defaultNow(),
+	updatedAt: timestamp("updated_at")
+		.defaultNow()
+		.notNull()
+		.$onUpdate(() => new Date()),
+})
+
+
+
 export const insertNewsLetterSchema = createInsertSchema(newsletter, {
 	email: z.string().email(),
 });
@@ -114,3 +128,5 @@ export const updatePricingSchema = z.object({
 		}),
 	),
 });
+export const insertVisitorSchema = createInsertSchema(visitors)
+export const selectVisitorSchema = createSelectSchema(visitors)

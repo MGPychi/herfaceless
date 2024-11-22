@@ -9,7 +9,7 @@ import IsThatYou from "./_components/IsThatYou";
 // import Last from "./_components/Last";
 import MemberShip from "./_components/MemberShip";
 import NewsletterSubscription from "./_components/Newsletter";
-import Pricing from "./_components/Pricing";
+import Pricing from "./_components/Pricing/Pricing";
 import Problem from "./_components/Problem";
 import QandA from "./_components/QandA";
 import Reviews from "./_components/Reviews";

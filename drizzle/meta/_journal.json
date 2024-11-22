@@ -50,6 +50,20 @@
       "when": 1732103058050,
       "tag": "0006_milky_champions",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1732288476657,
+      "tag": "0007_soft_white_tiger",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1732289204310,
+      "tag": "0008_light_captain_marvel",
+      "breakpoints": true
     }
   ]
 }

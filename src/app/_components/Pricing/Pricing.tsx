@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Check } from 'lucide-react';
 import { getAllPricing } from "@/data/pricing-data";
-import Link from "next/link";
+import PricingLink from "./PricingLink";
 
 const container = {
   hidden: { opacity: 0 },
@@ -84,13 +84,14 @@ export default async function Pricing() {
                   </motion.ul>
                 </CardContent>
                 <CardFooter className="mt-auto">
+                    <PricingLink plan={plan} >
                   <Button
-                    asChild
                     aria-label="sign me up button"
-                    className="w-full bg-[#dbc1b0] hover:bg-[#b17f65] text-black py-6 text-lg"
+                    className="w-full  bg-[#dbc1b0] hover:bg-[#b17f65] text-black py-6 text-lg"
                   >
-                    <Link target="_blank" href={plan.stripeUrl}>Get Started!</Link>
-                  </Button>
+                    Get Started!
+                    </Button>
+                  </PricingLink>
                 </CardFooter>
               </Card>
             </motion.div>
