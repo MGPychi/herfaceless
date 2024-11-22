@@ -2,16 +2,16 @@
 import React, { ReactNode } from "react";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { Toaster } from "react-hot-toast";
-import { PostHogProvider } from "posthog-js/react";
+import CSPostHogProvider from "./providers/PostHogProvider";
 
 
 const Wrappers = ({ children }: { children: ReactNode }) => {
 	return (
 		<>
 			<LazyMotion features={domAnimation}>
-				<PostHogProvider>
+				<CSPostHogProvider>
 				{children}
-				</PostHogProvider>
+				</CSPostHogProvider>
 				</LazyMotion>
 			<Toaster position="bottom-right" />
 		</>
