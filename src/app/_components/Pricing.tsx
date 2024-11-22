@@ -61,7 +61,6 @@ export default async function Pricing() {
                   </p>
                   <div className="text-4xl font-bold mt-4">
                     <span className="text-[#b17f65]">${plan.price}</span>
-                    <span className="text-xl font-normal">/mo</span>
                   </div>
                 </CardHeader>
                 <CardContent className="flex-grow">
