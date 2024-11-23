@@ -62,7 +62,7 @@ export default function AdminVisitorsTable({
 		// Set a new timeout to wait for 500ms before executing search
 		const timeout = setTimeout(() => {
 			router.push(
-				`${ADMIN_PAGE}/dashboard/visitors?search=${value}&page=${currentPage}`,
+				`${ADMIN_PAGE}/visitors?search=${value}&page=${currentPage}`,
 			);
 		}, 500);
 

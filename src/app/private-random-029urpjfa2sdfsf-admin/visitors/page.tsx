@@ -1,6 +1,7 @@
 import { PagePaginator } from "@/components/PagePaginator";
 import AdminVisitorsTable from "./_components/AdminVisitorsTable";
 import { getVisitors } from "@/data/visitors-data";
+import { ADMIN_PAGE } from "@/constants";
 
 export default async function VisitorsDashboard(props: {
 	searchParams?: Promise<{ [key: string]: string | string[] }>;
@@ -25,7 +26,7 @@ export default async function VisitorsDashboard(props: {
 			<PagePaginator
 				hasNext={hasNext}
 				hasPrev={hasPrev}
-				baseHref="/dashboard/users"
+				baseHref={ `${ADMIN_PAGE}/visitors` }
 				page={parseInt(page)}
 				pageCount={pageCount}
 			/>

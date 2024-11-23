@@ -1,6 +1,7 @@
 import { PagePaginator } from "@/components/PagePaginator";
 import AdminReviewsTable from "./_components/AdminReviewsTable";
 import { getReviews } from "@/data/reviews-data";
+import { ADMIN_PAGE } from "@/constants";
 
 export default async function ReviewsDashboard(props: {
 	searchParams?: Promise<{ [key: string]: string | string[] }>;
@@ -25,7 +26,7 @@ export default async function ReviewsDashboard(props: {
 			<PagePaginator
 				hasNext={hasNext}
 				hasPrev={hasPrev}
-				baseHref="/dashboard/users"
+				baseHref={ `${ADMIN_PAGE}/reviews` }
 				page={parseInt(page)}
 				pageCount={pageCount}
 			/>

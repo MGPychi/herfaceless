@@ -1,6 +1,7 @@
 import { PagePaginator } from "@/components/PagePaginator";
 import AdminNewsletterTable from "./_components/AdminNewsletterTable";
 import { getNewsletter } from "@/data/newsletter-data";
+import { ADMIN_PAGE } from "@/constants";
 
 export default async function UserDashboard(props: {
 	searchParams?: Promise<{ [key: string]: string | string[] }>;
@@ -25,7 +26,7 @@ export default async function UserDashboard(props: {
 			<PagePaginator
 				hasNext={hasNext}
 				hasPrev={hasPrev}
-				baseHref="/dashboard/newsletter"
+				baseHref={ `${ADMIN_PAGE}/newsletter` }
 				page={parseInt(page)}
 				pageCount={pageCount}
 			/>

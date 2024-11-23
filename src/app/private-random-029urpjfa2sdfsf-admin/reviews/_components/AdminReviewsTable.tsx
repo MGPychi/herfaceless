@@ -66,7 +66,7 @@ export default function AdminReviewsTable({
 		// Set a new timeout to wait for 500ms before executing search
 		const timeout = setTimeout(() => {
 			router.push(
-				`${ADMIN_PAGE}/dashboard/reviews?search=${value}&page=${currentPage}`,
+				`${ADMIN_PAGE}/reviews?search=${value}&page=${currentPage}`,
 			);
 		}, 500);
 
