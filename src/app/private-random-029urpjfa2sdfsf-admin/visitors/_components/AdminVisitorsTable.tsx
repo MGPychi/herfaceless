@@ -89,6 +89,8 @@ export default function AdminVisitorsTable({
 					<TableHeader>
 						<TableRow>
 							<TableHead>IP</TableHead>
+							<TableHead>Country</TableHead>
+							<TableHead>City</TableHead>
 							<TableHead>Clicked Pricing</TableHead>
 							<TableHead>Pricing</TableHead>
 							<TableHead>Date</TableHead>
@@ -99,6 +101,8 @@ export default function AdminVisitorsTable({
 						{data.map((item) => (
 							<TableRow key={item.id}>
 								<TableCell>{item.ip}</TableCell>
+								<TableCell>{item.country}</TableCell>
+								<TableCell>{item.city}</TableCell>
 								<TableCell>{item.clickedOnThePricing ?<Check/>:<X/>}</TableCell>
 								<TableCell>{item.pricingType??"None" }</TableCell>
 								<TableCell>

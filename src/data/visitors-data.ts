@@ -3,7 +3,7 @@
 import { PAGE_SIZE } from "@/constants";
 import { db } from "@/db";
 import { visitors } from "@/db/schema";
-import { and, count, gte, or, sql } from "drizzle-orm";
+import { and, count,  gte, or, sql } from "drizzle-orm";
 import { unstable_cache } from "next/cache";
 import { cache } from "react";
 
@@ -16,6 +16,13 @@ export const getAllVisitors = unstable_cache(
 		tags: ["visitors"],
 	},
 );
+interface IGeoLocationReponse {
+	country: string;
+	countryCode: string;
+	regionName: string;
+	city: string;
+
+}
 export const getVisitors = cache(
 	async ({ page, q }: { page: number; q?: string }) => {
 		const data = await db.query.visitors.findMany({
@@ -36,8 +43,13 @@ export const getVisitors = cache(
 		const pageCount = Math.ceil(c / PAGE_SIZE);
 		const hasNext = page < pageCount;
 		const hasPrev = page > 1;
+		const dataWithLocation = await Promise.all(data.map(async (visitor) => {
+			const countryResponse = await fetch(`http://ip-api.com/json/${visitor.ip}`);
+			const countryData = (await countryResponse.json()) as IGeoLocationReponse;
+			return { ...visitor, ...countryData };
 
-		return { data, hasNext, hasPrev, count: c, pageCount };
+		}))
+		return { data:dataWithLocation, hasNext, hasPrev, count: c, pageCount };
 	},
 );
 export const getVisitorsCount = cache(async ({ q }: { q?: string }) => {
