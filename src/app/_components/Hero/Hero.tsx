@@ -2,8 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 // import { Play } from "lucide-react";
 import * as motion from "framer-motion/m";
-import MainVideo from "./MainVideo";
+import MainVideo from "../MainVideo";
 import Link from "next/link";
+import VisitorsCounter from "./VisitorsCounter";
 
 export default function Hero() {
 	return (
@@ -29,6 +30,7 @@ export default function Hero() {
 
 			<main className="container mx-auto px-4 py-12 relative z-10">
 				<div className="flex flex-col items-center text-center  mx-auto space-y-8">
+					<VisitorsCounter/>
 					{/* Badge */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
