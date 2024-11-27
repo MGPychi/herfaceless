@@ -1,11 +1,30 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import {   useAnimation } from "framer-motion";
+import * as motion from "framer-motion/m";
 import { Badge } from "@/components/ui/badge";
 import { Eye  } from 'lucide-react';
-import { useEffect, useState } from "react";
+
+  const variants = {
+    visible: { 
+      x: 0, 
+      y: 0, 
+      transition: { duration: 0.5 } 
+    },
+    hidden: { 
+      x: 0, 
+      y: 0, 
+      bottom: "1rem",
+      left: "1rem",
+      transition: { duration: 0.5 } 
+    }
+  };
 
 const VisitorsCounter = () => {
-  const [viewers, setViewers] = useState(0);
+  const [viewers, setViewers] = useState(200);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const controls = useAnimation();
 
   useEffect(() => {
     if (viewers === 0) {
@@ -14,23 +33,48 @@ const VisitorsCounter = () => {
     }
 
     const interval = setInterval(() => {
-      // Update viewers count
       const newValue = Math.max(1, Math.floor(Math.random() * 6));
       setViewers(prev => (newValue >= 2) ? prev + newValue : prev - newValue);
     }, 5000);
 
-    return () => clearInterval(interval);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 100); // Adjust this value as needed
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
+  useEffect(() => {
+    if (isScrolled) {
+      controls.start("hidden");
+    } else {
+      controls.start("visible");
+    }
+  }, [controls, isScrolled]);
+
+
   return (
-    <div className="w-full flex justify-center mb-6">
+    <motion.div
+      initial="visible"
+      animate={controls}
+      variants={variants}
+      className={ `z-50 ${isScrolled&&"fixed"}` }
+    >
       <Badge
-        className="bg-[#fff1e5] uppercase    ring-[#C4A48A] hover:bg-[#C4A48A] text-[#cf9765] px-4 py-2  font-bold rounded-full transition-colors duration-300"
+        className="bg-[#C4A48A]/10 hover:bg-[#C4A48A]/20 text-[#C4A48A] px-4 py-2 text-sm font-medium rounded-full transition-colors duration-300 flex items-center"
       >
           <Eye className="w-4 h-4 mr-2 transition-opacity duration-300" />
-        {viewers.toLocaleString()} people are viewing this page
+        <span className=" duration-300" >
+          {viewers.toLocaleString()} {!isScrolled&&"people are viewing this page"}
+        </span>
       </Badge>
-    </div>
+    </motion.div>
   );
 };
 
