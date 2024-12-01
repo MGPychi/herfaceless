@@ -6,7 +6,7 @@ import * as motion from "framer-motion/m";
 import { Badge } from "@/components/ui/badge";
 import { Eye  } from 'lucide-react';
 
-  const variants = {
+const variants = {
     visible: { 
       x: 0, 
       y: 0, 
@@ -67,7 +67,7 @@ const VisitorsCounter = () => {
       className={ `z-50 ${isScrolled&&"fixed"}` }
     >
       <Badge
-        className="bg-[#C4A48A]/10 hover:bg-[#C4A48A]/20 text-[#C4A48A] px-4 py-2 text-sm font-medium rounded-full transition-colors duration-300 flex items-center"
+        className="bg-[#C4A48A]/10 uppercase hover:bg-[#C4A48A]/20 text-[#a57146] px-4 py-2 text-sm font-medium rounded-full transition-colors duration-300 flex items-center"
       >
           <Eye className="w-4 h-4 mr-2 transition-opacity duration-300" />
         <span className=" duration-300" >
