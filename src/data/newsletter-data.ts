@@ -86,3 +86,11 @@ export const getTotalNewslettersCountToDay = cache(async () => {
 	const c = result[0];
 	return c.count;
 });
+
+export const getAllNewsLetterEmails = cache(()=>{
+	return db.query.newsletter.findMany({
+		columns:{
+			email:true
+		}
+	})
+})

@@ -31,6 +31,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { deleteNewsletter } from "@/app/actions/newsletter-actions";
 import { ADMIN_PAGE } from "@/constants";
+import DownloadNewsLetters from "./DownloadNewsLetters";
 
 // import { deleteEmailAction } from "../actions";
 
@@ -80,12 +81,17 @@ export default function AdminNewsletterTable({
 			</CardHeader>
 			<CardContent className="min-h-[calc(100vh-328px)]">
 				<div className="mb-6 flex flex-col gap-4 md:flex-row">
+					<div className="flex w-full  items-center justify-between">
+
 					<Input
 						placeholder="Search newsletter..."
 						value={searchInput}
 						onChange={(e) => handleSearch(e.target.value)}
 						className="md:w-1/3"
 					/>
+					<DownloadNewsLetters/>
+					</div>
+					
 				</div>
 
 				<Table>
