@@ -1,31 +1,27 @@
 'use client'
-
-// import { useState } from 'react'
-// import { useRouter } from 'next/navigation'
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription,  CardHeader, CardTitle } from "@/components/ui/card"
+
 import { Separator } from "@/components/ui/separator"
-// import { loadStripe } from '@stripe/stripe-js'
-// import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js'
+import { getStripe } from "@/lib/stripe"
+import { useState } from "react"
+import { Elements} from '@stripe/react-stripe-js'
+import { convertToSubCurrency } from "@/lib/convertToSubCurency"
+import CheckoutForm from "./_components/CheckoutForm"
 
-// Make sure to call `loadStripe` outside of a component's render to avoid
-// recreating the `Stripe` object on every render.
-// const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
-
+const stripePromise = getStripe()
 export default function CheckoutPage() {
   // const [clientSecret, setClientSecret] = useState('')
-
-  // useState(() => {
-    // Create PaymentIntent as soon as the page loads
-    // fetch('/api/create-payment-intent', {
+  const amount = 29
+   useState(() => {
+    // // Create PaymentIntent as soon as the page loads
+    // fetch('/api/checkout_session', {
     //   method: 'POST',
     //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ amount: 99700 }), // amount in cents
+    //   body: JSON.stringify({ amount: 44 }), // amount in cents
     // })
-      // .then((res) => res.json())
-      // .then((data) => setClientSecret(data.clientSecret))
-//  } ),
-//    [])
+    //   .then((res) => res.json())
+    //   .then((data) => setClientSecret(data.clientSecret))
+  }, [])
 
   return (
     <div className="min-h-screen bg-[#f8efe8] p-4 md:p-8">
@@ -36,54 +32,24 @@ export default function CheckoutPage() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {/* {clientSecret && (
-            <Elements stripe={stripePromise} options={{ clientSecret }}>
-              <CheckoutForm />
+           <Elements stripe={stripePromise} options={{
+            mode:'payment',
+            currency: 'usd',
+            amount: convertToSubCurrency(amount,100),
+
+            }}>
+              <CheckoutForm amount={amount} />
             </Elements>
-          )} */}
 
           <div className="space-y-8">
             <OrderSummary />
             <MembershipDetails />
 
           </div>
-          <CheckoutForm/>
 
         </div>
       </div>
     </div>
-  )
-}
-
-function CheckoutForm() {
-  // const stripe = useStripe()
-  // const elements = useElements()
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-
-
-
-
-  }
-
-  return (
-    <Card className="bg-white/80 backdrop-blur">
-      <CardHeader>
-        <CardTitle>Payment Information</CardTitle>
-        <CardDescription>Enter your payment details</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <Button
-            type="submit"
-            className="w-full bg-[#a67b5b] hover:bg-[#8b6346]"
-            size="lg"
-          >
-            Checkout
-          </Button>
-        </form>
-      </CardContent>
-    </Card>
   )
 }
 
