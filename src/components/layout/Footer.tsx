@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="flex gap-10">
               <NewsLetterForm
                 iClassName="h-10 w-30 mr-2 "
-                className="flex items-center !space-y-0 "
+                className="flex flex-col  sm:flex-row items-center sm:!space-y-0 "
                 setHasScrolled={dummyFunc}
                 setHasSubscribed={dummyFunc}
                 setIsVisible={dummyFunc}

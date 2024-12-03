@@ -31,7 +31,7 @@ const DownloadNewsLetters = () => {
 	};
 	return (
 		<div>
-			<Button disabled={isLoading} onClick={handleDownload} className={`${isLoading&&"opacity-90"}`}>Downland</Button>
+			<Button disabled={isLoading} onClick={handleDownload} className={`${isLoading&&"opacity-9e0"}`}>Downland</Button>
 		</div>
 	);
 };
