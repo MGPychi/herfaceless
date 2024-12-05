@@ -47,7 +47,7 @@ function CheckoutForm({amount}:{amount:number}) {
 	}, [amount]);
 
 	return (
-		<Card className="bg-white/80 backdrop-blur">
+		<Card className="bg-white/80  backdrop-blur">
 			<CardHeader>
 				<CardTitle>Payment Information</CardTitle>
 				<CardDescription>Enter your payment details</CardDescription>
@@ -57,8 +57,9 @@ function CheckoutForm({amount}:{amount:number}) {
                     {clientSecret&&<PaymentElement/>}
                     
 					<Button
+					disabled={isLoading}
 						type="submit"
-						className="w-full bg-[#a67b5b] hover:bg-[#8b6346]"
+						className={ `${isLoading&&"opacity-90"} w-full bg-[#a67b5b] hover:bg-[#8b6346]  ` }
 						size="lg"
 					>
 						Checkout

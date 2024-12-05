@@ -3,25 +3,13 @@ import { Card, CardContent, CardDescription,  CardHeader, CardTitle } from "@/co
 
 import { Separator } from "@/components/ui/separator"
 import { getStripe } from "@/lib/stripe"
-import { useState } from "react"
 import { Elements} from '@stripe/react-stripe-js'
 import { convertToSubCurrency } from "@/lib/convertToSubCurency"
 import CheckoutForm from "./_components/CheckoutForm"
 
 const stripePromise = getStripe()
 export default function CheckoutPage() {
-  // const [clientSecret, setClientSecret] = useState('')
   const amount = 29
-   useState(() => {
-    // // Create PaymentIntent as soon as the page loads
-    // fetch('/api/checkout_session', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ amount: 44 }), // amount in cents
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => setClientSecret(data.clientSecret))
-  }, [])
 
   return (
     <div className="min-h-screen bg-[#f8efe8] p-4 md:p-8">
