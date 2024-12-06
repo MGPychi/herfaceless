@@ -65,7 +65,7 @@ export const SuccessEmail = ({
           </Section>
           <Section>
             <Text style={footer}>
-              Your success journey begins today. We are excited to see what you will create!
+              Your success journey begins today. We are excited to see what you wilrq create!
             </Text>
           </Section>
         </Container>

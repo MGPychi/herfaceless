@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,7 +29,7 @@ function CheckoutForm({amount}:{amount:number}) {
             setIsLoading(false)
             return 
         }
-        const {error} = await stripe.confirmPayment({
+        const {error,...rest} = await stripe.confirmPayment({
             clientSecret,
             elements,
             confirmParams:{
@@ -36,7 +37,12 @@ function CheckoutForm({amount}:{amount:number}) {
             },
 
         })
+
+		console.log(error)
+		console.log(rest)
+		setIsLoading(false)
         if(error)setErrorMessage(error.message??"")
+			
 	};
 	useEffect(() => {
 		fetch("/api/checkout_session", { method: "POST",body:JSON.stringify({
