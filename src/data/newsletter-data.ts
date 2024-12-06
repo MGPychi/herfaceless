@@ -2,7 +2,7 @@
 import { PAGE_SIZE } from "@/constants";
 import { db } from "@/db";
 import { newsletter } from "@/db/schema";
-import { and, count, gte, or, sql } from "drizzle-orm";
+import { and, count, eq, gte, or, sql } from "drizzle-orm";
 import { cache } from "react";
 export const getNewsletter = cache(
 	async ({ page, q }: { page: number; q?: string }) => {
@@ -87,10 +87,15 @@ export const getTotalNewslettersCountToDay = cache(async () => {
 	return c.count;
 });
 
-export const getAllNewsLetterEmails = cache(()=>{
+export const getAllNewsLetterEmails = cache(() => {
 	return db.query.newsletter.findMany({
-		columns:{
-			email:true
-		}
-	})
-})
+		columns: {
+			email: true,
+		},
+	});
+});
+export const verifyEmailIfIsPaid = cache(async (email: string) => {
+	return db.query.newsletter.findFirst({
+		where: and(eq(newsletter.email, email),eq(newsletter.isPaid,true)),
+	});
+});

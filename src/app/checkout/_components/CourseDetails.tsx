@@ -1,8 +1,8 @@
-import { verifyAmountIfExist } from "@/data/pricing-data"
+import { VerifyPricingIfExists } from "@/data/pricing-data"
 
 
 interface Props {
-    pricing:Awaited<ReturnType<typeof verifyAmountIfExist >>
+    pricing:Awaited<ReturnType<typeof VerifyPricingIfExists >>
 }
 
 export default function CourseDetails({pricing}:Props) {

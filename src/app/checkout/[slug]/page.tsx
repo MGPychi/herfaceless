@@ -1,4 +1,4 @@
-import { verifyAmountIfExist } from "@/data/pricing-data";
+import { VerifyPricingIfExists } from "@/data/pricing-data";
 import OrderSummary from "../_components/OrderSummary";
 import CourseDetails from "../_components/CourseDetails";
 import { notFound } from "next/navigation";
@@ -10,7 +10,7 @@ export default async function CheckoutPage({
 	params: Promise<{ [slug: string]: string }>;
 }) {
 	const { slug } = await params;
-	const pricing = await verifyAmountIfExist(slug);
+	const pricing = await VerifyPricingIfExists(slug);
 	if(!pricing) return notFound()
 
 	return (

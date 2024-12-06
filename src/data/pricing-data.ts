@@ -2,7 +2,7 @@
 import { PAGE_SIZE } from "@/constants";
 import { db } from "@/db";
 import { pricing, pricingItem } from "@/db/schema";
-import { and, asc, count, eq, gte, like, or, sql } from "drizzle-orm";
+import { and, asc, count,  gte,  or, sql } from "drizzle-orm";
 import { unstable_cache } from "next/cache";
 import { cache } from "react";
 
@@ -98,7 +98,7 @@ export const getTotalPricingCountToDay = cache(async () => {
 });
 
 
-export const verifyAmountIfExist = cache(async (name:string) => {	
+export const VerifyPricingIfExists = cache(async (name:string) => {	
 	return   db.query.pricing.findFirst(
 		{
 			where:sql`LOWER(title) = ${name.toLowerCase()}`,

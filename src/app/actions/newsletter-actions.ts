@@ -33,3 +33,18 @@ export const deleteNewsletter = protectedActionClient
 		revalidatePath(`${ADMIN_PAGE}/newsletter`);
 		return { success: true };
 	});
+
+export const changeNewsLetterToPaidOrCreate = actionClient
+	.schema(z.object({ email: z.string() }))
+	.action(async ({ ctx, parsedInput }) => {
+		try {
+			await ctx.db.insert(newsletter).values({ email: parsedInput.email,isPaid:true }).onConflictDoUpdate({
+				target: [newsletter.email],
+				set: { isPaid: true },
+			});
+		} catch (err) {
+			console.error(err);
+			return { success: false };
+		}
+		return { success: true };
+	});
