@@ -15,8 +15,8 @@ const PricingLink = ({ plan, children }: Props) => {
 		<Link
 			className="w-full"
 			onClick={() => handlePricingClick(plan)}
-			target="_blank"
-			href={plan.stripeUrl}
+			// target="_blank"
+			href={`/checkout/${plan.title}`}
 		>
 			{children}
 		</Link>

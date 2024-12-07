@@ -14,16 +14,18 @@ interface SuccessEmailProps {
   userName?: string;
   courseName?: string;
   accessLink?: string;
+  email:string;
 }
 
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
-  : "";
+  : "http://localhost:3000";
 
 export const SuccessEmail = ({
   userName = "Creator",
   courseName = "The Ultimate Faceless Digital Course",
-  accessLink = `${baseUrl}/success-0jfkaln2sfs`,
+  email,
+  accessLink = `${baseUrl}/success?email=${email}`,
 }: SuccessEmailProps) => {
   const previewText = `Welcome to ${courseName}! Your journey begins now.`;
 
@@ -59,7 +61,7 @@ export const SuccessEmail = ({
               2. Watch the welcome video in Module 1<br />
               3. Join our private community for support
             </Text>
-            <Button style={button} href={accessLink}>
+            <Button  style={button} href={accessLink}>
               ACCESS YOUR COURSE NOW!
             </Button>
           </Section>
@@ -89,77 +91,117 @@ const container = {
   maxWidth: "100%",
 };
 
+
+
+
+
+
+
+
+
+
+
+
 const badge = {
-  backgroundColor: "#B08B75",
-  color: "#FFFFFF",
-  fontSize: "12px",
-  fontWeight: "500",
-  padding: "6px 12px",
-  borderRadius: "20px",
-  textAlign: "center" as const,
-  maxWidth: "400px",
-  margin: "0 auto 32px",
-  textTransform: "uppercase" as const,
-  letterSpacing: "0.5px",
+backgroundColor: "#B08B75",
+color: "#FFFFFF",
+fontSize: "12px",
+fontWeight: "500",
+padding: "6px 12px",
+borderRadius: "20px",
+textAlign: "center" as const,
+maxWidth: "90%",
+margin: "0 auto 24px",
+textTransform: "uppercase" as const,
+letterSpacing: "0.5px",
+"@media (maxWidth: 600px)": {
+  fontSize: "10px",
+  padding: "4px 10px",
+},
 };
 
 const heading = {
-  fontSize: "32px",
-  lineHeight: "1.3",
-  fontWeight: "700",
-  color: "#000000",
-  textAlign: "center" as const,
-  margin: "0 0 16px",
-  padding: "0 24px",
-};
-
-const subheading = {
-  fontSize: "16px",
-  lineHeight: "1.5",
-  color: "#666666",
-  textAlign: "center" as const,
-  margin: "0 0 32px",
-  padding: "0 24px",
-};
-
-const paragraph = {
-  fontSize: "16px",
-  lineHeight: "1.5",
-  color: "#333333",
-  margin: "0 0 16px",
-};
-
-const instructions = {
-  fontSize: "16px",
-  lineHeight: "1.7",
-  color: "#333333",
-  backgroundColor: "#FFFFFF",
-  padding: "24px",
-  borderRadius: "8px",
-  margin: "24px 0",
-  boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+fontSize: "32px",
+lineHeight: "1.3",
+fontWeight: "700",
+color: "#000000",
+textAlign: "center" as const,
+margin: "0 0 16px",
+padding: "0 12px",
+"@media (maxWidth: 600px)": {
+  fontSize: "24px",
+  padding: "0 8px",
+},
 };
 
 const button = {
-  backgroundColor: "#B08B75",
-  borderRadius: "28px",
-  color: "#FFFFFF",
+backgroundColor: "#B08B75",
+borderRadius: "28px",
+color: "#FFFFFF",
+fontSize: "14px",
+fontWeight: "600",
+textTransform: "uppercase" as const,
+letterSpacing: "0.5px",
+padding: "16px 24px",
+textDecoration: "none",
+textAlign: "center" as const,
+display: "block",
+width: "100%",
+maxWidth: "400px",
+margin: "32px auto 0",
+"@media (maxWidth: 600px)": {
+  fontSize: "12px",
+  padding: "12px 20px",
+},
+};
+
+const instructions = {
+fontSize: "16px",
+lineHeight: "1.7",
+color: "#333333",
+backgroundColor: "#FFFFFF",
+padding: "20px",
+borderRadius: "8px",
+margin: "20px 0",
+boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+"@media (maxWidth: 600px)": {
   fontSize: "14px",
-  fontWeight: "600",
-  textTransform: "uppercase" as const,
-  letterSpacing: "0.5px",
-  padding: "16px 24px",
-  textDecoration: "none",
-  textAlign: "center" as const,
-  display: "block",
-  width: "100%",
-  marginTop: "32px",
+  padding: "16px",
+  margin: "16px 0",
+},
+};
+
+const subheading = {
+fontSize: "16px",
+lineHeight: "1.5",
+color: "#666666",
+textAlign: "center" as const,
+margin: "0 0 32px",
+padding: "0 12px",
+"@media (maxWidth: 600px)": {
+  fontSize: "14px",
+  margin: "0 0 24px",
+},
+};
+
+const paragraph = {
+fontSize: "16px",
+lineHeight: "1.5",
+color: "#333333",
+margin: "0 0 16px",
+"@media (maxWidth: 600px)": {
+  fontSize: "14px",
+  margin: "0 0 12px",
+},
 };
 
 const footer = {
-  fontSize: "14px",
-  color: "#666666",
-  textAlign: "center" as const,
-  margin: "32px 0 0",
+fontSize: "14px",
+color: "#666666",
+textAlign: "center" as const,
+margin: "32px 0 0",
+"@media (maxWidth: 600px)": {
+  fontSize: "12px",
+  margin: "24px 0 0",
+},
 };
-

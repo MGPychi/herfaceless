@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-import * as motion from "framer-motion/m";
 import { useState } from "react";
 
 const DownloadBook = () => {
@@ -30,10 +29,10 @@ const DownloadBook = () => {
 		}
 	};
 	return (
-		<motion.div
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.5, delay: 0.6 }}
+		<div
+			// initial={{ opacity: 0, y: 20 }}
+			// animate={{ opacity: 1, y: 0 }}
+			// transition={{ duration: 0.5, delay: 0.6 }}
 		>
 			<Button
 				className="w-full h-12 text-lg bg-[#96735f] hover:bg-[#96735f]/90 text-white"
@@ -43,7 +42,7 @@ const DownloadBook = () => {
 				<Download className="mr-2 h-5 w-5" />
 				{isDownloading ? "Downloading..." : "Download Your Course"}
 			</Button>
-		</motion.div>
+		</div>
 	);
 };
 

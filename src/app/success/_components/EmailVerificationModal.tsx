@@ -19,7 +19,7 @@ export function EmailVerificationModal() {
     try {
       const hasPaid = await verifyEmailIfIsPaid(email)
       if (hasPaid) {
-        window.location.href = `/success-0jfkaln2sfs?email=${encodeURIComponent(email)}`
+        window.location.href = `/success?email=${encodeURIComponent(email)}`
       } else {
         setError("No payment found for this email. Please make a purchase first.")
       }

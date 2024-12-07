@@ -26,7 +26,7 @@ export default async function SuccessPage({
   } else if (email) {
     confirmedEmail = email
   } else {
-	redirect("/success-0jfkaln2sfs/verify")
+	redirect("/success/verify")
   }
 
   if (confirmedEmail) {
@@ -68,9 +68,8 @@ export default async function SuccessPage({
             />
           </div>
 
-          <div className="space-y-4 w-full max-w-md">
+          <div className="space-y-2     w-full max-w-md">
             <DownloadBook />
-
             <Link
               target="_blank"
               href="https://discord.gg/tZrh4Czmt9"

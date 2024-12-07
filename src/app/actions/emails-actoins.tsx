@@ -8,7 +8,7 @@ export const sendSuccessEmail = async (email: string) => {
             from:"contact@hersfaceless.com",
             to:[email],
             subject:"Payment Successful",
-            react:<SuccessEmail userName="chihab"   />,
+            react:<SuccessEmail email={email} userName="chihab"   />,
         })
 
 }

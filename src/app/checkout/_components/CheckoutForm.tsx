@@ -50,7 +50,7 @@ function CheckoutForm({ amount }: { amount: number }) {
       clientSecret,
       elements,
       confirmParams: {
-        return_url: `http://localhost:3000/success-0jfkaln2sfs`,
+        return_url: `http://localhost:3000/success`,
         receipt_email: email || undefined, // Only include email if provided
       },
     });
