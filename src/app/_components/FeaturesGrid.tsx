@@ -159,7 +159,6 @@ export function BonusCard({
   totalValue,
   description,
   image,
-  backgroundColor = "bg-gradient-to-br from-blue-50 to-blue-100",
   textColor = "text-gray-900",
 }: BonusCardProps) {
   return (
