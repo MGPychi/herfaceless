@@ -139,7 +139,7 @@ export default function FandQ() {
             Yes, I Want In
           </Button>
           <p className="text-lg text-gray-500 italic">
-            Offer may go back to $129 soon. Claim all the bonuses before it's too late!
+            Offer may go back to $129 soon. Claim all the bonuses before it&apos;s too late!
           </p>
         </div>
       </div>

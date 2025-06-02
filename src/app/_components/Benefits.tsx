@@ -6,8 +6,6 @@ import {
   Mic,
   Lightbulb,
   DollarSign,
-  LineChart,
-  Video,
   ChevronRight,
 } from "lucide-react";
 import * as motion from "framer-motion/m";

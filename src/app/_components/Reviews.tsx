@@ -1,14 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
-// import { m as motion  } from "framer-motion"
 import * as motion from "framer-motion/m";
 import { getAllReviews } from "@/data/reviews-data";
 import { z } from "zod";
 import { selectReviewSchema } from "@/db/schema";
 import { DollarSign } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export default async function Reviews() {
   const reviews = await getAllReviews();

@@ -44,7 +44,7 @@ const ResultsSection = () => {
             Ready to see results like this?
           </h1>
           <p className="text-lg text-slate-600">
-            Some of the results I've achieved with digital products:
+            Some of the results I&apos;ve achieved with digital products:
           </p>
         </motion.div>
 
