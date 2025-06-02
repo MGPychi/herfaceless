@@ -38,7 +38,7 @@ export default async function Pricing() {
         className="container mx-auto text-center mb-12"
       >
         <h1 className="text-4xl md:text-5xl font-bold">
-          Find your <span className="text-[#b17f65]">Perfect Plan!</span>
+          Join Now And Get Full Lifetime Access
         </h1>
       </motion.div>
 
@@ -84,12 +84,12 @@ export default async function Pricing() {
                   </motion.ul>
                 </CardContent>
                 <CardFooter className="mt-auto">
-                    <PricingLink plan={plan} >
-                  <Button
-                    aria-label="sign me up button"
-                    className="w-full  bg-[#dbc1b0] hover:bg-[#b17f65] text-black py-6 text-lg"
-                  >
-                    Get Started!
+                  <PricingLink plan={plan} >
+                    <Button
+                      aria-label="sign me up button"
+                      className="w-full  bg-[#dbc1b0] hover:bg-[#b17f65] text-black py-6 text-lg"
+                    >
+                      Get Started!
                     </Button>
                   </PricingLink>
                 </CardFooter>
