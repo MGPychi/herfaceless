@@ -14,30 +14,34 @@ import Problem from "./_components/Problem";
 import QandA from "./_components/QandA";
 import Reviews from "./_components/Reviews";
 import SayGoodBTo from "./_components/SayGoodBTo";
-import TopBenefits from "./_components/TopBenefits";
+// import TopBenefits from "./_components/TopBenefits";
+import ResultsSection from "./_components/ResultsSection";
+import CourseModules from "./_components/CourseMoudles";
 
 export default function Home() {
-	return (
-		<>
-			<main className=" bg-ground">
-				<Hero />
-				<Benefits />
-				<TopBenefits />
-				<Reviews />
-				<Problem />
-				<SayGoodBTo />
-				<MemberShip />
-				<Pricing />
-				<GamePlan />
-				<IsThatYou />
-				<FeaturesGrid />
-				<QandA />
-				<Imagine />
-				<FandQ />
-				{/* <Last /> */}
-				<NewsletterSubscription />
-			</main>
-			<Footer />
-		</>
-	);
+  return (
+    <>
+      <main className=" bg-ground">
+        <Hero />
+        <ResultsSection />
+        <Benefits />
+        <FeaturesGrid />
+        {/* <TopBenefits />*/}
+        <Reviews />
+        <Problem />
+        <SayGoodBTo />
+        <MemberShip />
+        <Pricing />
+        <CourseModules />
+        <GamePlan />
+        <IsThatYou />
+        <QandA />
+        <Imagine />
+        <FandQ />
+        {/* <Last /> */}
+        <NewsletterSubscription />
+      </main>
+      <Footer />
+    </>
+  );
 }
