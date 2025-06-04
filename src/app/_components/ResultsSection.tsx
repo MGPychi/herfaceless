@@ -103,7 +103,7 @@ const ResultsSection = () => {
               variants={cardVariants}
               whileHover={{ scale: 1.03, y: -5 }}
               // Added back shadow classes and ensured hover effect is smooth
-              className="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl"
+              className="bg-white rounded-2xl  overflow-hidden transition-all duration-300 ease-out "
             >
               <div className="aspect-w-1 aspect-h-1">
                 <img
