@@ -2,11 +2,11 @@ import Image from "next/image"
 
 export default function Component() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+    <div className="min-h-screen pt-8 py-4  md:py-6 lg:py-12 px-4 bg-gray-50">
+      <div className="container mx-auto ">
+        <div className="flex flex-col lg:flex-row  items-center">
           {/* Left side - Course modules */}
-          <div className="bg-[#E8DDD4] rounded-2xl p-8 space-y-8">
+          <div className="bg-[#E8DDD4] w-full lg:w-1/2 rounded-2xl  p-8 space-y-8">
             {/* Module 01 */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
@@ -48,14 +48,13 @@ export default function Component() {
           </div>
 
           {/* Right side - Device mockups */}
-          <div className="relative">
+          <div className="relative flex items-center w-full  lg:w-1/2">
             <Image
               src="/modules-image.png"
               alt="Course content displayed on multiple devices showing Canva interface"
               width={600}
               height={400}
-              className="w-full h-auto"
-              priority
+              className="w-full h-auto "
             />
           </div>
         </div>
