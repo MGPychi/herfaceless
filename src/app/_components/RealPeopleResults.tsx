@@ -1,31 +1,44 @@
 "use client";
-import React, { useState, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
-import Link from 'next/link';
 
-const RealPeopleResults = () => {
-  const scrollContainerRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+import React, { FC, useState, useRef, useEffect, RefObject } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
 
-  // Placeholder images - you can replace these with your actual testimonial images
-  const testimonialImages = [
-    { id: 1, src: '/real-people/1.jpeg', alt: 'Customer testimonial 1' },
-    { id: 2, src: '/real-people/2.png', alt: 'Customer testimonial 2' },
-    { id: 3, src: '/real-people/3.jpeg', alt: 'Customer testimonial 3' },
-    { id: 5, src: '/real-people/5.png', alt: 'Customer testimonial 5' },
-    { id: 6, src: '/real-people/6.png', alt: 'Customer testimonial 6' },
+interface TestimonialImage {
+  id: number;
+  src: string;
+  alt: string;
+}
+
+interface ItemsPerView {
+  mobile: number;
+  tablet: number;
+  desktop: number;
+}
+
+const RealPeopleResults: FC = () => {
+  const scrollContainerRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  // Placeholder images - replace these with actual testimonial images as needed
+  const testimonialImages: TestimonialImage[] = [
+    { id: 1, src: "/real-people/1.jpeg", alt: "Customer testimonial 1" },
+    { id: 2, src: "/real-people/2.png", alt: "Customer testimonial 2" },
+    { id: 3, src: "/real-people/3.jpeg", alt: "Customer testimonial 3" },
+    { id: 5, src: "/real-people/5.png", alt: "Customer testimonial 5" },
+    { id: 6, src: "/real-people/6.png", alt: "Customer testimonial 6" },
   ];
 
-  const itemsPerView = {
+  const itemsPerView: ItemsPerView = {
     mobile: 2,
     tablet: 3,
-    desktop: 4
+    desktop: 4,
   };
 
-  const getItemsPerView = () => {
-    if (typeof window !== 'undefined') {
+  const getItemsPerView = (): number => {
+    if (typeof window !== "undefined") {
       if (window.innerWidth < 640) return itemsPerView.mobile;
       if (window.innerWidth < 1024) return itemsPerView.tablet;
       return itemsPerView.desktop;
@@ -33,42 +46,44 @@ const RealPeopleResults = () => {
     return itemsPerView.desktop;
   };
 
-  const [itemsVisible, setItemsVisible] = useState(getItemsPerView());
+  const [itemsVisible, setItemsVisible] = useState<number>(getItemsPerView());
 
-  React.useEffect(() => {
-    const handleResize = () => {
+  useEffect(() => {
+    const handleResize = (): void => {
       setItemsVisible(getItemsPerView());
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const maxIndex = Math.max(0, testimonialImages.length - itemsVisible);
 
-  const scrollToIndex = (index) => {
+  const scrollToIndex = (index: number): void => {
     const container = scrollContainerRef.current;
     if (container) {
       const itemWidth = container.scrollWidth / testimonialImages.length;
       container.scrollTo({
         left: index * itemWidth,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
       setCurrentIndex(index);
     }
   };
 
-  const handlePrevious = () => {
+  const handlePrevious = (): void => {
     const newIndex = Math.max(0, currentIndex - 1);
     scrollToIndex(newIndex);
   };
 
-  const handleNext = () => {
+  const handleNext = (): void => {
     const newIndex = Math.min(maxIndex, currentIndex + 1);
     scrollToIndex(newIndex);
   };
 
-  const handleScroll = () => {
+  const handleScroll = (): void => {
     const container = scrollContainerRef.current;
     if (container) {
       const itemWidth = container.scrollWidth / testimonialImages.length;
@@ -86,7 +101,7 @@ const RealPeopleResults = () => {
             Real People, Real Results
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Don't take our word for it - see what our amazing customers have to say about their transformative experiences.
+            Don&apos;t take our word for it - see what our amazing customers have to say about their transformative experiences.
           </p>
         </div>
 
@@ -116,17 +131,17 @@ const RealPeopleResults = () => {
             ref={scrollContainerRef}
             onScroll={handleScroll}
             className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth px-12"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {testimonialImages.map((image) => (
               <div
                 key={image.id}
                 className="flex-none w-1/2 sm:w-1/3 lg:w-1/4"
               >
-                <div className=" rounded-2xl  overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
                   <Image
-                  width={300}
-                  height={200}
+                    width={300}
+                    height={200}
                     src={image.src}
                     alt={image.alt}
                     className="w-full h-64 sm:h-72 lg:h-80 object-contain !rounded-lg"
@@ -142,11 +157,10 @@ const RealPeopleResults = () => {
               <button
                 key={index}
                 onClick={() => scrollToIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex
-                    ? 'bg-blue-600'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
+                className={`w-3 h-3 rounded-full transition-colors ${index === currentIndex
+                  ? "bg-blue-600"
+                  : "bg-gray-300 hover:bg-gray-400"
+                  }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
@@ -155,11 +169,11 @@ const RealPeopleResults = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-12">
-          <p className="text-gray-600  mb-6">Ready to join thousands of satisfied customers?</p>
-          <Link href='/#pricing'>
-          <Button className="" size="lg" >
-          Enroll now!
-          </Button>
+          <p className="text-gray-600 mb-6">
+            Ready to join thousands of satisfied customers?
+          </p>
+          <Link href="/#pricing" passHref>
+            <Button size="lg">Enroll now!</Button>
           </Link>
         </div>
       </div>
