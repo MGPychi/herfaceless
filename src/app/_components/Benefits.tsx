@@ -87,7 +87,7 @@ export default function Benefits() {
             </div>
           </div>
 
-          <div className="mt-10  text-center">
+          <div className="mt-10 flex flex-col gap-3 items-center   text-center">
             <Link href="/#pricing">
               <Button
                 aria-label="join button"
