@@ -92,8 +92,6 @@ const ResultsSection = () => {
             Some of the results I&apos;ve achieved with digital products:
           </p>
         </motion.div>
-
-        {/* Image Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10" // Adjusted gap slightly for consistency
         >
