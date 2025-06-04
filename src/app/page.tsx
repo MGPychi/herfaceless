@@ -17,6 +17,7 @@ import SayGoodBTo from "./_components/SayGoodBTo";
 // import TopBenefits from "./_components/TopBenefits";
 import ResultsSection from "./_components/ResultsSection";
 import CourseModules from "./_components/CourseMoudles";
+import RealPeopleResults from "./_components/RealPeopleResults";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
         <Problem />
         <SayGoodBTo />
         <MemberShip />
+        <RealPeopleResults/>
         <Pricing />
         <CourseModules />
         <GamePlan />
