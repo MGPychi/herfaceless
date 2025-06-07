@@ -75,7 +75,7 @@ export default function FeaturesGrid() {
   const totalValue = features.reduce((acc, feature) => acc + feature.value, 0)
 
   return (
-    <section className="min-h-screen bg-white py-20 px-4">
+    <section className="min-h-screen bg-ground py-20 px-4">
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="flex flex-col items-center gap-2">
           <motion.h2
@@ -125,8 +125,11 @@ export default function FeaturesGrid() {
           viewport={{ once: true }}
           className="text-center space-y-6"
         >
+          <div className="text-2xl del md:text-3xl font-bold text-gray-900">
+            TOTAL VALUE: <span className="">${totalValue.toLocaleString()}+</span>
+          </div>
           <div className="text-2xl md:text-3xl font-bold text-gray-900">
-            TOTAL VALUE: <span className="text-green-500">${totalValue.toLocaleString()}+</span>
+            Today only  <span className="">$29</span>
           </div>
 
           <Link href={"/#pricing"} className="block">
@@ -137,6 +140,9 @@ export default function FeaturesGrid() {
               Enrol Today
             </Button>
           </Link>
+          <p className="mt-4 text-sm sm:text-base  text-slate-700 max-w-lg md:max-w-xl mx-auto mt-4">
+            and claim all the bonuses...
+          </p>
         </motion.div>
       </div>
     </section>

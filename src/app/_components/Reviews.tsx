@@ -35,7 +35,7 @@ export default async function Reviews() {
               these proven, life-changing strategies!
             </p>
             {/*
-              <Link href={"/#pricing"}>
+              <Link href={}>
                 <Button className="bg-secondary h-12 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:bg-[#004080] transition-colors duration-300">
                   Join Our Success Stories
                 </Button>

@@ -27,13 +27,13 @@ export default function Home() {
         <ResultsSection />
         <Benefits />
         <FeaturesGrid />
+        <Pricing />
+        <RealPeopleResults />
         {/* <TopBenefits />*/}
         <Reviews />
         <Problem />
         <SayGoodBTo />
         <MemberShip />
-        <RealPeopleResults/>
-        <Pricing />
         <CourseModules />
         <GamePlan />
         <IsThatYou />

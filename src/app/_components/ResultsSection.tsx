@@ -11,16 +11,6 @@ const resultImages = [
     alt: 'Screenshot of sales results showing €277.13 gross volume',
   },
   {
-    id: 2,
-    src: '/first-results/2.jpeg',
-    alt: 'Screenshot of sales results showing €54.67 gross volume',
-  },
-  {
-    id: 3,
-    src: '/first-results/3.jpeg',
-    alt: 'Beacons notification: You made a sale for $112.20',
-  },
-  {
     id: 4,
     src: '/first-results/4.jpeg',
     alt: 'Beacons notification: You made a sale for $97.00 for Ultimate Faceless Bundle',
@@ -29,6 +19,16 @@ const resultImages = [
     id: 5,
     src: '/first-results/5.jpeg',
     alt: 'Dashboard showing $122.50 from 134 sales',
+  },
+  {
+    id: 2,
+    src: '/first-results/2.jpeg',
+    alt: 'Screenshot of sales results showing €54.67 gross volume',
+  },
+  {
+    id: 3,
+    src: '/first-results/3.jpeg',
+    alt: 'Beacons notification: You made a sale for $112.20',
   },
   {
     id: 6,
@@ -108,7 +108,7 @@ const ResultsSection = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full rounded-2xl h-full object-cover"
                 />
               </div>
             </motion.div>
