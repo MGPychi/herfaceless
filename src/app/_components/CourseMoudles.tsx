@@ -116,7 +116,7 @@ export default function ModulesComponent() {
         >
           <Link href="#pricing">
             <Button size="lg" className="text-lg"> {/* Example: slightly larger padding and text for button */}
-              I'am Ready To Entroll
+              I&apos;am Ready To Entroll
             </Button>
           </Link>
           <p className="mt-4 text-sm sm:text-base  text-slate-700 max-w-lg md:max-w-xl mx-auto mt-4">
