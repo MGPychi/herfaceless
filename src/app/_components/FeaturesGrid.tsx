@@ -167,7 +167,7 @@ export function BonusCard({
         <CardContent className="p-0 flex flex-col h-full">
           {/* Image Section */}
           {image && (
-            <div className="relative h-48 w-full flex-shrink-0">
+            <div className="relative bg-blue-500  h-48 w-full flex-shrink-0">
               <Image
                 src={image}
                 alt={title}
