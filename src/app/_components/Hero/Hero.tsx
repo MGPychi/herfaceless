@@ -32,6 +32,7 @@ export default function Hero() {
         <div className="flex flex-col items-center text-center  mx-auto space-y-8">
           <VisitorsCounter />
           {/* Badge */}
+          {/*
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,6 +42,7 @@ export default function Hero() {
           >
             The Ultimate Faceless Digital Course
           </motion.div>
+          */}
 
           {/* Headings */}
           <motion.div
@@ -55,10 +57,7 @@ export default function Hero() {
             className="space-y-4"
           >
             <h1 className="text-2xl uppercase sm:text-4xl md:text-5xl font-bold leading-tight">
-              <span className="text-secondary">
-                30-DAY
-              </span>
-              faceless launchpad
+              30-DAY faceless launchpad
               <br />
             </h1>
             <p className="text-gray-700  sm:text-lg  max-w-3xl mx-auto">
@@ -96,8 +95,7 @@ export default function Hero() {
             <Link href="/#pricing">
               <Button
                 aria-label="join now button"
-                variant={"ghost"}
-                className=" hover:bg-secondary text-black font-bold hover:ring-2 hover:ring-secondary text-lg px-8 py-2 h-auto"
+                className="  text-lg px-8 py-2 h-auto"
               >
                 Get instant Access NOW!
               </Button>

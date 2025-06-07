@@ -75,14 +75,17 @@ export default function FeaturesGrid() {
   const totalValue = features.reduce((acc, feature) => acc + feature.value, 0)
 
   return (
-    <section className="min-h-screen bg-white py-20 px-4">
+    <section className="min-h-screen bg-ground py-20 px-4">
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="flex flex-col items-center gap-2">
+          <div className="bg-secondary py-2  text-white my-4 font-bold rounded-full px-8 ">
+            Bonus
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center text-gray-900"
+            className="text-3xl md:text-5xl my-2 font-bold text-center text-gray-900"
           >
             Comes with lifetime access.
           </motion.h2>
@@ -91,7 +94,7 @@ export default function FeaturesGrid() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-lg md:text-xl font-bold text-center text-gray-900"
+            className="text-lg md:text-xl my-2 font-bold text-center text-gray-900"
           >
             Join now and get all these bonuses included.
           </motion.span>
@@ -125,8 +128,11 @@ export default function FeaturesGrid() {
           viewport={{ once: true }}
           className="text-center space-y-6"
         >
+          <div className="text-2xl del md:text-3xl font-bold text-gray-900">
+            TOTAL VALUE: <span className="">${totalValue.toLocaleString()}+</span>
+          </div>
           <div className="text-2xl md:text-3xl font-bold text-gray-900">
-            TOTAL VALUE: <span className="text-green-500">${totalValue.toLocaleString()}+</span>
+            Today only  <span className="">$29</span>
           </div>
 
           <Link href={"/#pricing"} className="block">
@@ -137,6 +143,9 @@ export default function FeaturesGrid() {
               Enrol Today
             </Button>
           </Link>
+          <p className="mt-4 text-sm sm:text-base  text-slate-700 max-w-lg md:max-w-xl mx-auto mt-4">
+            and claim all the bonuses...
+          </p>
         </motion.div>
       </div>
     </section>
@@ -167,7 +176,7 @@ export function BonusCard({
         <CardContent className="p-0 flex flex-col h-full">
           {/* Image Section */}
           {image && (
-            <div className="relative h-48 w-full flex-shrink-0">
+            <div className="relative bg-blue-500  h-48 w-full flex-shrink-0">
               <Image
                 src={image}
                 alt={title}

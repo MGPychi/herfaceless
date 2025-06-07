@@ -1,37 +1,38 @@
 import React from 'react';
 import * as motion from "framer-motion/m"; // Assuming this path is correct for your project setup
 import { Button } from '@/components/ui/button'; // Make sure this path is correct
+import Link from 'next/link';
 
 // Define your images array
 const resultImages = [
   {
     id: 1,
-    src: '/first-results/1.png',
+    src: '/first-results/1.jpeg',
     alt: 'Screenshot of sales results showing €277.13 gross volume',
   },
   {
-    id: 2,
-    src: '/first-results/2.png',
-    alt: 'Screenshot of sales results showing €54.67 gross volume',
-  },
-  {
-    id: 3,
-    src: '/first-results/3.png',
-    alt: 'Beacons notification: You made a sale for $112.20',
-  },
-  {
     id: 4,
-    src: '/first-results/4.png',
+    src: '/first-results/4.jpeg',
     alt: 'Beacons notification: You made a sale for $97.00 for Ultimate Faceless Bundle',
   },
   {
     id: 5,
-    src: '/first-results/5.png',
+    src: '/first-results/5.jpeg',
     alt: 'Dashboard showing $122.50 from 134 sales',
   },
   {
+    id: 2,
+    src: '/first-results/2.jpeg',
+    alt: 'Screenshot of sales results showing €54.67 gross volume',
+  },
+  {
+    id: 3,
+    src: '/first-results/3.jpeg',
+    alt: 'Beacons notification: You made a sale for $112.20',
+  },
+  {
     id: 6,
-    src: '/first-results/6.png',
+    src: '/first-results/6.jpeg',
     alt: 'Screenshot of total sales: $211.63 with a graph',
   },
 ];
@@ -101,13 +102,13 @@ const ResultsSection = () => {
               variants={cardVariants}
               whileHover={{ scale: 1.03, y: -5 }}
               // Added back shadow classes and ensured hover effect is smooth
-              className="bg-white rounded-2xl  overflow-hidden transition-all duration-300 ease-out "
+              className=""
             >
               <div className="aspect-w-1 aspect-h-1">
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full rounded-2xl h-full object-cover"
                 />
               </div>
             </motion.div>
@@ -118,25 +119,28 @@ const ResultsSection = () => {
         <motion.div className="text-center py-12 md:py-20"> {/* Increased vertical padding */}
           <motion.h4
             variants={textBlockVariants} // Apply animation
-            className='text-3xl sm:text-4xl lg:text-4xl text-black font-bold tracking-tight leading-tight'
+            className='text-2xl sm:text-4xl lg:text-4xl text-black font-bold tracking-tight leading-tight'
           // Increased size, added tracking-tight and leading-tight for compact, impactful look
           >
             Start selling your digital products today
           </motion.h4>
           <motion.p
             variants={textBlockVariants} // Apply animation
-            className='mt-4 text-base sm:text-lg text-slate-700 max-w-lg md:max-w-xl mx-auto'
+            className='mt-4 text-sm sm:text-base  text-slate-700 max-w-lg md:max-w-xl mx-auto'
           // Adjusted size, softer color (slate-700), controlled width, and top margin
           >
             Join 30-DAY FACELESS LAUNCHPAD and start earning with digital products today.
           </motion.p>
           <motion.div
             variants={textBlockVariants} // Apply animation
-            className="mt-8 md:mt-10" // Increased margin for button
+            className="mt-8 md:mt-6" // Increased margin for button
           >
-            <Button size="lg" className="text-lg"> {/* Example: slightly larger padding and text for button */}
-              I am ready to Enroll {/* Corrected typos */}
-            </Button>
+
+            <Link href="#pricing">
+              <Button size="lg" className="text-lg"> {/* Example: slightly larger padding and text for button */}
+                I am ready to Enroll {/* Corrected typos */}
+              </Button>
+            </Link >
           </motion.div>
         </motion.div>
       </motion.div>

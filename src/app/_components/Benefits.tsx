@@ -6,32 +6,35 @@ import {
   Mic,
   Lightbulb,
   DollarSign,
-  ChevronRight,
+  ScanFaceIcon,
 } from "lucide-react";
 import * as motion from "framer-motion/m";
 import {
   Tooltip,
-  TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
 import Image from "next/image";
 
-import SectionImage from "../../../public/phones.webp"
 
 const benefits = [
   {
     icon: <Mic className="w-6 h-6" />,
     title: "The exact content system i use",
-    description:
-      "Weekly expert guidance and actionable strategies to keep you on track and motivated.",
+    description: "Weekly expert guidance and actionable strategies to keep you on track and motivated.",
   },
   {
     icon: <Lightbulb className="w-6 h-6" />,
     title: "How to pick a profitable niche",
     description:
       "Step-by-step blueprints for business growth, tailored to your industry and goals.",
+  },
+
+  {
+    icon: <ScanFaceIcon className="w-6 h-6 " />,
+    title: "How to go faceless and still grow fast",
+    description: "",
   },
   {
     icon: <DollarSign className="w-6 h-6" />,
@@ -62,7 +65,7 @@ export default function Benefits() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative mx-auto lg:mx-0 order-2 lg:order-1">
               <div className="relative aspect-square">
-                <Image src={SectionImage} alt="section image" />
+                <Image src={"/laptops.png"} width={800} height={600} alt="section image" />
               </div>
             </div>
 
@@ -87,21 +90,38 @@ export default function Benefits() {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-col gap-3 items-center   text-center">
-            <Link href="/#pricing">
-              <Button
-                aria-label="join button"
-                className="bg-secondary  text-white hover:ring-2 hover:ring-secondary hover:bg-secondary text-xs sm:text-base md:text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform "
-              >
-                Claim  Your Spot Now!
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-            <span>And claim all the bounuses...</span>
-          </div>
-        </motion.div>
+        </motion.div >
       </div>
-    </section>
+
+      <motion.div className="text-center bg-ground py-4  "> {/* Increased vertical padding */}
+        <motion.h4
+          className='text-2xl sm:text-4xl lg:text-5xl text-black font-bold tracking-tight leading-tight'
+        // Increased size, added tracking-tight and leading-tight for compact, impactful look
+        >
+          Unlock my digital product system
+        </motion.h4>
+        <motion.p
+          className='mt-4 text-sm sm:text-lg  text-slate-700 max-w-lg md:max-w-xl mx-auto'
+        // Adjusted size, softer color (slate-700), controlled width, and top margin
+        >
+          Join now to access proven strategies for building your digital product empire.
+        </motion.p>
+        <motion.div
+          className="mt-8 md:mt-6" // Increased margin for button
+        >
+          <Link href="#pricing">
+            <Button size="lg" className="text-lg"> {/* Example: slightly larger padding and text for button */}
+              Claim Your Spot Now
+            </Button>
+          </Link>
+          <p className="mt-4 text-sm sm:text-base  text-slate-700 max-w-lg md:max-w-xl mx-auto mt-4">
+            And claim all the bonuses...
+          </p>
+        </motion.div>
+      </motion.div>
+
+    </section >
+
   );
 }
 
@@ -121,7 +141,9 @@ function BenefitItem({ benefit }: { benefit: Benefit }) {
         <h3 className=" md:text-xl font-semibold text-secondary mb-2 group-hover:text-[#0066cc] transition-colors duration-300">
           {benefit.title}
         </h3>
+        {/*
         <p className="text-gray-600 text-xs">{benefit.description}</p>
+          */}
       </div>
       <Tooltip>
         <TooltipTrigger asChild>
@@ -134,11 +156,14 @@ function BenefitItem({ benefit }: { benefit: Benefit }) {
             <Info className="w-5 h-5" />
           </Button>
         </TooltipTrigger>
+        {/*
         <TooltipContent side="left" className="max-w-xs">
           <p>{benefit.description}</p>
         </TooltipContent>
+        */}
       </Tooltip>
     </Card>
+
   );
 }
 
