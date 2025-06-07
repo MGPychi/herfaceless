@@ -78,11 +78,14 @@ export default function FeaturesGrid() {
     <section className="min-h-screen bg-ground py-20 px-4">
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="flex flex-col items-center gap-2">
+          <div className="bg-secondary py-2  text-white my-4 font-bold rounded-full px-8 ">
+            Bonus
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center text-gray-900"
+            className="text-3xl md:text-5xl my-2 font-bold text-center text-gray-900"
           >
             Comes with lifetime access.
           </motion.h2>
@@ -91,7 +94,7 @@ export default function FeaturesGrid() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-lg md:text-xl font-bold text-center text-gray-900"
+            className="text-lg md:text-xl my-2 font-bold text-center text-gray-900"
           >
             Join now and get all these bonuses included.
           </motion.span>
