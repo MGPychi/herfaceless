@@ -71,12 +71,15 @@ export default function ModulesComponent() {
                     </div>
                     <div className="p-6 space-y-3">
                       {mod.lessons.map((lesson, idx) => (
-                        <div
-                          key={idx}
-                          className="text-gray-800 hover:text-gray-900 cursor-pointer "
-                        >
-                          -{lesson}
-                        </div>
+                        <>
+                          <div
+                            key={idx}
+                            className="text-gray-800 flex items-center gap-2 hover:text-gray-900 cursor-pointer "
+                          >
+                            <div className="bg-gray-900 w-2 h-2 rounded-full" /> {lesson}
+                          </div>
+                          <br />
+                        </>
                       ))}
                     </div>
                   </Card>
@@ -96,7 +99,7 @@ export default function ModulesComponent() {
             />
           </div>
         </div>
-      </div>
+      </div >
 
       <motion.div className="text-center  md:m-0 bg-ground py-4  "> {/* Increased vertical padding */}
         <motion.h4
@@ -124,6 +127,6 @@ export default function ModulesComponent() {
           </p>
         </motion.div>
       </motion.div>
-    </div>
+    </div >
   );
 }
