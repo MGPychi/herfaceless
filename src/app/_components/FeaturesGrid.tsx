@@ -75,8 +75,8 @@ export default function FeaturesGrid() {
   const totalValue = features.reduce((acc, feature) => acc + feature.value, 0)
 
   return (
-    <section className="min-h-screen bg-ground py-20 px-4">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <section className="min-h-screen bg-ground py-2 sm:py-14 md:py-20 px-4">
+      <div className="max-w-6xl mx-auto space-y-4 md:space-y-12">
         <div className="flex flex-col items-center gap-2">
           <div className="bg-secondary py-2  text-white my-4 font-bold rounded-full px-8 ">
             Bonus
@@ -126,10 +126,10 @@ export default function FeaturesGrid() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center space-y-6"
+          className="text-center space-y-2 pt-4 md:pt-0"
         >
-          <div className="text-2xl del md:text-3xl font-bold text-gray-900">
-            TOTAL VALUE: <span className="">${totalValue.toLocaleString()}+</span>
+          <div className="text-xl del md:text-2xl font-bold text-gray-900">
+            Total  Value  <span className="">${(totalValue + 320).toLocaleString()}+</span>
           </div>
           <div className="text-2xl md:text-3xl font-bold text-gray-900">
             Today only  <span className="">$29</span>
@@ -143,7 +143,7 @@ export default function FeaturesGrid() {
               Enrol Today
             </Button>
           </Link>
-          <p className="mt-4 text-sm sm:text-base  text-slate-700 max-w-lg md:max-w-xl mx-auto mt-4">
+          <p className="mt-4 text-sm sm:text-base italic  text-slate-700 max-w-lg md:max-w-xl mx-auto mt-4">
             and claim all the bonuses...
           </p>
         </motion.div>

@@ -81,7 +81,7 @@ const steps = [
 
 export default function GamePlan() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-ground px-2 md:px-6 py-16">
+    <section className="relative min-h-screen overflow-hidden bg-ground px-2 md:px-6 py-4 md:py-16">
       {/* Decorative Background */}
       <div className="pointer-events-none absolute inset-0">
         <svg

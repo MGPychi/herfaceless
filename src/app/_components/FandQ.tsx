@@ -128,11 +128,11 @@ export default function FandQ() {
             );
           })}
         </motion.div>
-        <div className="flex flex-col gap-6 items-center py-8 pt-12 md:pt-16 text-center max-w-3xl mx-auto">
-          <h4 className="font-bold uppercase text-3xl md:text-4xl  tracking-tight text-secondary    ">
+        <div className="flex flex-col gap-6 items-center py-8 pt-12 md:pt-16 text-center  w-full md:max-w-3xl mx-auto">
+          <h4 className="font-bold  uppercase text-2xl md:text-4xl  tracking-tight text-secondary    ">
             Join 30-day Faceless Launchpad
           </h4>
-          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+          <p className="text-lg md:text-2xl text-gray-700 leading-relaxed">
             Learn how to create, launch, and sell digital products successfully - without wasting time or money.
           </p>
           <Button className="text-lg px-8 py-6 rounded-full    hover:from-primary/90 hover:to-purple-600/90 shadow-lg hover:shadow-xl transition-all">

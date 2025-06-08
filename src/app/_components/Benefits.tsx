@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
-  Info,
   Mic,
   Lightbulb,
   DollarSign,
@@ -10,9 +9,7 @@ import {
 } from "lucide-react";
 import * as motion from "framer-motion/m";
 import {
-  Tooltip,
   TooltipProvider,
-  TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
 import Image from "next/image";
@@ -35,6 +32,7 @@ const benefits = [
     icon: <ScanFaceIcon className="w-6 h-6 " />,
     title: "How to go faceless and still grow fast",
     description: "",
+
   },
   {
     icon: <DollarSign className="w-6 h-6" />,
@@ -46,15 +44,15 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section className="py-4 md:py-24 px-4 bg-gradient-to-b   bg-ground  overflow-hidden">
-      <div className="container mx-auto">
+    <section className="py-4  md:py-24 px-4 bg-gradient-to-b   bg-ground  overflow-hidden">
+      <div className="container  mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 text-secondary">
+          <h2 className="text-3xl mt-8 sm:text-4xl md:text-5xl font-bold text-center mb-8 text-secondary">
             Here is What You Get Inside
             <br className="hidden md:inline" /> the Course:
           </h2>
@@ -62,9 +60,9 @@ export default function Benefits() {
             Everything you need in one place.
           </p>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2   items-center">
             <div className="relative mx-auto lg:mx-0 order-2 lg:order-1">
-              <div className="relative aspect-square">
+              <div className="relative aspect-square ">
                 <Image src={"/laptops.png"} width={800} height={600} alt="section image" />
               </div>
             </div>
@@ -101,10 +99,10 @@ export default function Benefits() {
           Unlock my digital product system
         </motion.h4>
         <motion.p
-          className='mt-4 text-sm sm:text-lg  text-slate-700 max-w-lg md:max-w-xl mx-auto'
+          className='mt-4 italic  text-sm sm:text-lg  text-slate-700 max-w-lg md:max-w-xl mx-auto'
         // Adjusted size, softer color (slate-700), controlled width, and top margin
         >
-          Join now to access proven strategies for building your digital product empire.
+          Join now to access proven strategies  for building your digital product empire.
         </motion.p>
         <motion.div
           className="mt-8 md:mt-6" // Increased margin for button
@@ -114,7 +112,7 @@ export default function Benefits() {
               Claim Your Spot Now
             </Button>
           </Link>
-          <p className="mt-4 text-sm sm:text-base  text-slate-700 max-w-lg md:max-w-xl mx-auto mt-4">
+          <p className="mt-4 text-sm sm:text-base italic  text-slate-700 max-w-lg md:max-w-xl mx-auto mt-4">
             And claim all the bonuses...
           </p>
         </motion.div>
@@ -133,11 +131,11 @@ interface Benefit {
 
 function BenefitItem({ benefit }: { benefit: Benefit }) {
   return (
-    <Card className="p-2 py-4 md:!p-6 flex min-h-[135px]  items-start gap-4 group hover:bg-[#f0f8ff] transition-colors duration-300 cursor-pointer">
+    <Card className="p-2 py-4 md:!p-6 flex min-h-[105px]  items-start gap-4 group hover:bg-[#f0f8ff] transition-colors duration-300 cursor-pointer">
       <div className="p-3 rounded-full bg-secondary text-white shrink-0">
         {benefit.icon}
       </div>
-      <div className="flex-grow">
+      <div className="flex-grow ">
         <h3 className=" md:text-xl font-semibold text-secondary mb-2 group-hover:text-[#0066cc] transition-colors duration-300">
           {benefit.title}
         </h3>
@@ -145,23 +143,6 @@ function BenefitItem({ benefit }: { benefit: Benefit }) {
         <p className="text-gray-600 text-xs">{benefit.description}</p>
           */}
       </div>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Button
-            aria-label="info button"
-            variant="ghost"
-            size="icon"
-            className="shrink-0 opacity-50 group-hover:opacity-100 transition-opacity duration-300"
-          >
-            <Info className="w-5 h-5" />
-          </Button>
-        </TooltipTrigger>
-        {/*
-        <TooltipContent side="left" className="max-w-xs">
-          <p>{benefit.description}</p>
-        </TooltipContent>
-        */}
-      </Tooltip>
     </Card>
 
   );

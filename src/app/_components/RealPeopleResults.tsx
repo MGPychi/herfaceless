@@ -2,9 +2,9 @@
 
 import React, { FC, useState, useRef, useEffect, RefObject } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 
 interface TestimonialImage {
   id: number;
@@ -25,16 +25,16 @@ const RealPeopleResults: FC = () => {
   // Placeholder images - replace these with actual testimonial images as needed
   const testimonialImages: TestimonialImage[] = [
     { id: 1, src: "/real-people/1.jpeg", alt: "Customer testimonial 1" },
-    { id: 2, src: "/real-people/2.png", alt: "Customer testimonial 2" },
+    // { id: 2, src: "/real-people/2.png", alt: "Customer testimonial 2" },
     { id: 3, src: "/real-people/3.jpeg", alt: "Customer testimonial 3" },
     { id: 5, src: "/real-people/5.png", alt: "Customer testimonial 5" },
     { id: 6, src: "/real-people/6.png", alt: "Customer testimonial 6" },
   ];
 
   const itemsPerView: ItemsPerView = {
-    mobile: 2,
-    tablet: 3,
-    desktop: 4,
+    mobile: 1,
+    tablet: 2,
+    desktop: 3,
   };
 
   const getItemsPerView = (): number => {
@@ -93,7 +93,7 @@ const RealPeopleResults: FC = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gray-50 py-6 md:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -101,7 +101,7 @@ const RealPeopleResults: FC = () => {
           <div className="bg-secondary py-2 max-w-[200px] mx-auto  text-white my-4 font-bold rounded-full px-8 ">
             Results
           </div>
-          <h2 className="text-4xl md:text-5xl mt-10 font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-5xl mt-10 font-bold text-gray-900 mb-4">
             Real People, Real Results
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -171,15 +171,6 @@ const RealPeopleResults: FC = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-6">
-            Ready to join thousands of satisfied customers?
-          </p>
-          <Link href="/#pricing" passHref>
-            <Button size="lg">Enroll now!</Button>
-          </Link>
-        </div>
       </div>
     </div>
   );

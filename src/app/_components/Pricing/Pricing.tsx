@@ -30,19 +30,19 @@ export default async function Pricing() {
   const plans = await getAllPricing();
 
   return (
-    <section id="pricing" className="min-h-screen bg-ground py-20 px-4">
+    <section id="pricing" className="min-h-screen bg-ground py-2 md:py-20 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="container mx-auto text-center mb-12"
       >
-        <h1 className="text-4xl md:text-5xl font-bold">
+        <h1 className="text-3xl md:text-5xl font-bold">
           Join Now And Get Full Lifetime Access
         </h1>
       </motion.div>
 
-      <div className="container mx-auto px-4 py-12  flex justify-center items-center">
+      <div className="container mx-auto px-4 py-8 md:py-12  flex justify-center items-center">
         <div className="flex flex-wrap justify-center gap-8 w-full max-w-7xl">
           {plans.map((plan, index) => (
             <motion.div

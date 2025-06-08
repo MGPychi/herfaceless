@@ -38,16 +38,16 @@ const modules = [
 
 export default function ModulesComponent() {
   return (
-    <div className="min-h-screen bg-ground pt-8 py-4 md:py-6 lg:py-12 px-4 bg-gray-50">
+    <div className="min-h-screen  bg-ground pt-4 py-4 md:py-6 lg:py-12 md:px-4 bg-gray-50">
 
-      <div className="container mx-auto">
+      <div className="container mx-auto  ">
 
         <div className="bg-secondary mx-auto max-w-[250px] text-center py-2  text-white my-4 font-bold rounded-full px-8 ">
           Curriculum
         </div>
-        <div className="flex flex-col lg:flex-row items-center">
+        <div className="flex flex-col lg:flex-row  items-center">
           {/* Left side - Course modules */}
-          <div className="w-full lg:w-1/2 rounded-2xl p-8 space-y-8">
+          <div className="w-full lg:w-1/2 rounded-2xl py-2 px-4 md:px-8 py-8 space-y-8">
             {modules.map((mod, index) => (
               <motion.div
                 key={mod.title}
@@ -58,8 +58,8 @@ export default function ModulesComponent() {
               >
                 <div className="flex gap-6">
                   {/* Timeline dot */}
-                  <div className="relative mt-2 flex h-4 w-4 flex-shrink-0 items-center justify-center">
-                    <div className="h-4 w-4 rounded-full bg-black" />
+                  <div className="relative  hidden md:block  mt-2 flex h-4 w-4 flex-shrink-0 items-center justify-center">
+                    <div className="h-4 w-4rounded-full bg-black" />
                   </div>
                   {/* Card */}
                   <Card className="flex-1 border-none bg-white shadow-md">
@@ -73,7 +73,7 @@ export default function ModulesComponent() {
                       {mod.lessons.map((lesson, idx) => (
                         <div
                           key={idx}
-                          className="text-gray-800 hover:text-gray-900 cursor-pointer underline"
+                          className="text-gray-800 hover:text-gray-900 cursor-pointer "
                         >
                           {lesson}
                         </div>
@@ -86,7 +86,7 @@ export default function ModulesComponent() {
           </div>
 
           {/* Right side - Device mockups */}
-          <div className="relative flex items-center w-full lg:w-1/2">
+          <div className="relative flex  items-center w-full lg:w-1/2">
             <Image
               src="/modules-image.png"
               alt="Course content displayed on multiple devices showing Canva interface"
@@ -98,7 +98,7 @@ export default function ModulesComponent() {
         </div>
       </div>
 
-      <motion.div className="text-center bg-ground py-4  "> {/* Increased vertical padding */}
+      <motion.div className="text-center  md:m-0 bg-ground py-4  "> {/* Increased vertical padding */}
         <motion.h4
           className='text-2xl sm:text-4xl lg:text-5xl text-black font-bold tracking-tight leading-tight'
         // Increased size, added tracking-tight and leading-tight for compact, impactful look
@@ -106,7 +106,7 @@ export default function ModulesComponent() {
           Join 30-DAY FACELESS LAUNCHPAD
         </motion.h4>
         <motion.p
-          className='mt-4 text-sm sm:text-lg  text-slate-700 max-w-lg md:max-w-xl mx-auto'
+          className='mt-4 text-sm sm:text-lg italic  text-slate-700 max-w-lg md:max-w-xl mx-auto'
         // Adjusted size, softer color (slate-700), controlled width, and top margin
         >
           Get the tools to fast-track your digital product success.
@@ -119,7 +119,7 @@ export default function ModulesComponent() {
               I&apos;am Ready To Entroll
             </Button>
           </Link>
-          <p className="mt-4 text-sm sm:text-base  text-slate-700 max-w-lg md:max-w-xl mx-auto mt-4">
+          <p className="mt-4 text-sm sm:text-base italic  text-slate-700 max-w-lg md:max-w-xl mx-auto mt-4">
             And claim all the bonuses...
           </p>
         </motion.div>

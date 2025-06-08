@@ -56,11 +56,11 @@ export default function Hero() {
             }}
             className="space-y-4"
           >
-            <h1 className="text-2xl uppercase sm:text-4xl md:text-5xl font-bold leading-tight">
+            <h1 className="text-3xl uppercase sm:text-4xl md:text-5xl font-bold leading-tight">
               30-DAY faceless launchpad
               <br />
             </h1>
-            <p className="text-gray-700  sm:text-lg  max-w-3xl mx-auto">
+            <p className="text-gray-700 text-sm  sm:text-lg  max-w-3xl mx-auto">
               Build a Profitable Brand in 30 Days - With or Without Showing Your Face No followers. No experience. No adds. Just digital products & a system that works.
             </p>
           </motion.div>
