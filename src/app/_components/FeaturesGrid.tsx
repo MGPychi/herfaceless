@@ -140,7 +140,7 @@ export default function FeaturesGrid() {
               aria-label="get started button"
               className="bg-black hover:bg-black/90 text-white px-8 py-6 text-lg rounded-lg"
             >
-              Enrol Today
+              Enroll TODAY
             </Button>
           </Link>
           <p className="mt-4 text-sm sm:text-base italic  text-slate-700 max-w-lg md:max-w-xl mx-auto mt-4">
