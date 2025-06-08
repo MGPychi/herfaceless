@@ -6,6 +6,8 @@ import { getAllReviews } from "@/data/reviews-data";
 import { z } from "zod";
 import { selectReviewSchema } from "@/db/schema";
 import { DollarSign } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default async function Reviews() {
   const reviews = await getAllReviews();
@@ -42,6 +44,15 @@ export default async function Reviews() {
               </Link>*/}
           </div>
         </motion.div>
+      </div>
+
+      <div className="text-center mt-12">
+        <p className="text-gray-600 mb-6">
+          Ready to join thousands of satisfied customers?
+        </p>
+        <Link href="/#pricing" passHref>
+          <Button size="lg">Enroll now!</Button>
+        </Link>
       </div>
     </section>
   );
