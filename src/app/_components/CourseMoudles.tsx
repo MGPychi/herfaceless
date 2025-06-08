@@ -75,7 +75,7 @@ export default function ModulesComponent() {
                           key={idx}
                           className="text-gray-800 hover:text-gray-900 cursor-pointer "
                         >
-                          {lesson}
+                          -{lesson}
                         </div>
                       ))}
                     </div>
