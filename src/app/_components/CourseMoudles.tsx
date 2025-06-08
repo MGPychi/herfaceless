@@ -29,9 +29,13 @@ const modules = [
 
   {
     title: 'Module 03',
-    lessonsCount: 2,
+    lessonsCount: 0,
     lessons: [
-      'Unlock the bonuses',
+      "• +10 digital products MRR",
+      " Community Access",
+      "High-Converting Story Templates",
+      " +850 faceless reels",
+      "And More...",
     ]
   }
 ];
@@ -65,9 +69,11 @@ export default function ModulesComponent() {
                   <Card className="flex-1 border-none bg-white shadow-md">
                     <div className="flex justify-between items-center p-6 border-b">
                       <h3 className="text-xl font-semibold text-gray-900">{mod.title}</h3>
-                      <span className="bg-[#B8A394] text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {mod.lessonsCount} Lessons
-                      </span>
+                      {mod.lessonsCount > 0 &&
+                        <span className="bg-[#B8A394] text-white px-3 py-1 rounded-full text-sm font-medium">
+                          {mod.lessonsCount} Lessons
+                        </span>
+                      }
                     </div>
                     <div className="p-6 space-y-3">
                       {mod.lessons.map((lesson, idx) => (
