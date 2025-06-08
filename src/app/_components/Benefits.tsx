@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
-  Info,
   Mic,
   Lightbulb,
   DollarSign,
@@ -10,9 +9,7 @@ import {
 } from "lucide-react";
 import * as motion from "framer-motion/m";
 import {
-  Tooltip,
   TooltipProvider,
-  TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
 import Image from "next/image";
@@ -35,6 +32,7 @@ const benefits = [
     icon: <ScanFaceIcon className="w-6 h-6 " />,
     title: "How to go faceless and still grow fast",
     description: "",
+
   },
   {
     icon: <DollarSign className="w-6 h-6" />,
@@ -65,7 +63,7 @@ export default function Benefits() {
           <div className="grid lg:grid-cols-2   items-center">
             <div className="relative mx-auto lg:mx-0 order-2 lg:order-1">
               <div className="relative aspect-square ">
-                <Image src={"/laptops.png"} width={500} height={300} alt="section image" />
+                <Image src={"/laptops.png"} width={800} height={600} alt="section image" />
               </div>
             </div>
 
