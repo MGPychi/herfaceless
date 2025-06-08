@@ -31,10 +31,10 @@ const modules = [
     title: 'Module 03',
     lessonsCount: 0,
     lessons: [
-      "• +10 digital products MRR",
-      " Community Access",
+      " +10 digital products MRR",
+      "Community Access",
       "High-Converting Story Templates",
-      " +850 faceless reels",
+      "+850 faceless reels",
       "And More...",
     ]
   }
@@ -82,7 +82,7 @@ export default function ModulesComponent() {
                             key={idx}
                             className="text-gray-800 flex items-center gap-2 hover:text-gray-900 cursor-pointer "
                           >
-                            <div className="bg-gray-900 w-2 h-2 rounded-full" /> {lesson}
+                            •{lesson}
                           </div>
                           <br />
                         </>

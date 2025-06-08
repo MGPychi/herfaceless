@@ -129,7 +129,7 @@ export default function FeaturesGrid() {
           className="text-center space-y-2 pt-4 md:pt-0"
         >
           <div className="text-xl del md:text-2xl font-bold text-gray-900">
-            Total  Value  <span className="">${(totalValue + 320).toLocaleString()}+</span>
+            Total  Value  <span className="">${(totalValue).toLocaleString()}+</span>
           </div>
           <div className="text-2xl md:text-3xl font-bold text-gray-900">
             Today only  <span className="">$29</span>
@@ -197,7 +197,7 @@ export function BonusCard({
 
             {/* Title */}
             <h3 className="text-lg font-bold leading-tight mb-3">Bonus {bonusNumber} <span className="font-bold"> {title} {}</span>
-              <span className="text-gray-100">
+              <span className=" text-base text-gray-100">
                 (Total Value:{totalValue})
               </span>
             </h3>
