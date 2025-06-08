@@ -8,49 +8,49 @@ import Image from "next/image"
 const features = [
   {
     icon: FileText,
-    title: "+10 Digital Products MRR",
+    title: "+10 digital products MRR ",
     value: 197,
-    description: "Get ready-made digital products for you ready to sell (save your time).",
+    description: "Get ready-made digital product for you ready to sell (save your time).",
     image: "/bonus1.png",
     backgroundColor: "bg-gradient-to-br from-blue-50 to-blue-100"
   },
   {
     icon: Mic,
-    title: "Digital Marketing Strategy Handbook",
-    value: 97,
-    description: "Master digital marketing with actionable strategies to build your brand and convert followers into customers.",
+    title: "20+ Low-Competition Niches ",
+    value: 37,
+    description: "Top 20 niches in for digital products  Low-Competition",
     image: "/bonus2.png",
     backgroundColor: "bg-gradient-to-br from-purple-50 to-purple-100"
   },
   {
     icon: Database,
-    title: "Mastering Instagram Marketing",
-    value: 87,
-    description: "Learn the secrets to optimizing your Instagram profile, content, and hashtags for maximum impact.",
+    title: "Canva Crash Course MRR ",
+    value: 97,
+    description: "Get ready-made digital product for you ready to sell",
     image: "/bonus3.png",
     backgroundColor: "bg-gradient-to-br from-pink-50 to-pink-100"
   },
   {
     icon: Pen,
-    title: "Exclusive Members-Only Community",
-    value: 297,
-    description: "Connect with like-minded marketers, share insights, and gain exclusive access to expert tips.",
+    title: "Community Access ",
+    value: 397,
+    description: "Access lifetime membership to My community and support.",
     image: "/bonus4.png",
     backgroundColor: "bg-gradient-to-br from-amber-50 to-amber-100"
   },
   {
     icon: MessageSquare,
-    title: "Social Media Success Framework",
-    value: 47,
-    description: "A step-by-step guide to crafting winning social media strategies that drive results.",
+    title: "High-Converting Story Templates ",
+    value: 97,
+    description: "Get 5x views in your story",
     image: "/bonus5.png",
     backgroundColor: "bg-gradient-to-br from-green-50 to-green-100"
   },
   {
     icon: Briefcase,
-    title: "Guide to Creating Faceless Reels",
-    value: 97,
-    description: "Learn how to create captivating faceless reels that engage and grow your audience.",
+    title: "+850 faceless reels ",
+    value: 47,
+    description: "Get ready-made digital product for you ready to sell (save your time).",
     image: "/bonus6.png",
     backgroundColor: "bg-gradient-to-br from-indigo-50 to-indigo-100"
   },
@@ -140,7 +140,7 @@ export default function FeaturesGrid() {
               aria-label="get started button"
               className="bg-black hover:bg-black/90 text-white px-8 py-6 text-lg rounded-lg"
             >
-              Enrol Today
+              Enroll TODAY
             </Button>
           </Link>
           <p className="mt-4 text-sm sm:text-base italic  text-slate-700 max-w-lg md:max-w-xl mx-auto mt-4">
@@ -189,13 +189,18 @@ export function BonusCard({
 
           {/* Content Section */}
           <div className={`bg-secondary text-white ${textColor} p-6 flex flex-col flex-grow`}>
-            {/* Bonus Label */}
+            {/* Bonus Label
             <div className="flex justify-between items-start mb-2">
               <span className="text-sm font-medium text-gray-100">Value: ${totalValue}</span>
             </div>
+              */}
 
             {/* Title */}
-            <h3 className="text-lg font-bold leading-tight mb-3">Bonus {bonusNumber} {title}</h3>
+            <h3 className="text-lg font-bold leading-tight mb-3">Bonus {bonusNumber} <span className="font-bold"> {title} {}</span>
+              <span className="text-gray-100">
+                (Total Value:{totalValue})
+              </span>
+            </h3>
 
             {/* Description */}
             <p className="text-sm text-gray-50 leading-relaxed flex-grow">{description}</p>

@@ -29,9 +29,13 @@ const modules = [
 
   {
     title: 'Module 03',
-    lessonsCount: 2,
+    lessonsCount: 0,
     lessons: [
-      'Unlock the bonuses',
+      "• +10 digital products MRR",
+      " Community Access",
+      "High-Converting Story Templates",
+      " +850 faceless reels",
+      "And More...",
     ]
   }
 ];
@@ -65,18 +69,23 @@ export default function ModulesComponent() {
                   <Card className="flex-1 border-none bg-white shadow-md">
                     <div className="flex justify-between items-center p-6 border-b">
                       <h3 className="text-xl font-semibold text-gray-900">{mod.title}</h3>
-                      <span className="bg-[#B8A394] text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {mod.lessonsCount} Lessons
-                      </span>
+                      {mod.lessonsCount > 0 &&
+                        <span className="bg-[#B8A394] text-white px-3 py-1 rounded-full text-sm font-medium">
+                          {mod.lessonsCount} Lessons
+                        </span>
+                      }
                     </div>
                     <div className="p-6 space-y-3">
                       {mod.lessons.map((lesson, idx) => (
-                        <div
-                          key={idx}
-                          className="text-gray-800 hover:text-gray-900 cursor-pointer "
-                        >
-                          -{lesson}
-                        </div>
+                        <>
+                          <div
+                            key={idx}
+                            className="text-gray-800 flex items-center gap-2 hover:text-gray-900 cursor-pointer "
+                          >
+                            <div className="bg-gray-900 w-2 h-2 rounded-full" /> {lesson}
+                          </div>
+                          <br />
+                        </>
                       ))}
                     </div>
                   </Card>
@@ -96,7 +105,7 @@ export default function ModulesComponent() {
             />
           </div>
         </div>
-      </div>
+      </div >
 
       <motion.div className="text-center  md:m-0 bg-ground py-4  "> {/* Increased vertical padding */}
         <motion.h4
@@ -124,6 +133,6 @@ export default function ModulesComponent() {
           </p>
         </motion.div>
       </motion.div>
-    </div>
+    </div >
   );
 }
