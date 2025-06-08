@@ -17,6 +17,7 @@ import {
   DollarSign,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -135,9 +136,11 @@ export default function FandQ() {
           <p className="text-lg md:text-2xl text-gray-700 leading-relaxed">
             Learn how to create, launch, and sell digital products successfully - without wasting time or money.
           </p>
-          <Button className="text-lg px-8 py-6 rounded-full    hover:from-primary/90 hover:to-purple-600/90 shadow-lg hover:shadow-xl transition-all">
-            Yes, I Want In
-          </Button>
+          <Link href="/#pricing">
+            <Button className="text-lg px-8 py-6 rounded-full    hover:from-primary/90 hover:to-purple-600/90 shadow-lg hover:shadow-xl transition-all">
+              Yes, I Want In
+            </Button>
+          </Link>
           <p className="text-lg text-gray-500 italic">
             Offer may go back to $129 soon. Claim all the bonuses before it&apos;s too late!
           </p>
