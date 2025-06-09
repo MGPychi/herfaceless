@@ -19,13 +19,11 @@ export const authConfig: NextAuthConfig = {
 		async jwt({ token, user }) {
 			if (user) {
 				token.id = user.id as string;
-				token.role = user.role;
 			}
 			return token;
 		},
 		async session({ session, token }) {
 			if (session.user) {
-				session.user.role = token.role as "admin";
 				session.user.id = token.id as string;
 			}
 			return session;
@@ -51,18 +49,15 @@ export const authConfig: NextAuthConfig = {
 					});
 					if (!user) return null;
 
-					const isValid =
-						user.role == "admin" &&
-						(await verifyPassword(
-							password as string,
-							user.password,
-						));
+					const isValid = await verifyPassword(
+						password as string,
+						user.password,
+					);
 					if (!isValid) return null;
 					return {
 						id: user.id,
 						email: user.email,
 						name: user.name,
-						role: user.role,
 					};
 				} catch (err) {
 					console.log("Error in auth.ts ", err);
