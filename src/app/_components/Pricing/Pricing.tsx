@@ -11,6 +11,8 @@ import { Check } from 'lucide-react';
 import { getAllPricing } from "@/data/pricing-data";
 // import PricingLink from "./PricingLink";
 import Link from "next/link";
+import PricingLink from "./PricingLink";
+import StripePricingLink from "./StripePricingLink";
 
 const container = {
   hidden: { opacity: 0 },
@@ -86,14 +88,17 @@ export default async function Pricing() {
                 </CardContent>
                 <CardFooter className="mt-auto">
 
-                  <Link href={plan.stripeUrl}>
+                  <StripePricingLink plan={plan}   >
+
                     <Button
                       aria-label="sign me up button"
                       className="w-full  bg-[#dbc1b0] hover:bg-[#b17f65] text-black py-6 text-lg"
                     >
                       Get Started!
                     </Button>
-                  </Link>
+
+                  </StripePricingLink  >
+
                   {/*
                   <PricingLink plan={plan} >
                     <Button
