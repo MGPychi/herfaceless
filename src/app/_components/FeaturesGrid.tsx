@@ -132,7 +132,7 @@ export default function FeaturesGrid() {
             Total  Value  <span className="">${(totalValue).toLocaleString()}+</span>
           </div>
           <div className="text-2xl md:text-3xl font-bold text-gray-900">
-            Today only  <span className="">$29</span>
+            Today only  <span className="">$37</span>
           </div>
 
           <Link href={"/#pricing"} className="block">
