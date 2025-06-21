@@ -85,7 +85,7 @@ export default async function SuccessPage({
 
             <p className="text-sm text-muted-foreground">
               Having trouble? Contact our support team at
-              herfacelessmarketing1@gmail.com
+              hmfaceless@hersfaceless.com
             </p>
           </div>
         </CardContent>

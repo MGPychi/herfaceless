@@ -60,7 +60,7 @@ export default function Footer() {
                   href="mailto:contact@hersfaceless.com"
                   className="text-sm hover:underline"
                 >
-                  herfacelessmarketing1@gmail.com
+                  hmfaceless@hersfaceless.com
                 </Link>
                 <Link
                   href="https://www.instagram.com/her.facelessmarketing/"

@@ -34,18 +34,18 @@ export default function PrivacyPolicy() {
 
                 This way, you have nothing to lose, and everything to gain.
 
-                If you have questions before joining, email us at ✉️ herfacelessmarketing1@gmail.com — we’re happy to help.
+                If you have questions before joining, email us at ✉️ hmfaceless@hersfaceless.com — we’re happy to help.
               </p>
               <div className="flex items-center justify-center gap-2 mt-8 text-center">
                 <p className="text-lg">
                   If you have any questions prior to
                   purchasing, feel free to reach out to us at{" "}
                   <Link
-                    href="mailto:herfacelessmarketing1@gmail.com"
+                    href="mailto:hmfaceless@hersfaceless.com"
                     className="text-primary hover:underline inline-flex items-center gap-1"
                   >
                     <Mail className="h-4 w-4" />
-                    herfacelessmarketing1@gmail.com
+                    hmfaceless@hersfaceless.com
                   </Link>
                   . We&apos;re here to help!
                 </p>
